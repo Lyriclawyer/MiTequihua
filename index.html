@@ -6,7 +6,7 @@
     <title>MiTequihua - Grupo 1 Tequihua</title>
     
     <!-- Google Fonts: Plus Jakarta Sans para estética tipo Apple -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com font-display=swap">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -139,7 +139,6 @@
     </div>
 
     <!-- CABECERA FLOTANTE PRINCIPAL (Oculta al inicio por defecto) -->
-    <!-- STREAMING_CHUNK: Cabecera superior de MiTequihua -->
     <nav id="cabecera-principal" class="glass-nav fixed top-0 left-0 w-full z-50 transition-apple px-6 py-4 flex justify-between items-center hidden">
         <div class="flex items-center gap-4 cursor-pointer hover:opacity-90 transition-apple" onclick="regresarAlInicio()">
             <img src="Logo 1.png" alt="Logo Grupo 1 Tequihua" class="h-14 w-auto drop-shadow-md hover:scale-105 transition-apple">
@@ -157,11 +156,9 @@
     </nav>
 
     <!-- ÁREA PRINCIPAL -->
-    <!-- STREAMING_CHUNK: Contenedor principal de vistas -->
     <main id="main-area" class="pt-10 pb-16 px-4 md:px-8 max-w-6xl mx-auto flex flex-col justify-center min-h-[90vh]">
 
         <!-- ================= 1. ACCESO A MIEMBROS SCOUT (Inspirado en la imagen image_28185b.png) ================= -->
-        <!-- STREAMING_CHUNK: Formulario de inicio de sesión de Miembros Scout -->
         <section id="puerta-autenticacion-scout" class="transition-apple w-full max-w-5xl mx-auto pt-16">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-0 glass-panel rounded-[32px] overflow-hidden shadow-2xl border-2 border-white/50">
                 
@@ -198,7 +195,7 @@
                         </button>
 
                         <div class="text-center pt-2">
-                            <a href="#" onclick="lanzarAlert('Acceso Provisional', 'Usa las credenciales:\nManada: CUM: m / Pass: 1\nTropa: CUM: t / Pass: 1\nComunidad: CUM: co / Pass: 1\nClan: CUM: cl1 / Pass: 1')" class="text-xs text-indigo-500 hover:text-indigo-700 underline font-semibold transition-apple">He olvidado mi contraseña</a>
+                            <a href="#" onclick="lanzarAlert('Acceso Provisional', 'Usa las credenciales:\nManada: CUM: m / Pass: 1\nTropa: CUM: t / Pass: 1\nComunidad: CUM: co / Pass: 1\nClan: CUM: cl / Pass: 1')" class="text-xs text-indigo-500 hover:text-indigo-700 underline font-semibold transition-apple">He olvidado mi contraseña</a>
                         </div>
 
                         <div class="pt-6 border-t border-gray-100 mt-6 text-center">
@@ -238,7 +235,6 @@
         </section>
 
         <!-- ================= BIENVENIDA / HERO (De la encuesta) ================= -->
-        <!-- STREAMING_CHUNK: Bienvenidos a las encuestas de TequiVoz -->
         <section id="pantalla-inicio" class="text-center transition-apple w-full hidden">
             <span class="px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-widest inline-block mb-6 shadow-sm">Representación Juvenil</span>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 leading-tight">
@@ -292,7 +288,6 @@
         </section>
 
         <!-- ================= PANEL DE ENCUESTA GAMIFICADA ================= -->
-        <!-- STREAMING_CHUNK: Encuesta activa y renderizado interactivo -->
         <section id="contenedor-encuesta" class="hidden transition-apple w-full">
             <div class="glass-panel rounded-[32px] p-6 md:p-10 shadow-2xl">
                 
@@ -331,7 +326,6 @@
         </section>
 
         <!-- ================= PUERTA DE AUTENTICACIÓN ADM ================= -->
-        <!-- STREAMING_CHUNK: Verificación de acceso Scouter -->
         <section id="puerta-autenticacion" class="hidden transition-apple w-full max-w-md mx-auto text-center">
             <div class="glass-panel rounded-[32px] p-8 shadow-2xl">
                 <div class="relative w-28 h-28 mx-auto mb-6 flex items-center justify-center bg-white rounded-full p-2 border border-gray-100 shadow-md">
@@ -364,7 +358,6 @@
         </section>
 
         <!-- ================= ANALYTICS DASHBOARD & CONFIGURADOR DE PREGUNTAS ================= -->
-        <!-- STREAMING_CHUNK: Dashboard TequiRadar Analytics -->
         <section id="panel-scouter" class="hidden transition-apple w-full">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
                 <div>
@@ -438,7 +431,6 @@
                 </div>
 
                 <!-- ================= SECCIÓN DE EVALUACIÓN DE KPIs HÍBRIDOS (80% IA + 20% Humano) ================= -->
-                <!-- STREAMING_CHUNK: Evaluador dinámico de KPIs del Modelo Híbrido -->
                 <div class="glass-panel rounded-[32px] p-6 md:p-8 shadow-xl text-left">
                     <div class="flex items-center gap-3 mb-6">
                         <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-black uppercase tracking-wider">Módulo de Co-creación Híbrido</span>
@@ -521,7 +513,6 @@
             </div>
 
             <!-- VISTA DE EDITOR DE FORMULARIOS -->
-            <!-- STREAMING_CHUNK: Módulo de modificación de formularios scouts -->
             <div id="vista-scouter-editor" class="hidden text-left">
                 <div class="glass-panel rounded-3xl p-6 md:p-8 shadow-xl">
                     <div class="flex justify-between items-center mb-6">
@@ -590,7 +581,6 @@
     </main>
 
     <!-- ================= SCOUT DASHBOARD PORTAL (Inspirado en la imagen image_281b7d.png) ================= -->
-    <!-- STREAMING_CHUNK: Portal MiTequihua de Miembros del Grupo -->
     <div id="panel-scout-sisas" class="hidden min-h-screen bg-gray-50 transition-apple">
         <header class="bg-tequihuaPurple text-white px-6 py-3 flex justify-between items-center shadow-md">
             <div class="flex items-center gap-3">
@@ -649,7 +639,6 @@
             <main class="flex-1 p-6 md:p-8 space-y-6">
                 
                 <!-- SUB-VISTA: HOME -->
-                <!-- STREAMING_CHUNK: Inicio del portal MiTequihua, datos de progresión y perfil -->
                 <div id="sisas-sub-home" class="space-y-6 transition-apple">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                         
@@ -800,7 +789,7 @@
                 <!-- SUB-VISTA: ANUNCIOS -->
                 <div id="sisas-sub-anuncios" class="hidden glass-panel rounded-3xl p-6 md:p-8 text-left space-y-6">
                     <h3 class="text-2xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-bullhorn text-indigo-600"></i> Boletín de Avisos Grupo 1</h3>
-                    <p class="text-sm text-gray-500 font-medium">Enterate de las notificaciones oficiales dictadas por la Dirigencia y Jefaturas de Sección.</p>
+                    <p class="text-sm text-gray-500 font-medium font-semibold leading-relaxed">Enterate de las notificaciones oficiales dictadas por la Dirigencia y Jefaturas de Sección.</p>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="p-5 bg-white border border-gray-100 rounded-2xl shadow-sm space-y-3">
@@ -819,7 +808,7 @@
                 <!-- SUB-VISTA: PROYECTO DE VIDA -->
                 <div id="sisas-sub-proyecto" class="hidden glass-panel rounded-3xl p-6 md:p-8 text-left space-y-6">
                     <h3 class="text-2xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-brain text-indigo-600"></i> Mi Proyecto de Vida Rover</h3>
-                    <p class="text-sm text-gray-500 font-medium">Como Rover, tu plan de vida guía tus elecciones personales, profesionales y de servicio. Redacta y mantén tus objetivos aquí.</p>
+                    <p class="text-sm text-gray-500 font-medium font-semibold leading-relaxed">Como Rover, tu plan de vida guía tus elecciones personales, profesionales y de servicio. Redacta y mantén tus objetivos aquí.</p>
 
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm space-y-4">
@@ -855,7 +844,6 @@
     </div>
 
     <!-- ================= 3. MITEQUIHUA EXPANDED SCOUT PROFILE / CURRICULUM EDITOR (Fiel a la imagen image_282382.png) ================= -->
-    <!-- STREAMING_CHUNK: Editor del Curriculum y Datos Personales del Scout -->
     <section id="panel-scout-sisas-profile" class="hidden w-full glass-panel rounded-[32px] p-6 md:p-10 shadow-2xl border-2 border-white/50 text-left transition-apple mt-10">
         
         <div class="flex items-center gap-3 mb-8 border-b border-gray-100 pb-6">
@@ -868,26 +856,32 @@
 
         <!-- SISAS Stepper / Progress Bar (Inspirado en la imagen image_282382.png) -->
         <div class="relative flex justify-between items-center max-w-3xl mx-auto mb-12">
+            <!-- Stepper Progress Line -->
             <div class="absolute left-4 right-4 h-1 bg-gray-200 top-1/2 -translate-y-1/2 z-0">
                 <div id="sisas-stepper-progress-fill" class="h-full bg-purple-500 transition-all duration-500" style="width: 0%;"></div>
             </div>
 
+            <!-- Step 1: Datos Personales -->
             <div class="relative z-10 flex flex-col items-center">
                 <button onclick="cambiarPasoSisasProfile(1)" id="step-btn-1" class="w-8 h-8 rounded-full bg-purple-600 text-white font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">1</button>
                 <span class="text-[9px] font-black text-indigo-950 uppercase mt-2 hidden sm:block">Datos Personales</span>
             </div>
+            <!-- Step 2: Datos de contacto -->
             <div class="relative z-10 flex flex-col items-center">
                 <button onclick="cambiarPasoSisasProfile(2)" id="step-btn-2" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">2</button>
                 <span class="text-[9px] font-black text-gray-400 uppercase mt-2 hidden sm:block">Datos de contacto</span>
             </div>
-            <div class="relative z-10 flex flex-col items-center">
+            <!-- Step 3: Curriculum scout -->
+            <div class="relative z-10 flex flex-col h-full justify-between items-center">
                 <button onclick="cambiarPasoSisasProfile(3)" id="step-btn-3" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">3</button>
                 <span class="text-[9px] font-black text-gray-400 uppercase mt-2 hidden sm:block">Curriculum scout</span>
             </div>
+            <!-- Step 4: Ficha de salud -->
             <div class="relative z-10 flex flex-col items-center">
                 <button onclick="cambiarPasoSisasProfile(4)" id="step-btn-4" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">4</button>
                 <span class="text-[9px] font-black text-gray-400 uppercase mt-2 hidden sm:block">Ficha de salud</span>
             </div>
+            <!-- Step 5: Seguridad -->
             <div class="relative z-10 flex flex-col items-center">
                 <button onclick="cambiarPasoSisasProfile(5)" id="step-btn-5" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">5</button>
                 <span class="text-[9px] font-black text-gray-400 uppercase mt-2 hidden sm:block">Seguridad</span>
@@ -897,7 +891,6 @@
         <form id="scout-perfil-multipaso-form" onsubmit="event.preventDefault();" class="space-y-8">
             
             <!-- PASO 1: DATOS PERSONALES -->
-            <!-- STREAMING_CHUNK: Sección Datos Personales -->
             <div id="sisas-paso-1" class="space-y-6">
                 <h3 class="text-lg font-black text-indigo-950 border-b pb-2"><i class="fa-regular fa-id-card text-purple-600 mr-2"></i> Datos Personales del Miembro</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -932,8 +925,8 @@
             </div>
 
             <!-- PASO 2: DATOS DE CONTACTO (Inspirado en la imagen image_282382.png) -->
-            <!-- STREAMING_CHUNK: Sección Datos de Contacto y Tutor -->
             <div id="sisas-paso-2" class="hidden space-y-8">
+                <!-- Datos de Tutor / Emergencia -->
                 <div class="space-y-4">
                     <h3 class="text-lg font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-user-shield text-purple-600 mr-2"></i> Datos del Tutor / Emergencia</h3>
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -964,6 +957,7 @@
                     </div>
                 </div>
 
+                <!-- Datos de Contacto Regular -->
                 <div class="space-y-4">
                     <h3 class="text-md font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-address-book text-purple-600 mr-2"></i> Datos de contacto</h3>
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -992,8 +986,9 @@
             </div>
 
             <!-- PASO 3: CURRICULUM SCOUT (Inspirado en las imágenes de historiales scouts) -->
-            <!-- STREAMING_CHUNK: Sección Currículum Scout y Reconocimientos -->
             <div id="sisas-paso-3" class="hidden space-y-8">
+                
+                <!-- Datos Scout actuales -->
                 <div class="space-y-4">
                     <h3 class="text-lg font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-shield-halved text-purple-600 mr-2"></i> Datos Scout actuales</h3>
                     <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
@@ -1029,9 +1024,11 @@
                     </div>
                 </div>
 
+                <!-- Listado de Historial de Cargos y Progresiones -->
                 <div class="space-y-4">
                     <h3 class="text-md font-black text-purple-900 border-b pb-2">Datos Scout histórico</h3>
                     <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4 space-y-4">
+                        <!-- Tabla de Secciones Históricas -->
                         <div class="overflow-hidden rounded-xl border border-gray-100 bg-white">
                             <table class="w-full text-left text-xs border-collapse">
                                 <thead>
@@ -1064,6 +1061,7 @@
                     </div>
                 </div>
 
+                <!-- Reconocimientos, Cursos y Certificaciones -->
                 <div class="space-y-4">
                     <h3 class="text-md font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-ribbon text-purple-600 mr-2"></i> Reconocimientos, Cursos y Certificaciones</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1088,7 +1086,6 @@
             </div>
 
             <!-- PASO 4: FICHA DE SALUD -->
-            <!-- STREAMING_CHUNK: Sección Ficha de Salud e Historial Médico -->
             <div id="sisas-paso-4" class="hidden space-y-8">
                 <div class="space-y-4">
                     <h3 class="text-lg font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-notes-medical text-purple-600 mr-2"></i> Ficha de salud</h3>
@@ -1169,7 +1166,6 @@
             </div>
 
             <!-- PASO 5: SEGURIDAD Y AUTORIZACIÓN (Inspirado en la imagen image_282b1d.png) -->
-            <!-- STREAMING_CHUNK: Sección de Seguridad y Firma de Autorización -->
             <div id="sisas-paso-5" class="hidden space-y-6">
                 <h3 class="text-2xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-lock text-indigo-600"></i> Firma y Contraseña de Autorización</h3>
                 
@@ -1211,8 +1207,19 @@
         Plataforma diseñada y desarrollada por Rafael Magaña Rangel
     </footer>
 
-    <!-- LÓGICA DE PROGRAMACIÓN DEL PORTAL UNIFICADO -->
-    <!-- STREAMING_CHUNK: Scripts y lógica funcional de MiTequihua -->
+    <!-- MODAL ALERT REEMPLAZO DE ALERT() -->
+    <div id="custom-alert" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm transition-opacity duration-300">
+        <div class="glass-panel p-6 rounded-3xl max-w-sm w-full text-center shadow-2xl border border-white/20">
+            <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 text-xl mx-auto mb-4">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2" id="custom-alert-title">Notificación</h3>
+            <p class="text-sm text-gray-500 mb-6" id="custom-alert-message">Mensaje de alerta.</p>
+            <button onclick="cerrarAlert()" class="w-full py-2.5 rounded-xl bg-appleDark text-white font-bold hover:bg-black transition-apple active:scale-95 shadow-lg">Entendido</button>
+        </div>
+    </div>
+
+    <!-- ACCESIBILIDAD, FIREBASE Y SCRIPTS -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
@@ -1234,7 +1241,9 @@
             "m": { nombre: "Rafael Magaña Rangel", seccion: "Manada", logo: "Logo 2.png", cum: "SLP1820165", cargo: "Lobo Solitario / Subguía" },
             "t": { nombre: "Rafael Magaña Rangel", seccion: "Tropa", logo: "Logo 3.png", cum: "SLP1820165", cargo: "Guía de Patrulla" },
             "co": { nombre: "Rafael Magaña Rangel", seccion: "Comunidad", logo: "Logo 4.png", cum: "SLP1820165", cargo: "Coordinador de Equipo" },
-            "cl1": { nombre: "Rafael Magaña Rangel", seccion: "Clan", logo: "Logo 5.png", cum: "SLP1820165", cargo: "Representante de Sección" }
+            "cl": { nombre: "Rafael Magaña Rangel", seccion: "Clan", logo: "Logo 5.png", cum: "SLP1820165", cargo: "Representante de Sección" },
+            "cl1": { nombre: "Rafael Magaña Rangel", seccion: "Clan", logo: "Logo 5.png", cum: "SLP1820165", cargo: "Representante de Sección" }, // fallback
+            "d": { nombre: "Rafael Magaña Rangel", seccion: "Dirigencia", logo: "Logo 1.png", cum: "SLP1820165", cargo: "Jefe de Grupo" }
         };
 
         // Estado actual de respuestas
@@ -1419,7 +1428,7 @@
         }
         window.empezarEncuesta = empezarEncuesta;
 
-        // Renderizado dinámico del Diseñador del Formulario
+        // Renderizado dinámico del Wix-Style Question Editor
         function renderPreguntaActiva() {
             const container = document.getElementById('formulario-preguntas');
             const listaPreguntas = bancoPreguntas[seccionActiva];
@@ -1572,7 +1581,7 @@
                 } else if (id === 5) {
                     if (val <= 2) extra = "- Excelente / Muy accesible 🪙";
                     else if (val == 3) extra = "- Moderado / Balanceado";
-                    else extra = "- Muy caro / Difícil participar 💸";
+                    else extra = "- Muy caro / de costear 💸";
                 }
                 feedbackEl.innerText = `Calificación: ${val} ${extra}`;
             }
@@ -1721,7 +1730,7 @@
             const cumInput = document.getElementById('scout-cum-input').value.trim().toLowerCase();
             const passInput = document.getElementById('scout-password-input').value.trim();
 
-            if (passInput === "1" && (cumInput === "m" || cumInput === "t" || cumInput === "co" || cumInput === "cl1")) {
+            if (passInput === "1" && (cumInput === "m" || cumInput === "t" || cumInput === "co" || cumInput === "cl" || cumInput === "cl1" || cumInput === "d")) {
                 scoutLogueado = usuariosScout[cumInput];
                 
                 // Actualizar nombres y cargos del panel dinámicamente
@@ -1793,7 +1802,7 @@
             seccionesSocioScouts.forEach(s => {
                 const cardBtn = document.getElementById(`home-card-${s}`);
                 if (cardBtn) {
-                    if (s === seccionScout) {
+                    if (s === seccionScout || seccionScout === "Dirigencia") {
                         cardBtn.style.display = "flex";
                     } else {
                         cardBtn.style.display = "none";
@@ -2158,7 +2167,7 @@
             const filtrados = reportesValidadosHistorico.filter(r => r.rama === activeDashboardSection);
 
             if (filtrados.length === 0) {
-                listContainer.innerHTML = `<p class="text-xs text-gray-400 italic text-center py-6">Aún no se ha validado ningún reporte semanal de KPIs para la sección de ${activeDashboardSection}.</p>`;
+                listContainer.innerHTML = `<p class="text-xs text-gray-400 italic text-center py-6">Aún no se ha validado ningún reporte semanal de KPIs para esta sección.</p>`;
                 return;
             }
 
@@ -2531,212 +2540,6 @@
             cambiarPasoSisasProfileDirecto(step - pasoSisasProfileActual);
         }
         window.cambiarPasoSisasProfile = cambiarPasoSisasProfile;
-
-        function guardarProyectoVidaScout() {
-            const servicio = document.getElementById('scout-meta-servicio').value;
-            const caracter = document.getElementById('scout-meta-caracter').value;
-            
-            localStorage.setItem('scout_meta_servicio', servicio);
-            localStorage.setItem('scout_meta_caracter', caracter);
-
-            lanzarAlert("Proyecto de Vida Guardado ⚜️", "Tus metas e iniciativas trimestrales han sido guardadas de manera segura en tu perfil.");
-        }
-        window.guardarProyectoVidaScout = guardarProyectoVidaScout;
-
-        function configurarVisibilidadSegunRol() {
-            const selectorDash = document.getElementById('selector-secciones-dash');
-            const subtext = document.getElementById('subtitulo-rol-scouter');
-
-            if (currentRolScouter === "Dirigencia") {
-                selectorDash.classList.remove('hidden');
-                subtext.innerText = "Acceso Maestro Completo — Grupo 1 Tequihua";
-            } else {
-                selectorDash.classList.add('hidden'); 
-                subtext.innerText = `Acceso Restringido a Jefatura de ${currentRolScouter}`;
-            }
-
-            document.getElementById('editor-nombre-seccion-activa').innerText = activeDashboardSection;
-            inicializarWixEditorPreguntas();
-        }
-
-        function seleccionarSeccionDashboard(seccion) {
-            if (currentRolScouter !== "Dirigencia" && currentRolScouter !== seccion) {
-                return;
-            }
-
-            activeDashboardSection = seccion;
-            
-            const secciones = ["Manada", "Tropa", "Comunidad", "Clan"];
-            secciones.forEach((s) => {
-                const btn = document.getElementById(`dash-btn-${s}`);
-                if (s === seccion) {
-                    btn.className = `flex-1 min-w-[100px] py-2 px-3 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 bg-white text-${s === 'Manada' ? 'yellow-600' : (s === 'Tropa' ? 'emerald-600' : (s === 'Comunidad' ? 'sky-600' : 'rose-600'))} shadow-sm border border-${s === 'Manada' ? 'yellow-200' : (s === 'Tropa' ? 'emerald-200' : (s === 'Comunidad' ? 'sky-200' : 'rose-200'))}`;
-                } else {
-                    btn.className = "flex-1 min-w-[100px] py-2 px-3 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 hover:bg-white hover:text-gray-700";
-                }
-            });
-
-            document.getElementById('editor-nombre-seccion-activa').innerText = seccion;
-            actualizarDashboardSeccionUI();
-            inicializarWixEditorPreguntas();
-            renderReportesValidadosLista();
-        }
-        window.seleccionarSeccionDashboard = seleccionarSeccionDashboard;
-
-        function actualizarDashboardSeccionUI() {
-            const localFallback = JSON.parse(localStorage.getItem('tequivoz_fallback') || '[]');
-            const totalSurveys = [...surveysList, ...localFallback];
-
-            const filteredSurveys = totalSurveys.filter(s => s.rama === activeDashboardSection);
-            const total = filteredSurveys.length;
-
-            document.getElementById('dash-seccion').innerText = activeDashboardSection;
-            document.getElementById('dash-seccion').style.backgroundColor = `var(--color-${activeDashboardSection.toLowerCase()})`;
-            document.getElementById('dash-total-registros').innerText = total;
-
-            if (total === 0) {
-                document.getElementById('dash-promedio-diversion').innerText = "Sin Datos";
-                document.getElementById('dash-promedio-economia').innerText = "Sin Datos";
-                document.getElementById('dash-preferencia-actividades').innerText = "Sin Datos";
-
-                actualizarBarrasGrafica(0, 0, 0, 0, 0);
-                document.getElementById('ia-subtitle-seccion-kpi').innerText = `Análisis Pedagógico de ${activeDashboardSection}`;
-                document.getElementById('ia-diagnostico-kpi').innerText = `Aún no se registran datos para la sección de ${activeDashboardSection}. Las recomendaciones de IA se generarán cuando ingreses la primera encuesta.`;
-                document.getElementById('ia-accion-kpi').innerText = "Incentiva a los scouts de tu sección a dejar su huella digital en TequiVoz.";
-
-                setKPICardValue("isp", 0);
-                setKPICardValue("ics", 0);
-                setKPICardValue("iap", 0);
-                setKPICardValue("isg", 0);
-                setKPICardValue("ive", 0);
-                return;
-            }
-
-            let funSum = 0, supportSum = 0, teamworkSum = 0, progressionSum = 0, safetySum = 0, economySum = 0, p9Sum = 0;
-            let countAburrida = 0, countRegular = 0, countDivertida = 0, countExcelente = 0;
-            let countSupervivencia = 0, countServicio = 0, countExtremo = 0;
-            let sugerenciasCambio = [];
-
-            filteredSurveys.forEach(s => {
-                if (s.p1 === "Excelente") { funSum += 10; countExcelente++; }
-                else if (s.p1 === "Divertida") { funSum += 8; countDivertida++; }
-                else if (s.p1 === "Regular") { funSum += 5; countRegular++; }
-                else { funSum += 3; countAburrida++; }
-
-                supportSum += Number(s.p2 || 5);
-
-                if (s.p3 === "Fuerte") teamworkSum += 10;
-                else if (s.p3 === "Division") teamworkSum += 6;
-                else teamworkSum += 3;
-
-                if (s.p4 === "Si") progressionSum += 10;
-                else if (s.p4 === "Medias") progressionSum += 6;
-                else progressionSum += 3;
-
-                if (s.p8 === "Excelente") safetySum += 10;
-                else if (s.p8 === "Bien") safetySum += 7;
-                else safetySum += 4;
-
-                if (s.p9 === "Excelente") p9Sum += 10;
-                else p9Sum += 4;
-
-                economySum += Number(s.p5 || 3);
-
-                if (s.p6 === "Supervivencia") countSupervivencia++;
-                else if (s.p6 === "Servicio") countServicio++;
-                else if (s.p6 === "Extremo") countExtremo++;
-
-                if (s.p7 && s.p7.trim() !== "") {
-                    sugerenciasCambio.push(s.p7);
-                }
-            });
-
-            const avgFun = (funSum / total) * 10; 
-            const avgSupport = ((supportSum / total) / 10) * 100;
-            const avgTeamwork = (teamworkSum / total) * 10;
-            const avgProgression = (progressionSum / total) * 10;
-            const avgSafety = (safetySum / total) * 10;
-            const avgP9 = (p9Sum / total) * 10;
-            const avgEconomy = (economySum / total).toFixed(1);
-
-            let maxP1Val = Math.max(countAburrida, countRegular, countDivertida, countExcelente);
-            let popularP1 = "Divertida";
-            if (maxP1Val === countExcelente) popularP1 = "¡Épica!";
-            else if (maxP1Val === countRegular) popularP1 = "Neutro";
-            else if (maxP1Val === countAburrida) popularP1 = "Aburrida";
-
-            let maxActVal = Math.max(countSupervivencia, countServicio, countExtremo);
-            let favAct = "Supervivencia";
-            if (maxActVal === countServicio) favAct = "Servicio Comunitario";
-            else if (maxActVal === countExtremo) favAct = "Deportes Extremos";
-
-            document.getElementById('dash-promedio-diversion').innerText = popularP1;
-            document.getElementById('dash-promedio-economia').innerText = `${avgEconomy} / 5`;
-            document.getElementById('dash-preferencia-actividades').innerText = favAct;
-
-            actualizarBarrasGrafica(avgFun, avgSupport, avgTeamwork, avgProgression, avgSafety);
-
-            const kpiISP = Math.round((avgFun + avgSupport) / 2);
-            const kpiICS = Math.round((avgTeamwork + avgP9) / 2);
-            const kpiIAP = Math.round(avgProgression);
-            const kpiISG = Math.round(avgSafety);
-            const kpiIVE = Math.round(((5 - (economySum / total)) / 4) * 100);
-
-            setKPICardValue("isp", kpiISP);
-            setKPICardValue("ics", kpiICS);
-            setKPICardValue("iap", kpiIAP);
-            setKPICardValue("isg", kpiISG);
-            setKPICardValue("ive", kpiIVE);
-
-            document.getElementById('ia-subtitle-seccion-kpi').innerText = `Análisis Pedagógico de ${activeDashboardSection}`;
-            
-            let diagnostico = "", accion = "";
-
-            if (activeDashboardSection === "Manada") {
-                if (avgFun < 75) {
-                    diagnostico += "ALERTA DE FANTASÍA EN LA MANADA: Los lobatos reportan baja interactividad en las cacerías de sábado. ";
-                    accion += "• Dinamizar los consejos del Libro de la Selva. Menos plática estática de Akela, más acción teatralizada de Baloo y Bagheera. ";
-                } else {
-                    diagnostico += "MARCO SIMBÓLICO EXCELENTE: Los lobatos se sienten felices en la selva. ";
-                    accion += "• Continuar usando narrativas dramáticas de cacería como hilo conductor de cada sábado. ";
-                }
-                if (avgTeamwork < 75) {
-                    diagnostico += "SEISENAS CON ROCES: Se detecta falta de integración de lobatos nuevos o discusiones por roles de liderazgo de Seiseneros. ";
-                    accion += "• Planificar 'Juegos de Cuerdas de Integración' cooperativos para forzar la ayuda mutua en el fondo de la selva. ";
-                }
-            } else if (activeDashboardSection === "Tropa") {
-                if (avgFun < 70) {
-                    diagnostico += "BAJO ENTUSIASMO EN LA TROPA: Los scouts sienten que las juntas de sábado son muy pasivas o repetitivas. ";
-                    accion += "• Sustituir las pláticas teóricas por un rally de técnicas scouts prácticas en campo o pionerismo extremo. ";
-                } else {
-                    diagnostico += "ESPÍRITU DE TROPA EN ALTO: Los scouts disfrutan del sistema de patrullas. ";
-                    accion += "• Seguir promoviendo competencias sanas entre patrullas antes del juego nocturno. ";
-                }
-                if (avgTeamwork < 70) {
-                    diagnostico += "CONFLICITOS EN PATRULLAS: Hay indicios de roces marcados o falta de cohesión en las juntas. ";
-                    accion += "• Convocar a una Corte de Honor extraordinaria. Realizar dinámicas de empoderamiento para los Guías de Patrulla. ";
-                }
-            } else if (activeDashboardSection === "Comunidad") {
-                if (avgFun < 70) {
-                    diagnostico += "FALTA DESAFÍO EN COMUNIDAD: Los caminantes reportan que los proyectos carecen de aventura o iniciativa real. ";
-                    accion += "• Fomentar que la iniciativa y toma de decisiones surjan del Congreso de Comunidad, no de los asesores. ";
-                } else {
-                    diagnostico += "DINÁMICA DE COMUNIDAD SANA: Se reporta buen avance en proyectos autogestivos de equipo. ";
-                    accion += "• Ofrecer sutil de Scouter soporte para garantizar la viabilidad técnica de las expediciones. ";
-                }
-            } else if (activeDashboardSection === "Clan") {
-                if (avgFun < 70) {
-                    diagnostico += "JUNTAS DE CLAN MONÓTONAS: Rovers reportan que las actividades se sienten rutinarias o puramente teóricas. ";
-                    accion += "• Salir del local de grupo. Organizar servicios de impacto social externo o expediciones autónomas de fin de semana. ";
-                } else {
-                    diagnostico += "COMUNIDAD DE CLAN INSPIRADORA: Fuerte espíritu de debate y acompañamiento personal. ";
-                    accion += "• Fortalecer el avance de la ruta rover de plan de vida a través de sinodales dinámicos. ";
-                }
-            }
-
-            document.getElementById('ia-diagnostico-kpi').innerText = diagnostico;
-            document.getElementById('ia-accion-kpi').innerText = accion || "• Mantener el monitoreo continuo para prevenir desviaciones pedagógicas.";
-        }
 
         // Inicializar por defecto la vista de Login Scout sin cabecera
         mostrarSeccion('puerta-autenticacion-scout');
