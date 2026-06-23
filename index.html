@@ -1240,7 +1240,7 @@
         const usuariosScout = {
             "m": { nombre: "Rafael Magaña Rangel", seccion: "Manada", logo: "Logo 2.png", cum: "SLP1820165", cargo: "Lobo Solitario / Subguía" },
             "t": { nombre: "Rafael Magaña Rangel", seccion: "Tropa", logo: "Logo 3.png", cum: "SLP1820165", cargo: "Guía de Patrulla" },
-            "co": { nombre: "Rafael Magaña Rangel", seccion: "Comunidad", logo: "Logo 4.png", cum: "SLP1820165", cargo: "Coordinador de Equipo" },
+            "co": { nombre: "Rafael Magaña Rangel", seccion: "Comunidad", logo: "Logo 4.png", cum: "SLP1820165", cargo: "Caminante de Equipo" },
             "cl": { nombre: "Rafael Magaña Rangel", seccion: "Clan", logo: "Logo 5.png", cum: "SLP1820165", cargo: "Representante de Sección" },
             "cl1": { nombre: "Rafael Magaña Rangel", seccion: "Clan", logo: "Logo 5.png", cum: "SLP1820165", cargo: "Representante de Sección" }, // fallback
             "d": { nombre: "Rafael Magaña Rangel", seccion: "Dirigencia", logo: "Logo 1.png", cum: "SLP1820165", cargo: "Jefe de Grupo" }
@@ -1285,12 +1285,12 @@
                 { id: 1, type: "select", title: "¿Qué tanto te retó y entusiasmó el proyecto o actividad de la Comunidad hoy?", options: [ { val: "Aburrida", icon: "😴", text: "Sin reto" }, { val: "Regular", icon: "😐", text: "Regular" }, { val: "Divertida", icon: "😀", text: "Retador" }, { val: "Excelente", icon: "🤩", text: "¡Súper Épico!" } ] },
                 { id: 2, type: "range", title: "¿Cómo evalúas el entusiasmo y el rol de asesores de tus Scouters de Comunidad hoy?", min: 1, max: 10, def: 5, left: "Falta Dinamismo 🧭", right: "¡Estuvieron Increíbles! 🌟" },
                 { id: 3, type: "list", title: "¿Cómo marcha la mística, planeación y trabajo interno dentro de tu Equipo?", options: [ { val: "Fuerte", icon: "fa-hands-holding", color: "emerald", title: "Unión Fuerte", desc: "Excelente distribución de tareas y apoyo mutuo constante." }, { val: "Division", icon: "fa-bolt", color: "amber", title: "Desorganización", desc: "Dificultad para ponernos de acuerdo o apatía temporal." }, { val: "FaltaIntegracion", icon: "fa-circle-exclamation", color: "rose", title: "Falta de Equipo", desc: "Se siente recarga de trabajo en pocos integrantes o exclusión." } ] },
-                { id: 4, type: "grid", title: "¿Sientes que la actividad de hoy aporta a tu progresión de caminante (Búsqueda, Encuentro, Desafío)?", options: [ { val: "Si", icon: "🏅", title: "¡Sí, totalmente!", desc: "Fortalece mis competencias y proyectos personales." }, { val: "Medias", icon: "⏳", title: "A medias", desc: "Hubo algo de avance pero faltó mayor claridad pedagógica." }, { val: "No", icon: "❌", title: "No aportó", desc: "Siento que las juntas se volvieron muy teóricas." } ] },
+                { id: 4, type: "grid", title: "¿Sientes que la actividad de hoy aporta a tu progresión de caminante (Búsqueda, Encuentro, Desafío)?", options: [ { val: "Si", icon: "🏅", title: "¡Sí, totalmente!", desc: "Fortalece mis proyectos personales y progresión técnica." }, { val: "Medias", icon: "⏳", title: "A medias", desc: "Hubo algo de avance pero faltó mayor claridad pedagógica." }, { val: "No", icon: "❌", title: "No aportó", desc: "Siento que las juntas se volvieron muy teóricas." } ] },
                 { id: 5, type: "range", title: "¿Qué tan accesibles o viables ves los presupuestos para los proyectos de Comunidad?", min: 1, max: 5, def: 3, left: "Muy Accesibles 🪙", right: "Muy Difícil Costear 💸" },
-                { id: 6, type: "grid", title: "¿En qué área de proyectos te gustaría que la Comunidad de Caminantes se enfocara más?", options: [ { val: "Supervivencia", icon: "🌲", title: "Expedición", desc: "Retos de montaña, campamento sin huella y cartografía avanzada." }, { val: "Servicio", icon: "❤️", title: "Impacto", desc: "Acción social real, voluntariado ecológico y proyectos comunitarios." }, { val: "Extremo", icon: "🧗", title: "Desafíos Físicos", desc: "Deportes de aventura, rapel, orientación y juegos extremos." } ] },
+                { id: 6, type: "grid", title: "¿En qué área de proyectos te gustaría que la Comunidad de Caminantes se enfocara más?", options: [ { val: "Supervivencia", icon: "🌲", title: "Expedición", desc: "Retos de montaña, campamento sin huella y cartografía avanzada." }, { val: "Servicio", icon: "❤️", title: "Impacto", desc: "Acción social real, voluntariado ecológico and proyectos comunitarios." }, { val: "Extremo", icon: "🧗", title: "Desafíos Físicos", desc: "Deportes de aventura, rapel, orientación y juegos extremos." } ] },
                 { id: 7, type: "textarea", title: "Si pudieras proponer o modificar un artículo del reglamento interno de la Comunidad, ¿cuál sería?", placeholder: "Escribe tu propuesta constructiva para el Congreso de Comunidad..." },
                 { id: 8, type: "grid", title: "¿Cómo consideras la gestión de riesgos y seguridad durante las expediciones y campamentos?", options: [ { val: "Inseguro", icon: "⚠️", title: "Deficiente", desc: "Se descuidaron algunos aspectos de seguridad o rutas." }, { val: "Bien", icon: "👍", title: "Buena", desc: "Me siento seguro con la planeación de la Jefatura." }, { val: "Excelente", icon: "🛡️", title: "Excelente", desc: "Análisis previo de riesgos, equipamiento y monitoreo constante." } ] },
-                { id: 9, type: "grid", title: "¿Sientes que la Comunidad es un espacio de verdadera inclusión, respeto y equidad?", options: [ { val: "Excelente", icon: "✨", title: "Siempre inclusivo", desc: "Todos los caminantes y equipos son valorados y respetados." }, { val: "Excluyente", icon: "💬", title: "Hay exclusión", desc: "Siento favoritismos o rechazo en ocasiones." }, { val: "Neutro", icon: "😐", title: "Indiferente", desc: "Casi no me involucro de manera personal." } ] },
+                { id: 9, type: "grid", title: "Sientes que la Comunidad es un espacio de verdadera inclusión, respeto y equidad?", options: [ { val: "Excelente", icon: "✨", title: "Siempre inclusivo", desc: "Todos los caminantes y equipos son valorados y respetados." }, { val: "Excluyente", icon: "💬", title: "Hay exclusión", desc: "Siento favoritismos o rechazo en ocasiones." }, { val: "Neutro", icon: "😐", title: "Indiferente", desc: "Casi no me involucro de manera personal." } ] },
                 { id: 10, type: "textarea", title: "Para finalizar, propón una expedición o proyecto loco que te gustaría realizar en este ciclo de programa:", placeholder: "¡Ejemplo: Una expedición de alta montaña con vivac en la cumbre!" }
             ],
             Clan: [
@@ -1730,7 +1730,7 @@
             const cumInput = document.getElementById('scout-cum-input').value.trim().toLowerCase();
             const passInput = document.getElementById('scout-password-input').value.trim();
 
-            if (passInput === "1" && (cumInput === "m" || cumInput === "t" || cumInput === "co" || cumInput === "cl" || cumInput === "cl1" || cumInput === "d")) {
+            if (passInput === "1" && (cumInput === "m" || cumInput === "t" || cumInput === "co" || cumInput === "cl" || cumInput === "d")) {
                 scoutLogueado = usuariosScout[cumInput];
                 
                 // Actualizar nombres y cargos del panel dinámicamente
@@ -2258,6 +2258,7 @@
             const dd = document.getElementById(`opt-emoji-dropdown-${optIdx}`);
             if (dd) dd.classList.add('hidden');
         }
+        window.openSelectorEmojiInterno = abrirSelectorEmojiInterno;
         window.abrirSelectorEmojiInterno = abrirSelectorEmojiInterno;
 
         function toggleEmojiDropdownVisual(optIdx) {
