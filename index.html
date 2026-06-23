@@ -6,7 +6,7 @@
     <title>MiTequihua - Grupo 1 Tequihua</title>
     
     <!-- Google Fonts: Plus Jakarta Sans para estética tipo Apple -->
-    <link rel="preconnect" href="https://fonts.googleapis.com font-display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -128,6 +128,11 @@
         .apple-range::-webkit-slider-thumb:active {
             transform: scale(1.2);
         }
+
+        /* Stepper progress line style */
+        .stepper-line {
+            background: repeating-linear-gradient(to right, #ddd, #ddd 10px, transparent 10px, transparent 20px);
+        }
     </style>
 </head>
 <body class="antialiased min-h-screen text-appleDark no-scrollbar">
@@ -155,19 +160,19 @@
         </div>
     </nav>
 
-    <!-- ÁREA PRINCIPAL -->
+    <!-- ÁREA DE CONTENIDO DINÁMICO -->
     <main id="main-area" class="pt-10 pb-16 px-4 md:px-8 max-w-6xl mx-auto flex flex-col justify-center min-h-[90vh]">
 
         <!-- ================= 1. ACCESO A MIEMBROS SCOUT (Inspirado en la imagen image_28185b.png) ================= -->
         <section id="puerta-autenticacion-scout" class="transition-apple w-full max-w-5xl mx-auto pt-16">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-0 glass-panel rounded-[32px] overflow-hidden shadow-2xl border-2 border-white/50">
                 
-                <!-- Columna Izquierda: Formulario de Acceso (58% de ancho aprox) -->
+                <!-- Columna Izquierda: Formulario de Acceso -->
                 <div class="md:col-span-7 bg-white p-8 md:p-12 flex flex-col justify-center text-left">
                     <div class="flex items-center gap-3 mb-8">
                         <img src="Logo 1.png" alt="Logo Grupo 1 Tequihua" class="h-16 w-auto object-contain">
                         <div class="w-[1px] h-10 bg-gray-200"></div>
-                        <span class="text-emerald-600 font-extrabold text-sm tracking-wider uppercase leading-none">Scouts<br><span class="text-gray-400 font-medium text-[10px]">México</span></span>
+                        <img src="scouts logo" alt="Scouts México" class="h-12 w-auto object-contain">
                     </div>
 
                     <h2 class="text-2xl md:text-3xl font-black text-indigo-950 tracking-tight mb-1">Acceso a Miembros Scout</h2>
@@ -195,7 +200,7 @@
                         </button>
 
                         <div class="text-center pt-2">
-                            <a href="#" onclick="lanzarAlert('Acceso Provisional', 'Usa las credenciales:\nManada: CUM: m / Pass: 1\nTropa: CUM: t / Pass: 1\nComunidad: CUM: co / Pass: 1\nClan: CUM: cl / Pass: 1')" class="text-xs text-indigo-500 hover:text-indigo-700 underline font-semibold transition-apple">He olvidado mi contraseña</a>
+                            <a href="#" onclick="lanzarAlert('Acceso Provisional', 'Credenciales demo:\nManada: CUM m / Contraseña: 1\nTropa: CUM t / Contraseña: 1\nComunidad: CUM co / Contraseña: 1\nClan: CUM cl / Contraseña: 1\nDirigentes: CUM d / Contraseña: 1')" class="text-xs text-indigo-500 hover:text-indigo-700 underline font-semibold transition-apple">He olvidado mi contraseña</a>
                         </div>
 
                         <div class="pt-6 border-t border-gray-100 mt-6 text-center">
@@ -206,7 +211,7 @@
                     </div>
                 </div>
 
-                <!-- Columna Derecha: Ilustración y Citas (52% de ancho aprox - Estilo image_28185b.png) -->
+                <!-- Columna Derecha: Ilustración y Citas (Estilo image_28185b.png) -->
                 <div class="md:col-span-5 bg-gradient-to-br from-indigo-900 to-indigo-950 p-10 text-white flex flex-col justify-between text-left relative overflow-hidden">
                     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent"></div>
                     
@@ -234,978 +239,651 @@
             </div>
         </section>
 
-        <!-- ================= BIENVENIDA / HERO (De la encuesta) ================= -->
-        <section id="pantalla-inicio" class="text-center transition-apple w-full hidden">
-            <span class="px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-widest inline-block mb-6 shadow-sm">Representación Juvenil</span>
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 leading-tight">
-                Tu voz es el mapa de <br><span class="bg-gradient-to-r from-emerald-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">nuestras aventuras.</span>
-            </h1>
-            <p class="text-gray-500 text-base md:text-lg max-w-2xl mx-auto mb-12 font-medium">
-                TequiVoz es la plataforma interactiva oficial para evaluar y planificar las mejores actividades de sábado del Grupo 1 Tequihua. Elige tu sección para comenzar.
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-8 justify-center">
-                <!-- Manada -->
-                <button id="home-card-Manada" onclick="empezarEncuesta('Manada')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-manada flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
-                    <img src="Logo 2.png" alt="Logo Manada de Lobatos" class="h-24 w-auto object-contain drop-shadow-sm">
-                    <div class="text-center">
-                        <span class="font-extrabold text-lg block">Manada</span>
-                        <p class="text-[10px] text-yellow-600 font-bold uppercase tracking-wider">Lobatos</p>
-                    </div>
-                </button>
-
-                <!-- Tropa -->
-                <button id="home-card-Tropa" onclick="empezarEncuesta('Tropa')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-tropa flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
-                    <img src="Logo 3.png" alt="Logo Tropa de Scouts" class="h-24 w-auto object-contain drop-shadow-sm">
-                    <div class="text-center">
-                        <span class="font-extrabold text-lg block">Tropa</span>
-                        <p class="text-[10px] text-emerald-600 font-bold uppercase tracking-wider">Scouts</p>
-                    </div>
-                </button>
-
-                <!-- Comunidad -->
-                <button id="home-card-Comunidad" onclick="empezarEncuesta('Comunidad')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-comunidad flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
-                    <img src="Logo 4.png" alt="Logo Comunidad de Caminantes" class="h-24 w-auto object-contain drop-shadow-sm">
-                    <div class="text-center">
-                        <span class="font-extrabold text-lg block">Comunidad</span>
-                        <p class="text-[10px] text-sky-600 font-bold uppercase tracking-wider">Caminantes</p>
-                    </div>
-                </button>
-
-                <!-- Clan -->
-                <button id="home-card-Clan" onclick="empezarEncuesta('Clan')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-clan flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
-                    <img src="Logo 5.png" alt="Logo Clan de Rovers" class="h-24 w-auto object-contain drop-shadow-sm">
-                    <div class="text-center">
-                        <span class="font-extrabold text-lg block">Clan</span>
-                        <p class="text-[10px] text-rose-600 font-bold uppercase tracking-wider">Rovers</p>
-                    </div>
-                </button>
-            </div>
+        <!-- ================= 2. MI TEQUIHUA MEMBER DASHBOARD (Inspirado en la imagen image_281b7d.png) ================= -->
+        <section id="panel-scout-sisas" class="hidden w-full transition-apple">
             
-            <div class="text-center mt-6">
-                <button onclick="cancelarEncuestasIrAlDashboard()" class="px-5 py-2.5 rounded-full border-2 border-gray-300 font-bold hover:bg-gray-100 transition-apple text-xs"><i class="fa-solid fa-arrow-left mr-2"></i> Regresar a mi Cuenta</button>
-            </div>
-        </section>
-
-        <!-- ================= PANEL DE ENCUESTA GAMIFICADA ================= -->
-        <section id="contenedor-encuesta" class="hidden transition-apple w-full">
-            <div class="glass-panel rounded-[32px] p-6 md:p-10 shadow-2xl">
-                
-                <div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-100">
-                    <div class="flex items-center gap-4">
-                        <img id="seccion-logo-activo" src="Logo 2.png" alt="Logotipo Sección Activa" class="h-16 w-auto object-contain">
-                        <div>
-                            <span id="badge-seccion-activa" class="text-xs font-black uppercase px-3 py-1 rounded-full text-white tracking-widest shadow-sm">Sección</span>
-                            <h3 class="text-lg font-extrabold mt-1 text-gray-700">Encuesta de Satisfacción</h3>
-                        </div>
-                    </div>
-                    <span id="contador-progreso" class="text-xs font-bold text-gray-400 bg-gray-100 px-3 py-1.5 rounded-full">Pregunta 1 de 10</span>
-                </div>
-
-                <div class="mb-10">
-                    <div class="relative w-full h-3 bg-gray-200 rounded-full overflow-visible border border-gray-300">
-                        <div id="progreso-barra" class="h-full bg-gradient-to-r from-emerald-500 to-indigo-600 rounded-full transition-all duration-500" style="width: 10%;"></div>
-                        <div id="token-scout" class="absolute top-[-10px] left-[10%] -translate-x-1/2 transition-all duration-500 text-2xl filter drop-shadow-md">⛺</div>
+            <!-- MiTequihua Top Purple Bar Header -->
+            <header class="bg-tequihuaPurple text-white px-6 py-4 rounded-3xl flex justify-between items-center shadow-lg mb-8">
+                <div class="flex items-center gap-4">
+                    <img src="Logo 1.png" alt="Logo Grupo 1 Tequihua" class="h-10 w-auto filter brightness-0 invert">
+                    <div>
+                        <span class="text-lg font-black tracking-tight flex items-center gap-2">MiTequihua Grupo 1 <span class="text-[9px] bg-white/15 px-2 py-0.5 rounded-full uppercase tracking-wider">Versión 4.4</span></span>
                     </div>
                 </div>
-
-                <div id="formulario-preguntas">
-                    <!-- Dinamismo inyectado por JS -->
-                </div>
-
-                <div class="barra-navegacion flex justify-between mt-8 pt-6 border-t border-gray-100">
-                    <button id="btn-anterior" onclick="cambiarP(-1)" class="btn-nav-pop btn-izq text-gray-600 hover:bg-gray-200 px-6 py-3 rounded-xl font-bold transition-apple disabled:opacity-50" disabled>
-                        <i class="fa-solid fa-arrow-left mr-2"></i> Atrás
+                <div class="flex items-center gap-4">
+                    <span class="text-xs font-medium text-purple-200">23/06/2026</span>
+                    <div class="relative">
+                        <i class="fa-regular fa-bell text-lg cursor-pointer"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-[8px] text-white font-bold rounded-full w-4 h-4 flex items-center justify-center">3</span>
+                    </div>
+                    <button onclick="abrirPerfilScoutCompleto()" class="w-8 h-8 rounded-full bg-amber-400 text-indigo-950 font-black flex items-center justify-center cursor-pointer hover:scale-110 transition-apple shadow-md" title="Ver mi Perfil" id="scout-avatar-btn">
+                        R
                     </button>
-                    <button id="btn-siguiente" onclick="cambiarP(1)" class="btn-nav-pop btn-der text-white bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-xl font-bold transition-apple">
-                        Siguiente <i class="fa-solid fa-arrow-right ml-2"></i>
+                    <span class="text-xs font-bold hidden md:inline" id="scout-header-name">Hola, RAFAEL</span>
+                    <button onclick="cerrarSesionScout()" class="text-xs font-bold bg-white/10 hover:bg-white/20 px-4 py-2 rounded-xl transition-apple">
+                        Cerrar Sesión
                     </button>
                 </div>
+            </header>
 
-            </div>
-        </section>
-
-        <!-- ================= PUERTA DE AUTENTICACIÓN ADM ================= -->
-        <section id="puerta-autenticacion" class="hidden transition-apple w-full max-w-md mx-auto text-center">
-            <div class="glass-panel rounded-[32px] p-8 shadow-2xl">
-                <div class="relative w-28 h-28 mx-auto mb-6 flex items-center justify-center bg-white rounded-full p-2 border border-gray-100 shadow-md">
-                    <div id="biometric-ring" class="absolute inset-0 border-4 border-gray-200 rounded-full transition-all duration-[2s]"></div>
-                    <img src="Logo 1.png" alt="Logo Grupo 1 Tequihua" class="w-20 h-20 object-contain z-10 rounded-full">
-                </div>
-                <h3 class="text-xl font-extrabold mb-2">Acceso Scouters & Representantes</h3>
-                <p class="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-6">Confirmación de Privacidad</p>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
-                <div class="flex flex-col gap-4 text-left">
-                    <div>
-                        <label class="text-xs font-extrabold text-gray-500 uppercase block mb-1">Usuario Scouter</label>
-                        <select id="admin-user" class="w-full rounded-xl border border-gray-200 px-4 py-3 font-semibold focus:border-indigo-500 outline-none transition-apple bg-white">
-                            <option value="manada">Scouters Manada</option>
-                            <option value="tropa">Scouters Tropa</option>
-                            <option value="comunidad">Scouters Comunidad</option>
-                            <option value="clan">Scouters Clan</option>
-                            <option value="dirigencia">Dirigencia de Grupo</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="text-xs font-extrabold text-gray-500 uppercase block mb-1">Clave Tequihua</label>
-                        <input type="password" id="admin-pass" class="w-full rounded-xl border border-gray-200 px-4 py-3 font-semibold focus:border-indigo-500 outline-none transition-apple" placeholder="Ingresa la contraseña">
-                    </div>
-                    <button onclick="validarCredenciales()" class="w-full py-3.5 rounded-xl bg-appleDark text-white font-bold hover:bg-black transition-apple shadow-lg">Verificar Identidad</button>
-                    <button onclick="regresarAlInicio()" class="text-xs text-gray-400 font-extrabold uppercase hover:text-gray-600 transition-apple text-center block mt-2">Cancelar</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= ANALYTICS DASHBOARD & CONFIGURADOR DE PREGUNTAS ================= -->
-        <section id="panel-scouter" class="hidden transition-apple w-full">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-                <div>
-                    <h2 class="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-900 to-violet-700 bg-clip-text text-transparent">TequiRadar Analytics ⚜️</h2>
-                    <p id="subtitulo-rol-scouter" class="text-gray-500 text-sm font-medium">Registro continuo de la satisfacción juvenil</p>
-                </div>
-                <button onclick="cerrarSesionScouter()" class="px-5 py-2 rounded-full border-2 border-red-300 text-red-600 font-bold hover:bg-red-50 transition-apple"><i class="fa-solid fa-power-off mr-2"></i> Cerrar Sesión</button>
-            </div>
-
-            <div class="flex gap-4 border-b border-gray-200 mb-8">
-                <button id="tab-analytics" onclick="cambiarTabScouter('analytics')" class="pb-4 px-2 font-bold text-sm text-indigo-600 border-b-2 border-indigo-600 transition-apple">
-                    <i class="fa-solid fa-chart-line mr-2"></i> Métricas y Reportes
-                </button>
-                <button id="tab-editor" onclick="cambiarTabScouter('editor')" class="pb-4 px-2 font-bold text-sm text-gray-400 hover:text-gray-700 transition-apple">
-                    <i class="fa-solid fa-pen-to-square mr-2"></i> Diseñador de Formulario
-                </button>
-            </div>
-
-            <div id="vista-scouter-analytics" class="space-y-8">
-                <div id="selector-secciones-dash" class="flex flex-wrap gap-2 mb-8 bg-gray-100 p-1.5 rounded-2xl max-w-2xl">
-                    <button id="dash-btn-Manada" onclick="seleccionarSeccionDashboard('Manada')" class="flex-1 min-w-[100px] py-2 px-3 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 bg-white text-yellow-600 shadow-sm border border-yellow-200">Manada</button>
-                    <button id="dash-btn-Tropa" onclick="seleccionarSeccionDashboard('Tropa')" class="flex-1 min-w-[100px] py-2 px-3 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 hover:bg-white hover:text-emerald-600">Tropa</button>
-                    <button id="dash-btn-Comunidad" onclick="seleccionarSeccionDashboard('Comunidad')" class="flex-1 min-w-[100px] py-2 px-3 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 hover:bg-white hover:text-sky-600">Comunidad</button>
-                    <button id="dash-btn-Clan" onclick="seleccionarSeccionDashboard('Clan')" class="flex-1 min-w-[100px] py-2 px-3 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 hover:bg-white hover:text-rose-600">Clan</button>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="glass-panel rounded-3xl p-6 shadow-lg md:col-span-2 text-left">
-                        <h3 class="font-extrabold text-lg mb-4 flex items-center gap-2"><i class="fa-solid fa-chart-simple text-indigo-500"></i> Desempeño por Rama Seleccionada</h3>
-                        <div class="h-64 flex items-end justify-between px-4 pb-2 border-b border-gray-200 pt-6">
-                            <div class="flex flex-col items-center gap-2 w-12">
-                                <div id="chart-fun" class="w-full bg-yellow-400 rounded-t-lg transition-apple text-center text-[10px] font-black text-slate-900 pt-2" style="height: 0px;">0%</div>
-                                <span class="text-[9px] font-black uppercase text-gray-400">Diversión</span>
-                            </div>
-                            <div class="flex flex-col items-center gap-2 w-12">
-                                <div id="chart-leaders" class="w-full bg-emerald-400 rounded-t-lg transition-apple text-center text-[10px] font-black text-slate-900 pt-2" style="height: 0px;">0%</div>
-                                <span class="text-[9px] font-black uppercase text-gray-400">Soporte</span>
-                            </div>
-                            <div class="flex flex-col items-center gap-2 w-12">
-                                <div id="chart-teamwork" class="w-full bg-sky-400 rounded-t-lg transition-apple text-center text-[10px] font-black text-slate-900 pt-2" style="height: 0px;">0%</div>
-                                <span class="text-[9px] font-black uppercase text-gray-400">Unión</span>
-                            </div>
-                            <div class="flex flex-col items-center gap-2 w-12">
-                                <div id="chart-progression" class="w-full bg-rose-400 rounded-t-lg transition-apple text-center text-[10px] font-black text-slate-900 pt-2" style="height: 0px;">0%</div>
-                                <span class="text-[9px] font-black uppercase text-gray-400">Avanzar</span>
-                            </div>
-                            <div class="flex flex-col items-center gap-2 w-12">
-                                <div id="chart-safety" class="w-full bg-violet-400 rounded-t-lg transition-apple text-center text-[10px] font-black text-slate-900 pt-2" style="height: 0px;">0%</div>
-                                <span class="text-[9px] font-black uppercase text-gray-400">Seguro</span>
-                            </div>
-                        </div>
-                        <p class="text-xs text-gray-400 font-semibold mt-4">Los gráficos muestran el promedio acumulado en tiempo real en nuestra base de datos para la sección elegida.</p>
-                    </div>
-
-                    <div class="glass-panel rounded-3xl p-6 shadow-lg flex flex-col justify-between text-left">
-                        <div>
-                            <h3 class="font-extrabold text-lg mb-4 flex items-center gap-2"><i class="fa-solid fa-clock-rotate-left text-emerald-500"></i> Métricas en la Nube</h3>
-                            <div class="space-y-3">
-                                <div class="flex justify-between border-b pb-2"><span class="text-xs text-gray-400 font-bold">SECCIÓN ACTUAL:</span> <span id="dash-seccion" class="font-black text-xs px-2 py-0.5 rounded text-white bg-slate-800">Manada</span></div>
-                                <div class="flex justify-between border-b pb-2"><span class="text-xs text-gray-400 font-bold">TOTAL DE REGISTROS:</span> <span id="dash-total-registros" class="font-black text-xs text-indigo-600">0</span></div>
-                                <div class="flex justify-between border-b pb-2"><span class="text-xs text-gray-400 font-bold">SABOR DE ACTIVIDAD:</span> <span id="dash-promedio-diversion" class="font-black text-xs">Sin Datos</span></div>
-                                <div class="flex justify-between border-b pb-2"><span class="text-xs text-gray-400 font-bold">ECONOMÍA DE EVENTO:</span> <span id="dash-promedio-economia" class="font-black text-xs">Sin Datos</span></div>
-                                <div class="flex justify-between border-b pb-2"><span class="text-xs text-gray-400 font-bold">PREFERENCIA GENERAL:</span> <span id="dash-preferencia-actividades" class="font-black text-xs">Sin Datos</span></div>
-                            </div>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-gray-100 bg-gray-50 rounded-2xl p-4">
-                            <span class="text-[10px] font-black text-emerald-800 uppercase block mb-1">Estatus del Servidor</span>
-                            <div class="flex items-center gap-2 text-emerald-600 font-extrabold text-xs"><i class="fa-solid fa-cloud-arrow-up animate-pulse"></i> Base de Datos Activa</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ================= SECCIÓN DE EVALUACIÓN DE KPIs HÍBRIDOS (80% IA + 20% Humano) ================= -->
-                <div class="glass-panel rounded-[32px] p-6 md:p-8 shadow-xl text-left">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-black uppercase tracking-wider">Módulo de Co-creación Híbrido</span>
-                        <h3 class="text-2xl font-extrabold text-slate-800">Evaluador de KPIs Scouts</h3>
-                    </div>
-                    <p class="text-sm text-gray-500 mb-8 font-medium">La plataforma calcula dinámicamente las pre-calificaciones cuantitativas (80%) cruzando las respuestas en tiempo real de los jóvenes. Complementa con el contexto de sábado (20%) para oficializar tu diagnóstico.</p>
-
-                    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-                        <div id="kpi-card-isp" class="bg-gray-50 border border-gray-200 rounded-2xl p-4 flex flex-col justify-between items-center text-center transition-apple">
-                            <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">I.S.P. (Programa)</span>
-                            <div class="w-16 h-16 rounded-full flex items-center justify-center border-4 border-slate-200 text-lg font-black" id="kpi-val-isp">0%</div>
-                            <span class="text-[9px] font-bold text-slate-500 mt-2">Divertido y Retador</span>
-                        </div>
-                        <div id="kpi-card-ics" class="bg-gray-50 border border-gray-200 rounded-2xl p-4 flex flex-col justify-between items-center text-center transition-apple">
-                            <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">I.C.S. (Cohesión)</span>
-                            <div class="w-16 h-16 rounded-full flex items-center justify-center border-4 border-slate-200 text-lg font-black" id="kpi-val-ics">0%</div>
-                            <span class="text-[9px] font-bold text-slate-500 mt-2">Hermandad de Sección</span>
-                        </div>
-                        <div id="kpi-card-iap" class="bg-gray-50 border border-gray-200 rounded-2xl p-4 flex flex-col justify-between items-center text-center transition-apple">
-                            <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">I.A.P. (Avance)</span>
-                            <div class="w-16 h-16 rounded-full flex items-center justify-center border-4 border-slate-200 text-lg font-black" id="kpi-val-iap">0%</div>
-                            <span class="text-[9px] font-bold text-slate-500 mt-2">Crecimiento Educativo</span>
-                        </div>
-                        <div id="kpi-card-isg" class="bg-gray-50 border border-gray-200 rounded-2xl p-4 flex flex-col justify-between items-center text-center transition-apple">
-                            <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">I.S.G. (Seguridad)</span>
-                            <div class="w-16 h-16 rounded-full flex items-center justify-center border-4 border-slate-200 text-lg font-black" id="kpi-val-isg">0%</div>
-                            <span class="text-[9px] font-bold text-slate-500 mt-2">Espacio Seguro</span>
-                        </div>
-                        <div id="kpi-card-ive" class="bg-gray-50 border border-gray-200 rounded-2xl p-4 flex flex-col justify-between items-center text-center transition-apple">
-                            <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">I.V.E. (Economía)</span>
-                            <div class="w-16 h-16 rounded-full flex items-center justify-center border-4 border-slate-200 text-lg font-black" id="kpi-val-ive">0%</div>
-                            <span class="text-[9px] font-bold text-slate-500 mt-2">Viabilidad Financiera</span>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-4">
-                            <label class="text-xs font-extrabold text-gray-500 uppercase block tracking-wider">Contexto Cualitativo de la Actividad (20%)</label>
-                            <textarea id="scouter-context-note" rows="3" class="w-full rounded-2xl border border-gray-200 focus:border-indigo-500 p-4 font-semibold outline-none transition-apple bg-white resize-none text-sm" placeholder="Registra notas claves del sábado (ej. 'Lluvia moderada en gran juego', 'Exámenes escolares mermaron asistencia')..."></textarea>
-                            <button onclick="validarDiagnosticoSemanal()" class="w-full py-3.5 rounded-xl bg-appleDark hover:bg-black text-white text-sm font-bold transition-apple shadow-lg flex items-center justify-center gap-2 active:scale-95">
-                                <i class="fa-solid fa-cloud-arrow-up"></i> Validar Diagnóstico Semanal
-                            </button>
-                        </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5">
-                            <label class="text-xs font-extrabold text-gray-500 uppercase block tracking-wider mb-4">Registro Histórico de Reportes Semanales</label>
-                            <div id="reportes-validados-lista" class="space-y-3 max-h-[180px] overflow-y-auto no-scrollbar">
-                                <p class="text-xs text-gray-400 italic text-center py-6">Aún no se ha validado ningún reporte semanal de KPIs para esta sección.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RECOMENDACIÓN IA DINÁMICA -->
-                <div class="bg-gradient-to-r from-emerald-950 to-indigo-950 text-white rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden text-left mt-8">
-                    <div class="absolute right-0 bottom-0 opacity-10 translate-x-12 translate-y-12">
-                        <i class="fa-solid fa-brain text-[200px]"></i>
-                    </div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="bg-emerald-500 text-white text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-wider shadow-md"><i class="fa-solid fa-robot mr-1"></i> TequiVoz AI Engine</span>
-                        <span id="ia-subtitle-seccion-kpi" class="text-xs text-gray-300 font-semibold">Análisis Pedagógico</span>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-extrabold mb-4 leading-tight">Plan de Acción Estratégico Generado</h3>
+                <!-- Left Sidebar Navigation -->
+                <aside class="lg:col-span-3 bg-slate-900 text-gray-400 rounded-3xl p-5 space-y-3 shadow-xl border border-slate-800 text-left">
+                    <span class="text-[9px] font-black uppercase text-gray-500 tracking-wider block px-3 mb-2">Mi Navegación</span>
                     
-                    <div class="space-y-6">
-                        <div>
-                            <span class="text-xs font-black uppercase tracking-wider text-emerald-400 block mb-1">Diagnóstico General por Sección</span>
-                            <p id="ia-diagnostico-kpi" class="text-gray-300 text-sm font-medium leading-relaxed">
-                                Cargando análisis inteligente...
-                            </p>
-                        </div>
-
-                        <div>
-                            <span class="text-xs font-black uppercase tracking-wider text-emerald-400 block mb-1">Líneas de Acción Inmediatas sugeridas</span>
-                            <p id="ia-accion-kpi" class="text-gray-300 text-sm font-medium leading-relaxed">
-                                Cargando recomendaciones pedagógicas...
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- VISTA DE EDITOR DE FORMULARIOS -->
-            <div id="vista-scouter-editor" class="hidden text-left">
-                <div class="glass-panel rounded-3xl p-6 md:p-8 shadow-xl">
-                    <div class="flex justify-between items-center mb-6">
-                        <div>
-                            <span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider inline-block">Módulo de Personalización</span>
-                            <h3 class="text-2xl font-extrabold mt-2 text-slate-800">Diseñador del Formulario (<span id="editor-nombre-seccion-activa">Manada</span>)</h3>
-                        </div>
-                        <i class="fa-solid fa-palette text-indigo-500 text-3xl"></i>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="md:col-span-1 border-r border-gray-100 pr-4">
-                            <h4 class="text-sm font-extrabold text-slate-500 uppercase tracking-widest mb-4">Selecciona Pregunta</h4>
-                            <div class="flex flex-col gap-2 max-h-[350px] overflow-y-auto no-scrollbar" id="editor-selector-preguntas-lista">
-                                <!-- Inyectado por JS -->
-                            </div>
-                        </div>
-
-                        <div class="md:col-span-2 space-y-6">
-                            <h4 class="text-sm font-extrabold text-slate-500 uppercase tracking-widest mb-4">Configuración de Pregunta</h4>
-                            
-                            <div class="p-4 bg-indigo-50 border border-indigo-100 rounded-2xl">
-                                <span class="text-xs text-indigo-600 font-extrabold tracking-widest uppercase block">Modificando</span>
-                                <span id="editor-pregunta-label-seleccionada" class="text-lg font-black text-indigo-950">Pregunta 1</span>
-                            </div>
-
-                            <div>
-                                <label class="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">Título de la Pregunta</label>
-                                <input type="text" id="editor-pregunta-titulo" class="w-full rounded-xl border border-gray-200 px-4 py-3 font-semibold focus:border-indigo-500 outline-none transition-apple" placeholder="Escribe el título aquí">
-                            </div>
-
-                            <div>
-                                <label class="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">Tipo de Interacción</label>
-                                <select id="editor-pregunta-tipo" onchange="alternarCamposOpcionesEditor(this.value)" class="w-full rounded-xl border border-gray-200 px-4 py-3 font-semibold focus:border-indigo-500 outline-none transition-apple">
-                                    <option value="select">Fila de Botones con Emojis (Excelente para satisfacción rápida)</option>
-                                    <option value="range">Slider de Escala (Elegante barra del 1 al 10 o 1 al 5)</option>
-                                    <option value="list">Tarjetas con Descripciones (Ideales para dinámicas complejas)</option>
-                                    <option value="grid">Grid de Opciones con Icono (Muy visual)</option>
-                                    <option value="textarea">Caja de Texto Abierto (Para opiniones directas)</option>
-                                </select>
-                            </div>
-
-                            <div id="editor-seccion-opciones" class="space-y-4">
-                                <label class="text-xs font-bold text-gray-500 uppercase tracking-wider block">Opciones del Formulario</label>
-                                <p class="text-xs text-gray-400">Personaliza los textos o etiquetas de los botones interactivos.</p>
-                                
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="editor-campos-dinamicos-opciones">
-                                    <!-- Campos autogenerados según tipo -->
-                                </div>
-                            </div>
-
-                            <div class="pt-4 border-t border-gray-100 flex gap-4">
-                                <button onclick="guardarPreguntaModificada()" class="flex-1 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold transition-apple shadow-lg flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-circle-check"></i> Guardar y Aplicar Cambios
-                                </button>
-                                <button onclick="restablecerPreguntasPredeterminadas()" class="py-3.5 px-6 rounded-xl border border-gray-200 text-gray-500 font-bold hover:bg-gray-50 transition-apple">
-                                    Restablecer
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ================= SCOUT DASHBOARD PORTAL (Inspirado en la imagen image_281b7d.png) ================= -->
-    <div id="panel-scout-sisas" class="hidden min-h-screen bg-gray-50 transition-apple">
-        <header class="bg-tequihuaPurple text-white px-6 py-3 flex justify-between items-center shadow-md">
-            <div class="flex items-center gap-3">
-                <span class="text-xl font-bold tracking-tight"><i class="fa-solid fa-compass animate-spin text-amber-400"></i> MiTequihua Grupo 1</span>
-                <span class="text-[9px] bg-indigo-800 text-gray-100 px-2.5 py-0.5 rounded-full font-black uppercase">Versión 4.4</span>
-            </div>
-            <div class="flex items-center gap-4">
-                <span class="text-xs font-medium text-gray-200">23/06/2026</span>
-                <div class="relative">
-                    <i class="fa-regular fa-bell text-lg cursor-pointer"></i>
-                    <span class="absolute -top-1 -right-1 bg-red-500 text-[8px] text-white font-bold rounded-full w-4 h-4 flex items-center justify-center">3</span>
-                </div>
-                <div onclick="abrirPerfilScoutCompleto()" class="flex items-center gap-2 border-l border-white/20 pl-4 cursor-pointer">
-                    <div class="w-8 h-8 rounded-full bg-amber-400 text-indigo-950 font-black flex items-center justify-center">R</div>
-                    <span class="text-xs font-bold">Hola, RAFAEL</span>
-                </div>
-                <button onclick="cerrarSesionScout()" class="text-xs font-bold bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-apple">
-                    Cerrar Sesión
-                </button>
-            </div>
-        </header>
-
-        <div class="flex min-h-[calc(100vh-56px)]">
-            <aside class="w-16 md:w-64 bg-slate-900 text-gray-400 flex flex-col justify-between py-6 transition-apple border-r border-slate-800">
-                <div class="space-y-4 px-3">
-                    <button onclick="cambiarSeccionSisas('home')" class="w-full flex items-center gap-3 px-3 py-3 rounded-xl transition-apple text-left bg-slate-800 text-white font-bold" id="sisas-nav-home">
+                    <button onclick="cambiarSeccionSisas('home')" id="sisas-nav-home" class="w-full flex items-center gap-3 px-4 py-3.5 rounded-xl transition-apple text-left bg-slate-800 text-white font-bold">
                         <i class="fa-solid fa-house text-lg"></i>
-                        <span class="hidden md:inline text-xs">Inicio</span>
+                        <span class="text-xs">Inicio</span>
                     </button>
-                    <button onclick="cambiarTabSisas('calendario')" id="sisas-nav-calendario" class="w-full text-left p-3 rounded-xl hover:bg-slate-800 hover:text-white transition-apple flex items-center gap-4">
+                    <button onclick="cambiarTabSisas('calendario')" id="sisas-nav-calendario" class="w-full text-left p-3.5 rounded-xl hover:bg-slate-800 hover:text-white transition-apple flex items-center gap-3">
                         <i class="fa-solid fa-calendar-days text-lg text-emerald-400"></i>
-                        <span class="hidden md:inline text-xs font-bold">Calendario de Eventos</span>
+                        <span class="text-xs font-bold">Calendario de Eventos</span>
                     </button>
-                    <button onclick="cambiarTabSisas('pagos')" id="sisas-nav-pagos" class="w-full text-left p-3 rounded-xl hover:bg-slate-800 hover:text-white transition-apple flex items-center gap-4">
+                    <button onclick="cambiarTabSisas('pagos')" id="sisas-nav-pagos" class="w-full text-left p-3.5 rounded-xl hover:bg-slate-800 hover:text-white transition-apple flex items-center gap-3">
                         <i class="fa-solid fa-receipt text-lg text-amber-400"></i>
-                        <span class="hidden md:inline text-xs font-bold">Mis Pagos</span>
+                        <span class="text-xs font-bold">Mis Pagos</span>
                     </button>
-                    <button onclick="cambiarTabSisas('anuncios')" id="sisas-nav-anuncios" class="w-full text-left p-3 rounded-xl hover:bg-slate-800 hover:text-white transition-apple flex items-center gap-4">
+                    <button onclick="cambiarTabSisas('anuncios')" id="sisas-nav-anuncios" class="w-full text-left p-3.5 rounded-xl hover:bg-slate-800 hover:text-white transition-apple flex items-center gap-3">
                         <i class="fa-solid fa-bullhorn text-lg text-sky-400"></i>
-                        <span class="hidden md:inline text-xs font-bold">Mis Anuncios</span>
+                        <span class="text-xs font-bold">Mis Anuncios</span>
                     </button>
-                    <button onclick="cambiarTabSisas('proyecto')" id="sisas-nav-proyecto" class="w-full text-left p-3 rounded-xl hover:bg-slate-800 hover:text-white transition-apple flex items-center gap-4">
+                    <button onclick="cambiarTabSisas('proyecto')" id="sisas-nav-proyecto" class="w-full text-left p-3.5 rounded-xl hover:bg-slate-800 hover:text-white transition-apple flex items-center gap-3">
                         <i class="fa-solid fa-brain text-lg text-rose-400"></i>
-                        <span class="hidden md:inline text-xs font-bold">Mi Proyecto de Vida</span>
+                        <span class="text-xs font-bold">Mi Proyecto de Vida</span>
                     </button>
-                    <button onclick="abrirEncuestasDeSeccion()" class="w-full text-left p-3 rounded-xl border border-dashed border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 transition-apple flex items-center gap-4">
+                    <button onclick="abrirEncuestasDeSeccion()" class="w-full text-left p-3.5 rounded-xl border border-dashed border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 transition-apple flex items-center gap-3">
                         <i class="fa-solid fa-vote-yea text-lg"></i>
-                        <span class="hidden md:inline text-xs font-black">Mis Encuestas 🗳️</span>
+                        <span class="text-xs font-black">Mis Encuestas 🗳️</span>
                     </button>
-                </div>
-                <div class="px-6 text-center hidden md:block">
-                    <p class="text-[9px] text-gray-600 font-bold uppercase tracking-wider">Grupo 1 Tequihua</p>
-                </div>
-            </aside>
+                </aside>
 
-            <main class="flex-1 p-6 md:p-8 space-y-6">
-                
-                <!-- SUB-VISTA: HOME -->
-                <div id="sisas-sub-home" class="space-y-6 transition-apple">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                        
-                        <div class="bg-white border border-gray-100 rounded-3xl p-6 shadow-md text-left flex flex-col justify-between space-y-6">
-                            <div class="flex flex-col md:flex-row gap-6 items-center md:items-start border-b border-gray-100 pb-6">
-                                <div class="flex flex-col items-center gap-3">
-                                    <div onclick="abrirPerfilScoutCompleto()" class="relative w-28 h-28 rounded-full overflow-hidden border-4 border-indigo-500 shadow-md cursor-pointer hover:scale-105 transition-apple flex items-center justify-center bg-gray-100 text-3xl font-black text-indigo-900">
-                                        RM
-                                    </div>
-                                    <img src="Logo 1.png" alt="Logo Grupo 1" class="h-10 w-auto object-contain">
-                                </div>
-                                <div class="text-center md:text-left space-y-2 flex-1">
-                                    <span id="scout-badge-rama" class="text-xs font-black uppercase text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Clan de Rovers</span>
-                                    <h3 id="scout-display-nombre" class="text-xl font-extrabold text-indigo-950 mt-1">Rafael Magaña Rangel</h3>
-                                    <p id="scout-display-cum" class="text-xs text-gray-400 font-semibold uppercase leading-none">CUM: SLP1820165</p>
-                                    <p class="text-xs text-emerald-600 font-bold">Vigencia: 31/01/2027</p>
-                                    <p id="scout-display-cargo" class="text-xs text-gray-500 font-semibold bg-gray-50 p-2 rounded-lg border border-dashed border-gray-200">Cargo: Representante de Sección</p>
-                                </div>
-                            </div>
-
-                            <div>
-                                <span class="text-[10px] font-black uppercase tracking-wider text-gray-400 block mb-3">Próximo Evento Destacado</span>
-                                <div class="bg-slate-900 rounded-2xl p-6 text-white relative overflow-hidden flex items-center justify-between border-2 border-indigo-500">
-                                    <div class="space-y-2 relative z-10">
-                                        <span class="text-[10px] font-black bg-amber-500 text-indigo-950 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Polonia 2027</span>
-                                        <h4 class="text-lg font-black leading-tight">Jamboree Scout Mundial</h4>
-                                        <p class="text-xs text-gray-300 font-medium">Delegación Mexicana al Jamboree, Polonia 2027</p>
-                                    </div>
-                                    <div class="text-4xl text-amber-400 relative z-10"><i class="fa-solid fa-plane-departure animate-bounce"></i></div>
-                                </div>
-                            </div>
-
-                            <div class="bg-amber-400/10 border border-amber-400/20 rounded-2xl p-4 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-12 h-12 rounded-full border-4 border-amber-500 flex items-center justify-center text-sm font-black text-amber-600 bg-white">100%</div>
-                                    <div>
-                                        <span class="text-sm font-extrabold text-indigo-950 block leading-tight">¡Tu cuenta está completa!</span>
-                                        <p class="text-xs text-gray-500 font-medium">Información validada por Jefatura de Grupo.</p>
-                                    </div>
-                                </div>
-                                <button onclick="abrirPerfilScoutCompleto()" class="text-xs font-black uppercase tracking-wider bg-amber-500 text-indigo-950 px-4 py-2.5 rounded-xl hover:bg-amber-600 transition-apple">Ver / Actualizar</button>
-                            </div>
-                        </div>
-
-                        <div class="bg-white border border-gray-100 rounded-3xl p-6 shadow-md text-center flex flex-col justify-between items-center h-full">
-                            <h3 class="font-black text-lg text-indigo-950 mb-4 flex items-center gap-2 self-start"><i class="fa-solid fa-award text-amber-500"></i> Mi Progresión de Sección</h3>
+                <!-- Right Dynamic Content -->
+                <div class="lg:col-span-9 space-y-6">
+                    
+                    <!-- SUB-VISTA: INICIO -->
+                    <div id="sisas-sub-home" class="space-y-6 transition-apple">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                             
-                            <div class="relative w-full max-w-[280px] h-[280px] bg-rose-700 rounded-t-full border-4 border-indigo-950 overflow-hidden flex flex-col justify-between p-6 shadow-inner my-auto">
-                                <div class="flex justify-center mt-2">
-                                    <div class="bg-amber-400 border-2 border-indigo-950 px-4 py-1.5 font-black text-indigo-950 text-xs tracking-widest rounded-lg shadow-md transform rotate-1">R / S</div>
+                            <!-- Tarjeta de Perfil Resumido -->
+                            <div class="glass-panel border border-gray-100 rounded-[32px] p-6 shadow-md text-left flex flex-col justify-between space-y-6">
+                                <div class="flex gap-4 items-center">
+                                    <div onclick="abrirPerfilScoutCompleto()" class="w-20 h-28 rounded-full overflow-hidden border-2 border-indigo-500 shadow-md cursor-pointer hover:scale-105 transition-apple flex items-center justify-center bg-gray-100 text-2xl font-black text-indigo-900" id="scout-avatar-profile-card">
+                                        R
+                                    </div>
+                                    <div class="space-y-1">
+                                        <span id="scout-profile-role-badge" class="text-[9px] font-black uppercase text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">Clan de Rovers</span>
+                                        <h3 id="scout-profile-name-text" class="text-lg font-extrabold text-indigo-950 leading-tight">Rafael Magaña Rangel</h3>
+                                        <p id="scout-profile-cum-text" class="text-xs text-gray-400 font-semibold uppercase leading-none">CUM: SLP1820165</p>
+                                        <p id="scout-profile-vigencia-text" class="text-xs text-emerald-600 font-bold leading-none">Vigencia: 31/01/2027</p>
+                                    </div>
                                 </div>
                                 
-                                <div class="grid grid-cols-3 gap-3 my-auto items-center">
-                                    <div class="w-12 h-12 rounded-full bg-slate-100 border-2 border-indigo-950 flex items-center justify-center text-slate-500 text-xl shadow-md hover:scale-110 transition-apple" title="Técnicas Scouts"><i class="fa-solid fa-compass"></i></div>
-                                    <div class="w-14 h-14 bg-slate-800 border-2 border-indigo-950 rounded-xl flex items-center justify-center text-amber-400 text-2xl shadow-md hover:scale-110 transition-apple" title="Expediciones de Montaña"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                                    <div class="w-12 h-12 rounded-full bg-slate-100 border-2 border-indigo-950 flex items-center justify-center text-slate-500 text-xl shadow-md hover:scale-110 transition-apple" title="Servicio de Impacto"><i class="fa-solid fa-heart"></i></div>
+                                <div class="bg-gray-50 border border-gray-200/50 rounded-2xl p-4 flex justify-between items-center">
+                                    <div class="flex items-center gap-3">
+                                        <img src="Logo 1.png" alt="Logo Grupo 1" class="h-10 w-auto object-contain">
+                                        <div>
+                                            <span class="text-xs font-black uppercase text-gray-500 block leading-none">Sección Actual</span>
+                                            <span id="scout-profile-section-text" class="text-sm font-black text-indigo-950 font-black">Clan de Rovers</span>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gray-400 font-medium">Cargo: Miembro Activo</span>
                                 </div>
 
-                                <div class="flex justify-center mb-4">
-                                    <div class="w-16 h-16 rounded-full bg-white border-2 border-indigo-950 flex items-center justify-center text-indigo-950 text-3xl shadow-lg hover:scale-110 transition-apple"><i class="fa-solid fa-anchor"></i></div>
+                                <div class="bg-amber-400/10 border border-amber-400/20 rounded-2xl p-4 flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-full bg-white border-2 border-amber-500 flex items-center justify-center text-xs font-black text-amber-600">100%</div>
+                                        <div>
+                                            <span class="text-xs font-extrabold text-indigo-950 block leading-tight">¡Tu cuenta está completa!</span>
+                                            <p class="text-[10px] text-gray-400 font-medium">Información validada por Jefatura.</p>
+                                        </div>
+                                    </div>
+                                    <button onclick="abrirPerfilScoutCompleto()" class="text-[10px] font-black uppercase bg-amber-500 text-indigo-950 px-3 py-2 rounded-lg hover:bg-amber-600 transition-apple">Ver / Actualizar</button>
                                 </div>
                             </div>
-                            <span class="text-xs font-bold text-gray-400 mt-4 block">Esquema Rover: Plan de Progresión Activa "Encuentro y Desafío"</span>
-                        </div>
 
-                    </div>
-                </div>
-
-                <!-- SUB-VISTA: CALENDARIO -->
-                <div id="sisas-sub-calendario" class="hidden glass-panel rounded-3xl p-6 md:p-8 text-left space-y-6">
-                    <h3 class="text-2xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-calendar-days text-indigo-600"></i> Calendario de Actividades Grupo 1</h3>
-                    <p class="text-sm text-gray-500 font-medium">Revisa las fechas clave, juntas de sábado y excursiones de todas las secciones en el periodo activo.</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm">
-                            <span class="text-xs font-black uppercase text-amber-500 tracking-wider block mb-3">Eventos de Este Mes</span>
-                            <div class="space-y-3">
-                                <div class="flex gap-4 p-3 bg-indigo-50 border border-indigo-100 rounded-xl">
-                                    <div class="bg-indigo-600 text-white font-black px-3 py-2 rounded-lg flex flex-col items-center text-center justify-center leading-none">
-                                        <span class="text-lg">27</span>
-                                        <span class="text-[9px] uppercase mt-1">Jun</span>
+                            <!-- Tarjeta de Progresión Scout (Fiel a la imagen image_281b7d.png) -->
+                            <div class="glass-panel border border-gray-100 rounded-[32px] p-6 shadow-md text-center flex flex-col justify-between items-center">
+                                <h3 class="font-black text-md text-indigo-950 flex items-center gap-2 self-start"><i class="fa-solid fa-award text-amber-500"></i> Mi Progresión de Sección</h3>
+                                
+                                <div class="relative w-full max-w-[220px] h-[220px] bg-rose-700 rounded-t-full border-4 border-indigo-950 overflow-hidden flex flex-col justify-between p-4 shadow-inner my-auto">
+                                    <div class="flex justify-center mt-1">
+                                        <div class="bg-amber-400 border-2 border-indigo-950 px-3 py-1 font-black text-indigo-950 text-[10px] rounded-lg">R / S</div>
                                     </div>
-                                    <div>
-                                        <h4 class="text-sm font-extrabold text-indigo-950">Junta de Sábado Regular</h4>
-                                        <p class="text-xs text-gray-500 font-semibold">Parque de Morales - 16:00 hrs. Traer uniforme completo.</p>
+                                    
+                                    <div class="grid grid-cols-3 gap-2 my-auto items-center justify-items-center">
+                                        <div class="w-10 h-10 rounded-full bg-slate-100 border-2 border-indigo-950 flex items-center justify-center text-slate-500 text-sm shadow-md" title="Técnicas Scouts"><i class="fa-solid fa-compass"></i></div>
+                                        <div class="w-12 h-12 bg-slate-800 border-2 border-indigo-950 rounded-xl flex items-center justify-center text-amber-400 text-lg shadow-md" title="Expedición"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                                        <div class="w-10 h-10 rounded-full bg-slate-100 border-2 border-indigo-950 flex items-center justify-center text-slate-500 text-sm shadow-md" title="Servicios"><i class="fa-solid fa-heart"></i></div>
+                                    </div>
+
+                                    <div class="flex justify-center mb-1">
+                                        <div class="w-12 h-12 rounded-full bg-white border-2 border-indigo-950 flex items-center justify-center text-indigo-950 text-xl shadow-lg"><i class="fa-solid fa-anchor"></i></div>
                                     </div>
                                 </div>
-                                <div class="flex gap-4 p-3 bg-indigo-50 border border-indigo-100 rounded-xl">
-                                    <div class="bg-rose-600 text-white font-black px-3 py-2 rounded-lg flex flex-col items-center text-center justify-center leading-none">
-                                        <span class="text-lg">11</span>
-                                        <span class="text-[9px] uppercase mt-1">Jul</span>
+
+                                <span class="text-[10px] font-bold text-gray-400 mt-3 block">Esquema Rover: Plan de Progresión Activa "Encuentro y Desafío"</span>
+                            </div>
+
+                        </div>
+
+                        <!-- Próximo Evento Destacado -->
+                        <div class="bg-slate-900 rounded-3xl p-6 text-white text-left relative overflow-hidden flex items-center justify-between border-2 border-indigo-500">
+                            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent"></div>
+                            <div class="space-y-2 relative z-10">
+                                <span class="text-[10px] font-black bg-amber-500 text-indigo-950 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Polonia 2027</span>
+                                <h4 class="text-xl font-black leading-tight">Jamboree Scout Mundial</h4>
+                                <p class="text-xs text-gray-300 font-medium max-w-md">La Delegación Mexicana se prepara para el Jamboree Scout Mundial de Polonia 2027. Consulta requisitos con tu Jefe de Sección.</p>
+                            </div>
+                            <div class="text-5xl text-amber-400 relative z-10 hidden md:block"><i class="fa-solid fa-plane-departure animate-pulse"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- SUB-VISTA: CALENDARIO -->
+                    <div id="sisas-sub-calendario" class="hidden glass-panel rounded-[32px] p-6 md:p-8 text-left space-y-6 shadow-xl">
+                        <h3 class="text-xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-calendar-days text-indigo-600"></i> Calendario de Actividades Grupo 1</h3>
+                        <p class="text-xs text-gray-500 font-medium">Revisa las fechas clave, juntas de sábado y excursiones de todas las secciones en el periodo activo.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm">
+                                <span class="text-[10px] font-black uppercase text-amber-500 tracking-wider block mb-3">Eventos de Este Mes</span>
+                                <div class="space-y-3">
+                                    <div class="flex gap-4 p-3 bg-indigo-50 border border-indigo-100 rounded-xl">
+                                        <div class="bg-indigo-600 text-white font-black px-3 py-2 rounded-lg flex flex-col items-center text-center justify-center leading-none">
+                                            <span class="text-lg">27</span>
+                                            <span class="text-[9px] uppercase mt-1">Jun</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-sm font-extrabold text-indigo-950">Junta de Sábado Regular</h4>
+                                            <p class="text-xs text-gray-500 font-semibold">Parque de Morales - 16:00 hrs. Traer uniforme completo.</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 class="text-sm font-extrabold text-indigo-950">Campamento de Grupo Verano</h4>
-                                        <p class="text-xs text-gray-500 font-semibold">Sierra de San Pedro - 3 días de alta mística scout.</p>
+                                    <div class="flex gap-4 p-3 bg-indigo-50 border border-indigo-100 rounded-xl">
+                                        <div class="bg-rose-600 text-white font-black px-3 py-2 rounded-lg flex flex-col items-center text-center justify-center leading-none">
+                                            <span class="text-lg">11</span>
+                                            <span class="text-[9px] uppercase mt-1">Jul</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-sm font-extrabold text-indigo-950">Campamento de Grupo Verano</h4>
+                                            <p class="text-xs text-gray-500 font-semibold">Sierra de San Pedro - 3 días de alta mística scout.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm flex flex-col justify-center items-center text-center">
-                            <div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 text-2xl mb-4"><i class="fa-solid fa-circle-check"></i></div>
-                            <h4 class="text-md font-extrabold text-indigo-950">¡Estás Inscrito en Todos los Eventos Obligatorios!</h4>
-                            <p class="text-xs text-gray-400 font-medium mt-1 max-w-xs">Cualquier cambio de logística o locación será notificado de inmediato por el consejo de grupo.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SUB-VISTA: PAGOS -->
-                <div id="sisas-sub-pagos" class="hidden glass-panel rounded-3xl p-6 md:p-8 text-left space-y-6">
-                    <h3 class="text-2xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-receipt text-indigo-600"></i> Control de Cuotas y Registro</h3>
-                    <p class="text-sm text-gray-500 font-medium font-semibold leading-relaxed">Monitorea los registros de tus cuotas de membresía y aportaciones para campamentos.</p>
-
-                    <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
-                        <table class="w-full text-left border-collapse text-sm">
-                            <thead>
-                                <tr class="bg-gray-50 text-gray-400 font-black uppercase text-xs border-b border-gray-100">
-                                    <th class="p-4">Concepto</th>
-                                    <th class="p-4">Monto</th>
-                                    <th class="p-4">Estatus</th>
-                                    <th class="p-4">Fecha Límite</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="border-b border-gray-50">
-                                    <td class="p-4 font-bold text-indigo-950">Membresía ASMAC Nacional 2026</td>
-                                    <td class="p-4 font-semibold text-gray-600">$850.00 MXN</td>
-                                    <td class="p-4"><span class="px-2.5 py-1 rounded-full text-xs font-black uppercase bg-emerald-100 text-emerald-800">Pagado</span></td>
-                                    <td class="p-4 font-semibold text-gray-400">31/01/2026</td>
-                                </tr>
-                                <tr class="border-b border-gray-50">
-                                    <td class="p-4 font-bold text-indigo-950">Registro Campamento Verano 2026</td>
-                                    <td class="p-4 font-semibold text-gray-600">$450.00 MXN</td>
-                                    <td class="p-4"><span class="px-2.5 py-1 rounded-full text-xs font-black uppercase bg-emerald-100 text-emerald-800">Pagado</span></td>
-                                    <td class="p-4 font-semibold text-gray-400">15/06/2026</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-4 font-bold text-indigo-950">Aportación para Uniforme y Insignias de Grupo</td>
-                                    <td class="p-4 font-semibold text-gray-600">$180.00 MXN</td>
-                                    <td class="p-4"><span class="px-2.5 py-1 rounded-full text-xs font-black uppercase bg-amber-100 text-amber-800">Pendiente</span></td>
-                                    <td class="p-4 font-semibold text-gray-400">30/06/2026</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- SUB-VISTA: ANUNCIOS -->
-                <div id="sisas-sub-anuncios" class="hidden glass-panel rounded-3xl p-6 md:p-8 text-left space-y-6">
-                    <h3 class="text-2xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-bullhorn text-indigo-600"></i> Boletín de Avisos Grupo 1</h3>
-                    <p class="text-sm text-gray-500 font-medium font-semibold leading-relaxed">Enterate de las notificaciones oficiales dictadas por la Dirigencia y Jefaturas de Sección.</p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="p-5 bg-white border border-gray-100 rounded-2xl shadow-sm space-y-3">
-                            <span class="text-[9px] font-black uppercase tracking-wider text-rose-500 block">Urgente — Dirigencia de Grupo</span>
-                            <h4 class="text-md font-extrabold text-indigo-950">Documentación de Campamento</h4>
-                            <p class="text-xs text-gray-500 leading-relaxed font-semibold">"Todos los miembros scouts deben subir su ficha médica y responsiva firmada para el Campamento de Verano a más tardar este próximo sábado. No se admitirá participación sin este requisito de espacio seguro."</p>
-                        </div>
-                        <div class="p-5 bg-white border border-gray-100 rounded-2xl shadow-sm space-y-3">
-                            <span class="text-[9px] font-black uppercase tracking-wider text-indigo-500 block">Jefatura de Clan</span>
-                            <h4 class="text-md font-extrabold text-indigo-950">Consejo de Clan Extraordinario</h4>
-                            <p class="text-xs text-gray-500 leading-relaxed font-semibold">"Este sábado tendremos junta de Clan en Morales a las 15:00 hrs para revisar los avances del proyecto de servicio ecológico. Favor de traer su cuaderno de mística."</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SUB-VISTA: PROYECTO DE VIDA -->
-                <div id="sisas-sub-proyecto" class="hidden glass-panel rounded-3xl p-6 md:p-8 text-left space-y-6">
-                    <h3 class="text-2xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-brain text-indigo-600"></i> Mi Proyecto de Vida Rover</h3>
-                    <p class="text-sm text-gray-500 font-medium font-semibold leading-relaxed">Como Rover, tu plan de vida guía tus elecciones personales, profesionales y de servicio. Redacta y mantén tus objetivos aquí.</p>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <div class="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm space-y-4">
-                            <div>
-                                <label class="text-xs font-black text-gray-500 uppercase block mb-1">Mis Metas de Servicio Social</label>
-                                <textarea id="scout-meta-servicio" rows="3" class="w-full rounded-xl border border-gray-200 p-3 text-xs font-semibold focus:border-indigo-500 outline-none" placeholder="¿Cómo planeas servir a tu comunidad este trimestre?"></textarea>
-                            </div>
-                            <div>
-                                <label class="text-xs font-black text-gray-500 uppercase block mb-1">Mis Retos de Carácter y Vida Profesional</label>
-                                <textarea id="scout-meta-caracter" rows="3" class="w-full rounded-xl border border-gray-200 p-3 text-xs font-semibold focus:border-indigo-500 outline-none" placeholder="Estudios, metas deportivas o hábitos personales..."></textarea>
-                            </div>
-                            <button onclick="guardarProyectoVidaScout()" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs uppercase tracking-wider transition-all duration-300">
-                                Guardar Avances de Proyecto
-                            </button>
-                        </div>
-
-                        <div class="bg-slate-900 rounded-2xl p-6 text-white flex flex-col justify-between">
-                            <div class="space-y-4">
-                                <span class="text-[9px] font-black uppercase text-amber-400 tracking-wider block">Acompañamiento Rover</span>
-                                <h4 class="text-lg font-black leading-tight">Estatus de mi Proyecto de Vida</h4>
-                                <p class="text-xs text-gray-300 font-medium leading-relaxed">Tu plan de vida rover ha sido validado satisfactoriamente por tu sinodal asesor. Sigue registrando tus avances de crecimiento espiritual, de carácter, físico y afectivo.</p>
-                            </div>
-                            <div class="border-t border-white/20 pt-4 mt-6">
-                                <span class="text-[9px] font-black text-gray-500 uppercase block leading-none">Última Revisión</span>
-                                <span class="text-xs font-bold text-amber-400">Hace 4 días por Sinodal Asesor</span>
+                            <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm flex flex-col justify-center items-center text-center">
+                                <div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 text-2xl mb-4"><i class="fa-solid fa-circle-check"></i></div>
+                                <h4 class="text-md font-extrabold text-indigo-950">¡Estás Inscrito en Todos los Eventos Obligatorios!</h4>
+                                <p class="text-xs text-gray-400 font-medium mt-1 max-w-xs">Cualquier cambio de logística o locación será notificado de inmediato por el consejo de grupo.</p>
                             </div>
                         </div>
                     </div>
-                </div>
 
-            </main>
-        </div>
-    </div>
+                    <!-- SUB-VISTA: PAGOS -->
+                    <div id="sisas-sub-pagos" class="hidden glass-panel rounded-[32px] p-6 md:p-8 text-left space-y-6 shadow-xl">
+                        <h3 class="text-xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-receipt text-indigo-600"></i> Control de Cuotas y Registro</h3>
+                        <p class="text-xs text-gray-500 font-medium">Monitorea los registros de tus cuotas de membresía y aportaciones para campamentos.</p>
 
-    <!-- ================= 3. MITEQUIHUA EXPANDED SCOUT PROFILE / CURRICULUM EDITOR (Fiel a la imagen image_282382.png) ================= -->
-    <section id="panel-scout-sisas-profile" class="hidden w-full glass-panel rounded-[32px] p-6 md:p-10 shadow-2xl border-2 border-white/50 text-left transition-apple mt-10">
-        
-        <div class="flex items-center gap-3 mb-8 border-b border-gray-100 pb-6">
-            <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-700"><i class="fa-solid fa-user-gear"></i></div>
-            <div>
-                <h2 class="text-2xl font-black text-indigo-950">Mi Perfil Scout</h2>
-                <p class="text-xs text-indigo-600 font-bold uppercase tracking-widest leading-none mt-1">Configuración Unificada del Registro SISAS</p>
-            </div>
-        </div>
-
-        <!-- SISAS Stepper / Progress Bar (Inspirado en la imagen image_282382.png) -->
-        <div class="relative flex justify-between items-center max-w-3xl mx-auto mb-12">
-            <!-- Stepper Progress Line -->
-            <div class="absolute left-4 right-4 h-1 bg-gray-200 top-1/2 -translate-y-1/2 z-0">
-                <div id="sisas-stepper-progress-fill" class="h-full bg-purple-500 transition-all duration-500" style="width: 0%;"></div>
-            </div>
-
-            <!-- Step 1: Datos Personales -->
-            <div class="relative z-10 flex flex-col items-center">
-                <button onclick="cambiarPasoSisasProfile(1)" id="step-btn-1" class="w-8 h-8 rounded-full bg-purple-600 text-white font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">1</button>
-                <span class="text-[9px] font-black text-indigo-950 uppercase mt-2 hidden sm:block">Datos Personales</span>
-            </div>
-            <!-- Step 2: Datos de contacto -->
-            <div class="relative z-10 flex flex-col items-center">
-                <button onclick="cambiarPasoSisasProfile(2)" id="step-btn-2" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">2</button>
-                <span class="text-[9px] font-black text-gray-400 uppercase mt-2 hidden sm:block">Datos de contacto</span>
-            </div>
-            <!-- Step 3: Curriculum scout -->
-            <div class="relative z-10 flex flex-col h-full justify-between items-center">
-                <button onclick="cambiarPasoSisasProfile(3)" id="step-btn-3" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">3</button>
-                <span class="text-[9px] font-black text-gray-400 uppercase mt-2 hidden sm:block">Curriculum scout</span>
-            </div>
-            <!-- Step 4: Ficha de salud -->
-            <div class="relative z-10 flex flex-col items-center">
-                <button onclick="cambiarPasoSisasProfile(4)" id="step-btn-4" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">4</button>
-                <span class="text-[9px] font-black text-gray-400 uppercase mt-2 hidden sm:block">Ficha de salud</span>
-            </div>
-            <!-- Step 5: Seguridad -->
-            <div class="relative z-10 flex flex-col items-center">
-                <button onclick="cambiarPasoSisasProfile(5)" id="step-btn-5" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">5</button>
-                <span class="text-[9px] font-black text-gray-400 uppercase mt-2 hidden sm:block">Seguridad</span>
-            </div>
-        </div>
-
-        <form id="scout-perfil-multipaso-form" onsubmit="event.preventDefault();" class="space-y-8">
-            
-            <!-- PASO 1: DATOS PERSONALES -->
-            <div id="sisas-paso-1" class="space-y-6">
-                <h3 class="text-lg font-black text-indigo-950 border-b pb-2"><i class="fa-regular fa-id-card text-purple-600 mr-2"></i> Datos Personales del Miembro</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div>
-                        <label class="text-[10px] font-black text-gray-400 uppercase block mb-1">Nombre</label>
-                        <input type="text" class="w-full rounded-xl border border-gray-200 px-4 py-3 font-semibold text-gray-700 bg-gray-50/50" value="RAFAEL" readonly>
-                    </div>
-                    <div>
-                        <label class="text-[10px] font-black text-gray-400 uppercase block mb-1">Primer Apellido</label>
-                        <input type="text" class="w-full rounded-xl border border-gray-200 px-4 py-3 font-semibold text-gray-700 bg-gray-50/50" value="MAGAÑA" readonly>
-                    </div>
-                    <div>
-                        <label class="text-[10px] font-black text-gray-400 uppercase block mb-1">Segundo Apellido</label>
-                        <input type="text" class="w-full rounded-xl border border-gray-200 px-4 py-3 font-semibold text-gray-700 bg-gray-50/50 outline-none" value="RANGEL">
-                    </div>
-                    <div>
-                        <label class="text-[10px] font-bold text-gray-400 uppercase block mb-1">CURP</label>
-                        <input type="text" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-xs font-semibold text-gray-700 bg-gray-50/50" value="MARR020612HSLNGR09">
-                    </div>
-                    <div>
-                        <label class="text-[10px] font-bold text-gray-400 uppercase block mb-1">Fecha de Nacimiento</label>
-                        <input type="date" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-xs font-semibold text-gray-700 bg-gray-50/50" value="2002-06-12">
-                    </div>
-                    <div>
-                        <label class="text-[10px] font-bold text-gray-400 uppercase block mb-1">Sexo</label>
-                        <select class="w-full rounded-xl border border-gray-200 px-4 py-3 text-xs font-semibold bg-gray-50/50">
-                            <option value="H" selected>Masculino</option>
-                            <option value="M">Femenino</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PASO 2: DATOS DE CONTACTO (Inspirado en la imagen image_282382.png) -->
-            <div id="sisas-paso-2" class="hidden space-y-8">
-                <!-- Datos de Tutor / Emergencia -->
-                <div class="space-y-4">
-                    <h3 class="text-lg font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-user-shield text-purple-600 mr-2"></i> Datos del Tutor / Emergencia</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                        <div>
-                            <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Nombre</label>
-                            <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="RAFAEL">
-                        </div>
-                        <div>
-                            <label class="text-[10px] font-extrabold text-gray-500 uppercase block">Primer Apellido</label>
-                            <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="MAGAÑA">
-                        </div>
-                        <div>
-                            <label class="text-[10px] font-extrabold text-gray-500 uppercase block">Segundo Apellido</label>
-                            <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="GALLEGOS">
-                        </div>
-                        <div>
-                            <label class="text-[10px] font-extrabold text-gray-500 uppercase block">Parentesco</label>
-                            <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="Tutor">
-                        </div>
-                        <div>
-                            <label class="text-[10px] font-extrabold text-gray-500 uppercase block">Teléfono</label>
-                            <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="4444190255">
-                        </div>
-                        <div class="md:col-span-2">
-                            <label class="text-[10px] font-extrabold text-gray-500 uppercase block">Correo</label>
-                            <input type="email" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="rafael@uaslp.mx">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Datos de Contacto Regular -->
-                <div class="space-y-4">
-                    <h3 class="text-md font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-address-book text-purple-600 mr-2"></i> Datos de contacto</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                        <div>
-                            <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Nombre</label>
-                            <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-gray-50/50" placeholder="Nombre">
-                        </div>
-                        <div>
-                            <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Primer Apellido</label>
-                            <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-gray-50/50" placeholder="Primer Apellido">
-                        </div>
-                        <div>
-                            <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Segundo Apellido</label>
-                            <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-gray-50/50" placeholder="Segundo Apellido">
-                        </div>
-                        <div>
-                            <label class="text-[10px] font-extrabold text-gray-400 block">Celular / Teléfono</label>
-                            <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-gray-50" placeholder="Ej. 444...">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="text-[10px] font-extrabold text-gray-400 uppercase block mb-1">Detalles/Observaciones</label>
-                        <textarea rows="2" class="w-full rounded-xl border border-gray-200 p-3 text-xs font-semibold outline-none" placeholder="Ingresa detalles o comentarios adicionales de contacto..."></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PASO 3: CURRICULUM SCOUT (Inspirado en las imágenes de historiales scouts) -->
-            <div id="sisas-paso-3" class="hidden space-y-8">
-                
-                <!-- Datos Scout actuales -->
-                <div class="space-y-4">
-                    <h3 class="text-lg font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-shield-halved text-purple-600 mr-2"></i> Datos Scout actuales</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-                        <div>
-                            <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Miembro desde</label>
-                            <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-gray-100 text-gray-500" value="17/09/2020" readonly>
-                        </div>
-                        <div>
-                            <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Vigencia</label>
-                            <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-gray-100 text-gray-500" value="31/01/2027" readonly>
-                        </div>
-                        <div>
-                            <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Sección</label>
-                            <select id="sisas-perfil-seccion-select" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold">
-                                <option value="Clan" selected>Clan de Rovers</option>
-                                <option value="Comunidad">Comunidad de Caminantes</option>
-                                <option value="Tropa">Tropa de Scouts</option>
-                                <option value="Manada">Manada de Lobatos</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="text-[10px] font-extrabold text-gray-400 block">Provincia</label>
-                            <select class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold">
-                                <option value="SLP" selected>SAN LUIS POTOSI</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="text-[10px] font-extrabold text-gray-400 block">Grupo/Localidad</label>
-                            <select class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold">
-                                <option value="1" selected>1 - SAN LUIS POTOSI</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Listado de Historial de Cargos y Progresiones -->
-                <div class="space-y-4">
-                    <h3 class="text-md font-black text-purple-900 border-b pb-2">Datos Scout histórico</h3>
-                    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4 space-y-4">
-                        <!-- Tabla de Secciones Históricas -->
-                        <div class="overflow-hidden rounded-xl border border-gray-100 bg-white">
-                            <table class="w-full text-left text-xs border-collapse">
+                        <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+                            <table class="w-full text-left border-collapse text-xs">
                                 <thead>
-                                    <tr class="bg-gray-50 border-b text-gray-400 font-bold uppercase tracking-wider text-[9px]">
-                                        <th class="p-3">De</th>
-                                        <th class="p-3">A</th>
-                                        <th class="p-3">Provincia</th>
-                                        <th class="p-3">Grupo / Localidad</th>
-                                        <th class="p-3">Sección</th>
+                                    <tr class="bg-gray-50 text-gray-400 font-black uppercase text-[10px] border-b border-gray-100">
+                                        <th class="p-4">Concepto</th>
+                                        <th class="p-4">Monto</th>
+                                        <th class="p-4">Estatus</th>
+                                        <th class="p-4">Fecha Límite</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="border-b border-gray-50">
-                                        <td class="p-3">10/08/2023</td>
-                                        <td class="p-3">04/04/2024</td>
-                                        <td class="p-3">SAN LUIS POTOSI</td>
-                                        <td class="p-3">10 - SAN LUIS POTOSI</td>
-                                        <td class="p-3 font-bold text-indigo-600">Tropa</td>
+                                        <td class="p-4 font-bold text-indigo-950">Membresía ASMAC Nacional 2026</td>
+                                        <td class="p-4 font-semibold text-gray-600">$850.00 MXN</td>
+                                        <td class="p-4"><span class="px-2.5 py-1 rounded-full text-[9px] font-black uppercase bg-emerald-100 text-emerald-800">Pagado</span></td>
+                                        <td class="p-4 font-semibold text-gray-400">31/01/2026</td>
                                     </tr>
                                     <tr class="border-b border-gray-50">
-                                        <td class="p-3">05/09/2022</td>
-                                        <td class="p-3">05/09/2025</td>
-                                        <td class="p-3">SAN LUIS POTOSI</td>
-                                        <td class="p-3">1 - SAN LUIS POTOSI</td>
-                                        <td class="p-3 font-bold text-sky-600">Comunidad</td>
+                                        <td class="p-4 font-bold text-indigo-950">Registro Campamento Verano 2026</td>
+                                        <td class="p-4 font-semibold text-gray-600">$450.00 MXN</td>
+                                        <td class="p-4"><span class="px-2.5 py-1 rounded-full text-[9px] font-black uppercase bg-emerald-100 text-emerald-800">Pagado</span></td>
+                                        <td class="p-4 font-semibold text-gray-400">15/06/2026</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-4 font-bold text-indigo-950">Aportación para Uniforme y Insignias</td>
+                                        <td class="p-4 font-semibold text-gray-600">$180.00 MXN</td>
+                                        <td class="p-4"><span class="px-2.5 py-1 rounded-full text-[9px] font-black uppercase bg-amber-100 text-amber-800">Pendiente</span></td>
+                                        <td class="p-4 font-semibold text-gray-400">30/06/2026</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                </div>
 
-                <!-- Reconocimientos, Cursos y Certificaciones -->
-                <div class="space-y-4">
-                    <h3 class="text-md font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-ribbon text-purple-600 mr-2"></i> Reconocimientos, Cursos y Certificaciones</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm">
-                            <span class="text-[9px] font-black uppercase text-amber-500 tracking-wider block mb-2">Reconocimientos de Grupo</span>
-                            <div class="p-3 bg-gray-50 rounded-xl border border-dashed border-gray-200 flex justify-between items-center text-xs">
+                    <!-- SUB-VISTA: ANUNCIOS -->
+                    <div id="sisas-sub-anuncios" class="hidden glass-panel rounded-[32px] p-6 md:p-8 text-left space-y-6 shadow-xl">
+                        <h3 class="text-xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-bullhorn text-indigo-600"></i> Boletín de Avisos Grupo 1</h3>
+                        <p class="text-xs text-gray-500 font-medium">Entérate de las notificaciones oficiales dictadas por la Dirigencia y Jefaturas de Sección.</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-5 bg-white border border-gray-100 rounded-2xl shadow-sm space-y-3">
+                                <span class="text-[9px] font-black uppercase tracking-wider text-rose-500 block">Urgente — Dirigencia de Grupo</span>
+                                <h4 class="text-md font-extrabold text-indigo-950">Documentación de Campamento</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed font-semibold">"Todos los miembros scouts deben subir su ficha médica y responsiva firmada para el Campamento de Verano a más tardar este próximo sábado."</p>
+                            </div>
+                            <div class="p-5 bg-white border border-gray-100 rounded-2xl shadow-sm space-y-3">
+                                <span class="text-[9px] font-black uppercase tracking-wider text-indigo-500 block">Jefatura de Clan</span>
+                                <h4 class="text-md font-extrabold text-indigo-950">Consejo de Clan Extraordinario</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed font-semibold">"Este sábado tendremos junta de Clan en Morales a las 15:00 hrs para revisar los avances del proyecto de servicio ecológico."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUB-VISTA: PROYECTO DE VIDA -->
+                    <div id="sisas-sub-proyecto" class="hidden glass-panel rounded-[32px] p-6 md:p-8 text-left space-y-6 shadow-xl">
+                        <h3 class="text-xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-brain text-indigo-600"></i> Mi Proyecto de Vida Rover</h3>
+                        <p class="text-xs text-gray-500 font-medium">Tu plan de vida guía tus elecciones personales, profesionales y de servicio.</p>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div class="bg-white border border-gray-100 rounded-2xl p-5 space-y-4">
                                 <div>
-                                    <span class="font-extrabold text-indigo-950 block">DIPLOMA DE PERSEVERANCIA</span>
-                                    <span class="text-[10px] text-gray-400 font-semibold">Folio: 768/2022 — 05/05/2023</span>
+                                    <label class="text-[10px] font-black text-gray-400 uppercase block mb-1">Mis Metas de Servicio Social</label>
+                                    <textarea id="scout-meta-servicio" rows="3" class="w-full rounded-xl border border-gray-200 p-3 text-xs font-semibold focus:border-indigo-500 outline-none" placeholder="¿Cómo planeas servir a tu comunidad este trimestre?"></textarea>
                                 </div>
-                                <i class="fa-solid fa-award text-amber-500 text-lg"></i>
+                                <div>
+                                    <label class="text-[10px] font-black text-gray-400 uppercase block mb-1">Mis Retos de Carácter y Vida Profesional</label>
+                                    <textarea id="scout-meta-caracter" rows="3" class="w-full rounded-xl border border-gray-200 p-3 text-xs font-semibold focus:border-indigo-500 outline-none" placeholder="Estudios, metas deportivas o hábitos personales..."></textarea>
+                                </div>
+                                <button onclick="guardarProyectoVidaScout()" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs uppercase tracking-wider transition-all duration-300">
+                                    Guardar Avances de Proyecto
+                                </button>
+                            </div>
+
+                            <div class="bg-slate-900 rounded-2xl p-6 text-white flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <span class="text-[9px] font-black uppercase text-amber-400 tracking-wider block">Acompañamiento Rover</span>
+                                    <h4 class="text-lg font-black leading-tight">Estatus de mi Proyecto de Vida</h4>
+                                    <p class="text-xs text-gray-300 font-medium leading-relaxed">Tu plan de vida rover ha sido validado satisfactoriamente por tu sinodal asesor. Sigue registrando tus avances de crecimiento.</p>
+                                </div>
+                                <div class="border-t border-white/20 pt-4 mt-6">
+                                    <span class="text-[9px] font-black text-gray-500 uppercase block leading-none">Última Revisión</span>
+                                    <span class="text-xs font-bold text-amber-400">Hace 4 días por Sinodal Asesor</span>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm flex flex-col justify-center items-center text-center">
-                            <i class="fa-solid fa-graduation-cap text-gray-300 text-2xl mb-2"></i>
-                            <span class="text-xs font-extrabold text-gray-400 uppercase">Sin Certificaciones ASMAC Registradas</span>
-                            <p class="text-[10px] text-gray-300 font-medium">Los cursos y CLAC acreditados se registrarán automáticamente por el J.G.</p>
-                        </div>
                     </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 3. MITEQUIHUA EXPANDED SCOUT PROFILE / CURRICULUM EDITOR (De image_282382.png a image_282b1d.png) ================= -->
+        <section id="panel-scout-sisas-profile" class="hidden w-full glass-panel rounded-[32px] p-6 md:p-10 shadow-2xl border-2 border-white/50 text-left transition-apple">
+            
+            <div class="flex items-center gap-3 mb-8 border-b border-gray-100 pb-6">
+                <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-700"><i class="fa-solid fa-user-gear"></i></div>
+                <div>
+                    <h2 class="text-2xl font-black text-indigo-950">Mi Perfil Scout</h2>
+                    <p class="text-xs text-indigo-600 font-bold uppercase tracking-widest leading-none mt-1">Configuración Unificada del Registro SISAS</p>
                 </div>
             </div>
 
-            <!-- PASO 4: FICHA DE SALUD -->
-            <div id="sisas-paso-4" class="hidden space-y-8">
-                <div class="space-y-4">
-                    <h3 class="text-lg font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-notes-medical text-purple-600 mr-2"></i> Ficha de salud</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <!-- SISAS Stepper / Progress Bar (Inspirado en la imagen image_282382.png) -->
+            <div class="relative flex justify-between items-center max-w-3xl mx-auto mb-12">
+                <!-- Stepper Progress Line -->
+                <div class="absolute left-4 right-4 h-1 bg-gray-200 top-1/2 -translate-y-1/2 z-0">
+                    <div id="sisas-stepper-progress-fill" class="h-full bg-purple-500 transition-all duration-500" style="width: 25%;"></div>
+                </div>
+
+                <!-- Step 1: Datos Personales -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <button type="button" onclick="cambiarPasoSisasProfile(1)" id="step-btn-1" class="w-8 h-8 rounded-full bg-purple-600 text-white font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">1</button>
+                    <span class="text-[9px] font-black text-indigo-950 uppercase mt-2 hidden sm:block">Datos Personales</span>
+                </div>
+                <!-- Step 2: Datos de contacto -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <button type="button" onclick="cambiarPasoSisasProfile(2)" id="step-btn-2" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">2</button>
+                    <span class="text-[9px] font-black text-gray-400 uppercase mt-2 hidden sm:block">Datos de contacto</span>
+                </div>
+                <!-- Step 3: Curriculum scout -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <button type="button" onclick="cambiarPasoSisasProfile(3)" id="step-btn-3" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">3</button>
+                    <span class="text-[9px] font-black text-gray-400 uppercase mt-2 hidden sm:block">Curriculum scout</span>
+                </div>
+                <!-- Step 4: Ficha de salud -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <button type="button" onclick="cambiarPasoSisasProfile(4)" id="sisas-step-4" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">4</button>
+                    <span class="text-[9px] font-black text-gray-400 uppercase mt-2 hidden sm:block">Ficha de salud</span>
+                </div>
+                <!-- Step 5: Seguridad -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <button type="button" onclick="cambiarPasoSisasProfile(5)" id="sisas-nav-seguridad-step" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple">5</button>
+                    <span class="text-[9px] font-black text-gray-400 uppercase mt-2 hidden sm:block">Seguridad</span>
+                </div>
+            </div>
+
+            <!-- TABS DEL STEPER -->
+            <form id="scout-perfil-multipaso-form" onsubmit="event.preventDefault();" class="space-y-8">
+                
+                <!-- PASO 1: DATOS PERSONALES -->
+                <div id="sisas-paso-1" class="space-y-6">
+                    <h3 class="text-lg font-black text-indigo-950 border-b pb-2"><i class="fa-regular fa-id-card text-purple-600 mr-2"></i> Datos Personales del Miembro</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div>
-                            <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Peso (Kg)</label>
-                            <input type="number" step="0.1" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="70.0">
+                            <label class="text-[10px] font-black text-gray-400 uppercase block mb-1">Nombre</label>
+                            <input type="text" class="w-full rounded-xl border border-gray-200 px-4 py-3 font-semibold text-gray-700 bg-gray-50/50" value="RAFAEL" readonly>
                         </div>
                         <div>
-                            <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Estatura (cm)</label>
-                            <input type="number" step="0.01" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="1.73">
+                            <label class="text-[10px] font-black text-gray-400 uppercase block mb-1">Primer Apellido</label>
+                            <input type="text" class="w-full rounded-xl border border-gray-200 px-4 py-3 font-semibold text-gray-700 bg-gray-50/50" value="MAGAÑA" readonly>
                         </div>
                         <div>
-                            <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Tipo de sangre</label>
-                            <select class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold">
-                                <option value="O" selected>O</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="AB">AB</option>
-                            </select>
+                            <label class="text-[10px] font-black text-gray-400 uppercase block mb-1">Segundo Apellido</label>
+                            <input type="text" class="w-full rounded-xl border border-gray-200 px-4 py-3 font-semibold text-gray-700 bg-gray-50/50 outline-none" value="RANGEL">
                         </div>
                         <div>
-                            <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Factor RH</label>
-                            <select class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold">
-                                <option value="+" selected>+</option>
-                                <option value="-">-</option>
+                            <label class="text-[10px] font-bold text-gray-400 uppercase block mb-1">CURP</label>
+                            <input type="text" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-xs font-semibold text-gray-700 bg-gray-50/50" value="MARR020612HSLNGR09">
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-bold text-gray-400 uppercase block mb-1">Fecha de Nacimiento</label>
+                            <input type="date" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-xs font-semibold text-gray-700 bg-gray-50/50" value="2002-06-12">
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-bold text-gray-400 uppercase block mb-1">Sexo</label>
+                            <select class="w-full rounded-xl border border-gray-200 px-4 py-3 text-xs font-semibold bg-gray-50/50">
+                                <option value="H" selected>Masculino</option>
+                                <option value="M">Femenino</option>
                             </select>
                         </div>
                     </div>
                 </div>
 
-                <div class="space-y-3">
-                    <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Seguro Médico / Derechohabiencia</label>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        <label class="flex items-center gap-2 bg-gray-50 border p-3 rounded-xl cursor-pointer hover:bg-gray-100 transition-all text-xs font-bold text-gray-600">
-                            <input type="radio" name="seguro-tipo" value="IMSS" checked class="accent-purple-600"> IMSS
-                        </label>
-                        <label class="flex items-center gap-3">
-                            <input type="radio" name="seguro-medico" class="accent-tequihuaPurple">
-                            <span class="text-xs font-bold text-gray-600">ISSSTE</span>
-                        </label>
-                        <label class="flex items-center gap-3">
-                            <input type="radio" name="seguro-medico" class="accent-tequihuaPurple">
-                            <span class="text-xs font-bold text-gray-600">Seguro Popular</span>
-                        </label>
-                        <div class="col-span-2">
-                            <input type="text" class="w-full rounded-xl border p-2.5 text-xs font-semibold" placeholder="Nombre de Aseguradora Particular o Número de Póliza">
+                <!-- PASO 2: DATOS DE CONTACTO (Inspirado en la imagen image_282382.png) -->
+                <div id="sisas-paso-2" class="hidden space-y-8">
+                    <!-- Datos de Tutor / Emergencia -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-user-shield text-purple-600 mr-2"></i> Datos del Tutor / Emergencia</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Nombre</label>
+                                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="RAFAEL">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-500 uppercase block">Primer Apellido</label>
+                                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="MAGAÑA">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-500 uppercase block">Segundo Apellido</label>
+                                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="GALLEGOS">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-500 uppercase block">Parentesco</label>
+                                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="Tutor">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-500 uppercase block">Teléfono</label>
+                                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="4444190255">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="text-[10px] font-extrabold text-gray-500 uppercase block">Correo</label>
+                                <input type="email" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="rafael@uaslp.mx">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Datos de Contacto Regular -->
+                    <div class="space-y-4">
+                        <h3 class="text-md font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-address-book text-purple-600 mr-2"></i> Datos de contacto</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Nombre</label>
+                                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-gray-50/50" placeholder="Nombre">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Primer Apellido</label>
+                                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-gray-50/50" placeholder="Primer Apellido">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Segundo Apellido</label>
+                                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-gray-50/50" placeholder="Segundo Apellido">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-400 block">Celular / Teléfono</label>
+                                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-gray-50" placeholder="Ej. 444...">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-extrabold text-gray-400 uppercase block mb-1">Detalles/Observaciones</label>
+                            <textarea rows="2" class="w-full rounded-xl border border-gray-200 p-3 text-xs font-semibold outline-none" placeholder="Ingresa detalles o comentarios adicionales de contacto..."></textarea>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 border border-gray-200/50 rounded-2xl p-5 space-y-4">
-                    <span class="text-xs font-black uppercase text-indigo-900 tracking-wider block">Alergias e Información Adicional</span>
+                <!-- PASO 3: CURRICULUM SCOUT (Inspirado en las imágenes image_2823f6.png, image_2826e0.png y image_282722.png) -->
+                <div id="sisas-paso-3" class="hidden space-y-8">
                     
-                    <div>
-                        <label class="text-[10px] font-bold text-gray-400 block mb-1">Alergias Conocidas (Especificar agente y reacción)</label>
-                        <input type="text" class="w-full rounded-lg border border-gray-200 p-2.5 text-xs font-semibold" placeholder="Ej. Polvo - Asma, Nueces - Anafilaxia..." value="Ninguna">
+                    <!-- Datos Scout actuales -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-shield-halved text-purple-600 mr-2"></i> Datos Scout actuales</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Miembro desde</label>
+                                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-gray-100 text-gray-500" value="17/09/2020" readonly>
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Vigencia</label>
+                                <input type="text" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-gray-100 text-gray-500" value="31/01/2027" readonly>
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Sección</label>
+                                <select class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-white">
+                                    <option value="Clan" selected>Clan de Rovers</option>
+                                    <option value="Comunidad">Comunidad de Caminantes</option>
+                                    <option value="Tropa">Tropa de Scouts</option>
+                                    <option value="Manada">Manada de Lobatos</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-400 block">Provincia</label>
+                                <select class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-white">
+                                    <option value="SLP" selected>SAN LUIS POTOSI</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-400 block">Grupo/Localidad</label>
+                                <select class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-white">
+                                    <option value="1" selected>1 - SAN LUIS POTOSI</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Listado de Historial de Cargos y Progresiones -->
+                    <div class="space-y-4">
+                        <h3 class="text-md font-black text-purple-900 border-b pb-2">Datos Scout histórico</h3>
+                        
+                        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4 space-y-4">
+                            <!-- Tabla de Secciones Históricas -->
+                            <div class="overflow-hidden rounded-xl border border-gray-100 bg-white">
+                                <table class="w-full text-left text-xs border-collapse">
+                                    <thead>
+                                        <tr class="bg-gray-50 border-b text-gray-400 font-bold uppercase tracking-wider text-[9px]">
+                                            <th class="p-3">De</th>
+                                            <th class="p-3">A</th>
+                                            <th class="p-3">Provincia</th>
+                                            <th class="p-3">Grupo / Localidad</th>
+                                            <th class="p-3">Sección</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-b border-gray-50">
+                                            <td class="p-3">10/08/2023</td>
+                                            <td class="p-3">04/04/2024</td>
+                                            <td class="p-3">SAN LUIS POTOSI</td>
+                                            <td class="p-3">10 - SAN LUIS POTOSI</td>
+                                            <td class="p-3 font-bold text-indigo-600">Tropa</td>
+                                        </tr>
+                                        <tr class="border-b border-gray-50">
+                                            <td class="p-3">05/09/2022</td>
+                                            <td class="p-3">05/09/2025</td>
+                                            <td class="p-3">SAN LUIS POTOSI</td>
+                                            <td class="p-3">1 - SAN LUIS POTOSI</td>
+                                            <td class="p-3 font-bold text-sky-600">Comunidad</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reconocimientos, Cursos y Certificaciones (image_282722.png) -->
+                    <div class="space-y-4">
+                        <h3 class="text-md font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-ribbon text-purple-600 mr-2"></i> Reconocimientos, Cursos y Certificaciones</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Reconocimientos -->
+                            <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm">
+                                <span class="text-[9px] font-black uppercase text-amber-500 tracking-wider block mb-2">Reconocimientos de Grupo</span>
+                                <div class="p-3 bg-gray-50 rounded-xl border border-dashed border-gray-200 flex justify-between items-center text-xs">
+                                    <div>
+                                        <span class="font-extrabold text-indigo-950 block">DIPLOMA DE PERSEVERANCIA</span>
+                                        <span class="text-[10px] text-gray-400 font-semibold">Folio: 768/2022 — 05/05/2023</span>
+                                    </div>
+                                    <i class="fa-solid fa-award text-amber-500 text-lg"></i>
+                                </div>
+                            </div>
+
+                            <!-- Certificaciones ASMAC -->
+                            <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm flex flex-col justify-center items-center text-center">
+                                <i class="fa-solid fa-graduation-cap text-gray-300 text-2xl mb-2"></i>
+                                <span class="text-xs font-extrabold text-gray-400 uppercase">Sin Certificaciones ASMAC Registradas</span>
+                                <p class="text-[10px] text-gray-300 font-medium">Los cursos y CLAC acreditados se registrarán automáticamente por el J.G.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 4: FICHA DE SALUD (Inspirado en las imágenes image_28279a.png, image_282a66.png y image_282a89.png) -->
+                <div id="sisas-paso-4" class="hidden space-y-8">
+                    
+                    <!-- Ficha de Salud principal -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-notes-medical text-purple-600 mr-2"></i> Ficha de salud</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Peso (Kg)</label>
+                                <input type="number" step="0.1" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="70.0">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Estatura (cm)</label>
+                                <input type="number" step="0.01" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold" value="1.73">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Tipo de sangre</label>
+                                <select class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-white">
+                                    <option value="O" selected>O</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="AB">AB</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Factor RH</label>
+                                <select class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs font-semibold bg-white">
+                                    <option value="+" selected>+</option>
+                                    <option value="-">-</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Institución de Seguro Médico -->
+                    <div class="space-y-3">
+                        <label class="text-[10px] font-extrabold text-gray-400 uppercase block">Seguro Médico / Derechohabiencia</label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <label class="flex items-center gap-2 bg-gray-50 border p-3 rounded-xl cursor-pointer hover:bg-gray-100 transition-all text-xs font-bold text-gray-600">
+                                <input type="radio" name="seguro-tipo" value="IMSS" checked class="accent-purple-600"> IMSS
+                            </label>
+                            <label class="flex items-center gap-3">
+                                <input type="radio" name="seguro-tipo" value="ISSSTE" class="accent-tequihuaPurple">
+                                <span class="text-xs font-bold text-gray-600">ISSSTE</span>
+                            </label>
+                            <label class="flex items-center gap-3">
+                                <input type="radio" name="seguro-tipo" value="Seguro Popular" class="accent-tequihuaPurple">
+                                <span class="text-xs font-bold text-gray-600">Seguro Popular</span>
+                            </label>
+                            <div class="col-span-2">
+                                <input type="text" class="w-full rounded-xl border p-2.5 text-xs font-semibold bg-white" placeholder="Aseguradora Particular o Póliza">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alergias y Vacunación -->
+                    <div class="bg-gray-50 border border-gray-200/50 rounded-2xl p-5 space-y-4">
+                        <span class="text-xs font-black uppercase text-indigo-900 tracking-wider block">Alergias e Información Adicional</span>
+                        
+                        <div>
+                            <label class="text-[10px] font-bold text-gray-400 block mb-1">Alergias Conocidas (Especificar agente y reacción)</label>
+                            <input type="text" class="w-full rounded-lg border border-gray-200 p-2.5 text-xs font-semibold bg-white" placeholder="Ej. Polvo, Polen..." value="Ninguna">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-[10px] font-bold text-gray-400 block mb-1">Vacunas Aplicadas (Check e ingrese fechas)</label>
+                                <div class="space-y-2 text-xs font-semibold text-gray-600">
+                                    <label class="flex items-center gap-2"><input type="checkbox" checked class="accent-purple-600"> Vacuna Tétanos (13/04/2024)</label>
+                                    <label class="flex items-center gap-2"><input type="checkbox" checked class="accent-purple-600"> Vacuna COVID (15/10/2022)</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-bold text-gray-400 block mb-1">¿Sabes nadar?</label>
+                                <select class="w-full rounded-lg border px-3 py-2 text-xs font-semibold bg-white">
+                                    <option value="Si" selected>Sí (Avanzado)</option>
+                                    <option value="Intermedio">Sí (Intermedio / Básico)</option>
+                                    <option value="No">No sé nadar</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 5: SEGURIDAD Y AUTORIZACIÓN (Inspirado en la imagen image_282b1d.png) -->
+                <div id="sisas-paso-5" class="hidden space-y-6">
+                    <h3 class="text-2xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-lock text-indigo-600"></i> Firma y Contraseña de Autorización</h3>
+                    
+                    <div class="p-6 bg-purple-50 border border-indigo-100 rounded-2xl space-y-4">
+                        <span class="text-xs font-black uppercase text-indigo-700 tracking-wider block">Firma Digital MiTequihua</span>
+                        <h4 class="text-md font-extrabold text-indigo-950">Contraseña de Autorización Digital</h4>
+                        <p class="text-xs text-gray-500 font-semibold leading-relaxed">"La Contraseña de autorización es el medio digital por el cual podrás realizar autorizaciones dentro del sistema y evitará que se tenga que presentar documentación impresa para su autorización y por tanto agilizará los procesos de validación."</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="text-[10px] font-bold text-gray-400 block mb-1">Vacunas Aplicadas (Check e ingrese fechas)</label>
-                            <div class="space-y-2 text-xs font-semibold text-gray-600">
-                                <label class="flex items-center gap-2"><input type="checkbox" checked class="accent-purple-600"> Vacuna Tétanos (13/04/2024)</label>
-                                <label class="flex items-center gap-2"><input type="checkbox" checked class="accent-purple-600"> Vacuna COVID (15/10/2022)</label>
-                            </div>
-                        </div>
-                        <div>
-                            <label class="text-[10px] font-bold text-gray-400 block mb-1">¿Sabes nadar?</label>
-                            <select class="w-full rounded-lg border px-3 py-2 text-xs font-semibold">
-                                <option value="Si" selected>Sí (Avanzado)</option>
-                                <option value="Intermedio">Sí (Intermedio / Básico)</option>
-                                <option value="No">No sé nadar</option>
-                            </select>
-                        </div>
+                        <button type="button" onclick="lanzarAlert('Descargar INE', 'La descarga de la carátula de identificación oficial del tutor se encuentra temporalmente disponible para visualización.')" class="p-4 bg-amber-500 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl hover:bg-amber-600 transition-apple shadow-md">
+                            Descargar INE
+                        </button>
+                        <button type="button" onclick="lanzarAlert('Descargar Carátula', 'Tu carátula digital SISAS ha sido descargada satisfactoriamente.')" class="p-4 bg-purple-600 text-white font-black text-xs uppercase tracking-wider rounded-xl hover:bg-purple-700 transition-apple shadow-md">
+                            Imprimir Currículum / Resumen
+                        </button>
                     </div>
                 </div>
-            </div>
 
-            <!-- PASO 5: SEGURIDAD Y AUTORIZACIÓN (Inspirado en la imagen image_282b1d.png) -->
-            <div id="sisas-paso-5" class="hidden space-y-6">
-                <h3 class="text-2xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-lock text-indigo-600"></i> Firma y Contraseña de Autorización</h3>
-                
-                <div class="p-6 bg-purple-50 border border-indigo-100 rounded-2xl space-y-4">
-                    <span class="text-xs font-black uppercase text-indigo-700 tracking-wider block">Firma Digital MiTequihua</span>
-                    <h4 class="text-md font-extrabold text-indigo-950">Contraseña de Autorización Digital</h4>
-                    <p class="text-xs text-gray-500 font-semibold leading-relaxed">"La Contraseña de autorización es el medio digital por el cual podrás realizar autorizaciones dentro del sistema y evitará que se tenga que presentar documentación impresa para su autorización y por tanto agilizará los procesos de validación."</p>
+                <!-- Barra de Navegación de Apartados -->
+                <div class="barra-navegacion flex justify-between mt-8 pt-6 border-t border-gray-100">
+                    <button type="button" onclick="cancelarEdicionPerfilSisas()" class="btn-nav-pop btn-izq text-gray-500 hover:bg-gray-100 px-6 py-3 rounded-xl font-bold transition-apple">
+                        Salir
+                    </button>
+                    <div class="flex gap-3">
+                        <button type="button" id="sisas-btn-anterior-step" onclick="cambiarPasoSisasProfileDirecto(-1)" class="px-5 py-3 text-xs font-black text-gray-400 bg-gray-100 hover:bg-gray-200 rounded-xl transition-apple" disabled>
+                            Regresar
+                        </button>
+                        <button type="button" id="sisas-btn-siguiente-step" onclick="cambiarPasoSisasProfileDirecto(1)" class="px-6 py-3 text-xs font-black text-white bg-lime-600 hover:bg-lime-700 rounded-xl transition-apple shadow-md">
+                            Siguiente
+                        </button>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <button onclick="lanzarAlert('Descargar INE', 'La descarga de la carátula de identificación oficial del tutor se encuentra temporalmente disponible para visualización.')" class="p-4 bg-amber-500 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl hover:bg-amber-600 transition-apple shadow-md">
-                        Descargar INE
-                    </button>
-                    <button onclick="lanzarAlert('Descargar Carátula', 'Tu carátula digital SISAS ha sido descargada satisfactoriamente.')" class="p-4 bg-purple-600 text-white font-black text-xs uppercase tracking-wider rounded-xl hover:bg-purple-700 transition-apple shadow-md">
-                        Imprimir Currículum / Resumen
-                    </button>
-                </div>
-            </div>
+            </form>
+        </section>
 
-            <div class="barra-navegacion flex justify-between mt-8 pt-6 border-t border-gray-100">
-                <button type="button" onclick="cancelarEdicionPerfilSisas()" class="btn-nav-pop btn-izq text-gray-500 hover:bg-gray-100 px-6 py-3 rounded-xl font-bold transition-apple">
-                    Salir
-                </button>
-                <div class="flex gap-3">
-                    <button id="sisas-btn-anterior-step" onclick="cambiarPasoSisasProfileDirecto(-1)" class="px-5 py-3 text-xs font-black text-gray-400 bg-gray-100 hover:bg-gray-200 rounded-xl transition-apple" disabled>
-                        Regresar
-                    </button>
-                    <button id="sisas-btn-siguiente-step" onclick="cambiarPasoSisasProfileDirecto(1)" class="px-6 py-3 text-xs font-black text-white bg-lime-600 hover:bg-lime-700 rounded-xl transition-apple shadow-md">
-                        Siguiente
-                    </button>
-                </div>
-            </div>
-
-        </form>
-    </section>
-
-    <!-- CRÉDITOS -->
-    <footer class="mt-16 pb-8 text-center text-[10px] font-semibold text-gray-400 tracking-wide uppercase opacity-75">
-        Plataforma diseñada y desarrollada por Rafael Magaña Rangel
-    </footer>
+    </main>
 
     <!-- MODAL ALERT REEMPLAZO DE ALERT() -->
     <div id="custom-alert" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm transition-opacity duration-300">
@@ -1234,22 +912,21 @@
         let currentRolScouter = "Dirigencia"; // "Dirigencia", "Manada", "Tropa", "Comunidad", "Clan"
         let editorPreguntaIndexSeleccionada = 0; // Índice de la pregunta que se edita (0 a 9)
         let pasoSisasProfileActual = 1; // 1 a 5
-        let scoutLogueado = null; // Guardará el objeto scout con sesión activa
+        let loggedInScoutRole = ""; // Para mantener un registro de la sección activa de la cuenta
         
-        // Base de Datos Estructurada de Usuarios Scouts (Seguridad y Acceso)
-        const usuariosScout = {
-            "m": { nombre: "Rafael Magaña Rangel", seccion: "Manada", logo: "Logo 2.png", cum: "SLP1820165", cargo: "Lobo Solitario / Subguía" },
-            "t": { nombre: "Rafael Magaña Rangel", seccion: "Tropa", logo: "Logo 3.png", cum: "SLP1820165", cargo: "Guía de Patrulla" },
-            "co": { nombre: "Rafael Magaña Rangel", seccion: "Comunidad", logo: "Logo 4.png", cum: "SLP1820165", cargo: "Caminante de Equipo" },
-            "cl": { nombre: "Rafael Magaña Rangel", seccion: "Clan", logo: "Logo 5.png", cum: "SLP1820165", cargo: "Representante de Sección" },
-            "cl1": { nombre: "Rafael Magaña Rangel", seccion: "Clan", logo: "Logo 5.png", cum: "SLP1820165", cargo: "Representante de Sección" }, // fallback
-            "d": { nombre: "Rafael Magaña Rangel", seccion: "Dirigencia", logo: "Logo 1.png", cum: "SLP1820165", cargo: "Jefe de Grupo" }
-        };
-
         // Estado actual de respuestas
         let respuestasSesion = {
             rama: "",
-            p1: "", p2: 5, p3: "", p4: "", p5: 3, p6: "", p7: "", p8: "", p9: "", p10: ""
+            p1: "", // Diversidad
+            p2: 5,  // Desempeño Dirigentes (1-10)
+            p3: "", // Sinergia
+            p4: "", // Progresión
+            p5: 3,  // Economía (1-5)
+            p6: "", // Áreas de preferencia
+            p7: "", // Texto libre cambio
+            p8: "", // Seguridad
+            p9: "", // Equidad
+            p10: "" // Idea Loca
         };
 
         // Estado local de Reportes Semanales de KPIs Validados por Scouters
@@ -1287,10 +964,10 @@
                 { id: 3, type: "list", title: "¿Cómo marcha la mística, planeación y trabajo interno dentro de tu Equipo?", options: [ { val: "Fuerte", icon: "fa-hands-holding", color: "emerald", title: "Unión Fuerte", desc: "Excelente distribución de tareas y apoyo mutuo constante." }, { val: "Division", icon: "fa-bolt", color: "amber", title: "Desorganización", desc: "Dificultad para ponernos de acuerdo o apatía temporal." }, { val: "FaltaIntegracion", icon: "fa-circle-exclamation", color: "rose", title: "Falta de Equipo", desc: "Se siente recarga de trabajo en pocos integrantes o exclusión." } ] },
                 { id: 4, type: "grid", title: "¿Sientes que la actividad de hoy aporta a tu progresión de caminante (Búsqueda, Encuentro, Desafío)?", options: [ { val: "Si", icon: "🏅", title: "¡Sí, totalmente!", desc: "Fortalece mis proyectos personales y progresión técnica." }, { val: "Medias", icon: "⏳", title: "A medias", desc: "Hubo algo de avance pero faltó mayor claridad pedagógica." }, { val: "No", icon: "❌", title: "No aportó", desc: "Siento que las juntas se volvieron muy teóricas." } ] },
                 { id: 5, type: "range", title: "¿Qué tan accesibles o viables ves los presupuestos para los proyectos de Comunidad?", min: 1, max: 5, def: 3, left: "Muy Accesibles 🪙", right: "Muy Difícil Costear 💸" },
-                { id: 6, type: "grid", title: "¿En qué área de proyectos te gustaría que la Comunidad de Caminantes se enfocara más?", options: [ { val: "Supervivencia", icon: "🌲", title: "Expedición", desc: "Retos de montaña, campamento sin huella y cartografía avanzada." }, { val: "Servicio", icon: "❤️", title: "Impacto", desc: "Acción social real, voluntariado ecológico and proyectos comunitarios." }, { val: "Extremo", icon: "🧗", title: "Desafíos Físicos", desc: "Deportes de aventura, rapel, orientación y juegos extremos." } ] },
+                { id: 6, type: "grid", title: "¿En qué área de proyectos te gustaría que la Comunidad de Caminantes se enfocara más?", options: [ { val: "Supervivencia", icon: "🌲", title: "Expedición", desc: "Retos de montaña, campamento sin huella y cartografía avanzada." }, { val: "Servicio", icon: "❤️", title: "Impacto", desc: "Acción social real, voluntariado ecológico y proyectos comunitarios." }, { val: "Extremo", icon: "🧗", title: "Desafíos Físicos", desc: "Deportes de aventura, rapel, orientación y juegos extremos." } ] },
                 { id: 7, type: "textarea", title: "Si pudieras proponer o modificar un artículo del reglamento interno de la Comunidad, ¿cuál sería?", placeholder: "Escribe tu propuesta constructiva para el Congreso de Comunidad..." },
                 { id: 8, type: "grid", title: "¿Cómo consideras la gestión de riesgos y seguridad durante las expediciones y campamentos?", options: [ { val: "Inseguro", icon: "⚠️", title: "Deficiente", desc: "Se descuidaron algunos aspectos de seguridad o rutas." }, { val: "Bien", icon: "👍", title: "Buena", desc: "Me siento seguro con la planeación de la Jefatura." }, { val: "Excelente", icon: "🛡️", title: "Excelente", desc: "Análisis previo de riesgos, equipamiento y monitoreo constante." } ] },
-                { id: 9, type: "grid", title: "Sientes que la Comunidad es un espacio de verdadera inclusión, respeto y equidad?", options: [ { val: "Excelente", icon: "✨", title: "Siempre inclusivo", desc: "Todos los caminantes y equipos son valorados y respetados." }, { val: "Excluyente", icon: "💬", title: "Hay exclusión", desc: "Siento favoritismos o rechazo en ocasiones." }, { val: "Neutro", icon: "😐", title: "Indiferente", desc: "Casi no me involucro de manera personal." } ] },
+                { id: 9, type: "grid", title: "¿Sientes que la Comunidad es un espacio de verdadera inclusión, respeto y equidad?", options: [ { val: "Excelente", icon: "✨", title: "Siempre inclusivo", desc: "Todos los caminantes y equipos son valorados y respetados." }, { val: "Excluyente", icon: "💬", title: "Hay exclusión", desc: "Siento favoritismos o rechazo en ocasiones." }, { val: "Neutro", icon: "😐", title: "Indiferente", desc: "Casi no me involucro de manera personal." } ] },
                 { id: 10, type: "textarea", title: "Para finalizar, propón una expedición o proyecto loco que te gustaría realizar en este ciclo de programa:", placeholder: "¡Ejemplo: Una expedición de alta montaña con vivac en la cumbre!" }
             ],
             Clan: [
@@ -1310,7 +987,7 @@
         // Estado del banco de preguntas dinámico (se carga de localStorage o usa el default)
         let bancoPreguntas = JSON.parse(localStorage.getItem('bancoPreguntas_tequivoz')) || bancoPreguntasPredeterminado;
 
-        // Configuración y Inicialización de Firebase
+        // Configuración y Inicialización de Firebase (Simulación de Realtime Firestore en Frontend para GitHub Pages)
         const appId = 'tequivoz-gpo1';
         let firebaseConfig = {
             apiKey: "AIzaSyAs-demo-key-for-github-pages",
@@ -1344,6 +1021,7 @@
             snapshot.forEach((doc) => {
                 surveysList.push(doc.data());
             });
+            // Si el panel de administración está abierto, refrescar UI
             if (!document.getElementById('panel-scouter').classList.contains('hidden')) {
                 actualizarDashboardSeccionUI();
             }
@@ -1380,7 +1058,6 @@
             document.getElementById('custom-alert-message').innerText = mensaje;
             document.getElementById('custom-alert').classList.remove('hidden');
         }
-        window.lanzarAlert = lanzarAlert;
 
         function cerrarAlert() {
             document.getElementById('custom-alert').classList.add('hidden');
@@ -1526,8 +1203,10 @@
 
             container.innerHTML = html;
 
+            // Actualizar interfaz del contador
             document.getElementById('contador-progreso').innerText = `Pregunta ${preguntaActual + 1} de ${totalPreguntas}`;
 
+            // Mover token de aventura elásticamente
             const pct = ((preguntaActual) / (totalPreguntas - 1)) * 100;
             document.getElementById('progreso-barra').style.width = pct + '%';
             document.getElementById('token-scout').style.left = pct + '%';
@@ -1538,8 +1217,10 @@
                 token.style.transform = 'scale(1) translateX(-50%)';
             }, 300);
 
+            // Bloquear anterior si es el inicio
             document.getElementById('btn-anterior').disabled = (preguntaActual === 0);
             
+            // Texto del botón del final
             if (preguntaActual === totalPreguntas - 1) {
                 document.getElementById('btn-siguiente').innerHTML = 'Terminar Aventura <i class="fa-solid fa-circle-check ml-2"></i>';
             } else {
@@ -1547,6 +1228,7 @@
             }
         }
 
+        // Registrar respuestas individuales
         function registrarP(pregunta, valor, btn) {
             respuestasSesion[`p${pregunta}`] = valor;
             
@@ -1581,14 +1263,16 @@
                 } else if (id === 5) {
                     if (val <= 2) extra = "- Excelente / Muy accesible 🪙";
                     else if (val == 3) extra = "- Moderado / Balanceado";
-                    else extra = "- Muy caro / de costear 💸";
+                    else extra = "- Muy caro / Difícil participar 💸";
                 }
                 feedbackEl.innerText = `Calificación: ${val} ${extra}`;
             }
         }
         window.actualizarFeedbackRango = actualizarFeedbackRango;
 
+        // Controlador de navegación de la encuesta
         function cambiarP(direccion) {
+            // Guardar texto abierto de manera explícita si aplica antes de cambiar de índice
             const txtArea = document.getElementById('texto-textarea-dinamico');
             if (txtArea) {
                 const qList = bancoPreguntas[seccionActiva];
@@ -1621,6 +1305,7 @@
                 btnSig.innerHTML = 'Enviando... <i class="fa-solid fa-spinner animate-spin ml-2"></i>';
             }
 
+            // Capturar última respuesta de texto abierto si se omitió el evento input
             const txtArea = document.getElementById('texto-textarea-dinamico');
             if (txtArea) {
                 const qList = bancoPreguntas[seccionActiva];
@@ -1628,6 +1313,7 @@
                 respuestasSesion[`p${q.id}`] = txtArea.value;
             }
 
+            // Datos estructurados limpios
             const docData = {
                 rama: respuestasSesion.rama,
                 p1: respuestasSesion.p1 || "Divertida",
@@ -1650,6 +1336,7 @@
             };
 
             try {
+                // Agregar documento a Firebase Firestore con timeout de seguridad
                 const firestoreSavePromise = addDoc(surveysCollectionRef, docData);
                 const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error("Timeout de conexión")), 2000));
                 
@@ -1660,6 +1347,7 @@
                 guardarLocalmente();
                 lanzarAlert("¡Aventura Completada! ⛺", "Tu registro ha sido guardado localmente de forma segura debido a baja señal.");
             } finally {
+                // Esperar que el modal sea leído y recargar el navegador limpio para destruir datos
                 setTimeout(() => {
                     window.location.reload();
                 }, 3000);
@@ -1687,6 +1375,7 @@
             const pass = document.getElementById('admin-pass').value.toLowerCase().trim();
             let loginValido = false;
 
+            // Mapeo estricto de contraseñas requeridas
             if (user === 'manada' && pass === 'm1') {
                 currentRolScouter = "Manada";
                 activeDashboardSection = "Manada";
@@ -1705,7 +1394,7 @@
                 loginValido = true;
             } else if (user === 'dirigencia' && pass === 'tequihua1') {
                 currentRolScouter = "Dirigencia";
-                activeDashboardSection = "Manada"; 
+                activeDashboardSection = "Manada"; // Dirigencia abre Manada primero pero puede cambiar
                 loginValido = true;
             }
 
@@ -1713,42 +1402,84 @@
                 configurarVisibilidadSegunRol();
                 seleccionarSeccionDashboard(activeDashboardSection);
                 mostrarSeccion('panel-scouter');
-                document.body.style.backgroundColor = '#f5f5f7'; 
+                document.body.style.backgroundColor = '#f5f5f7'; // fondo premium de analytics
             } else {
                 lanzarAlert("Acceso Denegado", "La clave Tequihua es incorrecta.");
             }
         }
         window.validarCredenciales = validarCredenciales;
 
-        // ACCESO MIEMBROS SCOUT (CUM y Password)
+        // ACCESO MIEMBROS SCOUT (CUM y Password corregidos con filtros específicos)
         function mostrarModalAutenticarScout() {
             mostrarSeccion('puerta-autenticacion-scout');
         }
         window.mostrarModalAutenticarScout = mostrarModalAutenticarScout;
 
         function validarCredencialesScout() {
-            const cumInput = document.getElementById('scout-cum-input').value.trim().toLowerCase();
-            const passInput = document.getElementById('scout-password-input').value.trim();
+            const cum = document.getElementById('scout-cum-input').value.trim().toLowerCase();
+            const pass = document.getElementById('scout-password-input').value.trim();
 
-            if (passInput === "1" && (cumInput === "m" || cumInput === "t" || cumInput === "co" || cumInput === "cl" || cumInput === "d")) {
-                scoutLogueado = usuariosScout[cumInput];
-                
-                // Actualizar nombres y cargos del panel dinámicamente
-                document.getElementById('scout-display-nombre').innerText = scoutLogueado.nombre;
-                document.getElementById('scout-display-cum').innerText = `CUM: ${scoutLogueado.cum}`;
-                document.getElementById('scout-display-cargo').innerText = `Cargo: ${scoutLogueado.cargo}`;
-                document.getElementById('scout-badge-rama').innerText = `${scoutLogueado.seccion} de Grupo`;
-                document.getElementById('scout-badge-rama').className = `text-xs font-black uppercase bg-indigo-50 px-3 py-1 rounded-full text-${scoutLogueado.seccion.toLowerCase()}`;
-                
-                // Actualizar selección por defecto en la edición de perfil (Paso 3)
-                document.getElementById('sisas-perfil-seccion-select').value = scoutLogueado.seccion;
+            let valid = false;
+            let role = "";
+            let nombreCompleto = "";
+            let cumOficial = "";
+            let sectionName = "";
 
-                // Redirigir al panel de cuenta de MiTequihua (image_281b7d.png)
+            if (pass === "1") {
+                if (cum === "m") {
+                    valid = true;
+                    role = "Manada";
+                    nombreCompleto = "Lobato Ejemplo";
+                    cumOficial = "SLP1820165M";
+                    sectionName = "Manada de Lobatos";
+                } else if (cum === "t") {
+                    valid = true;
+                    role = "Tropa";
+                    nombreCompleto = "Scout Ejemplo";
+                    cumOficial = "SLP1820165T";
+                    sectionName = "Tropa de Scouts";
+                } else if (cum === "co") {
+                    valid = true;
+                    role = "Comunidad";
+                    nombreCompleto = "Caminante Ejemplo";
+                    cumOficial = "SLP1820165CO";
+                    sectionName = "Comunidad de Caminantes";
+                } else if (cum === "cl") {
+                    valid = true;
+                    role = "Clan";
+                    nombreCompleto = "Rafael Magaña Rangel";
+                    cumOficial = "SLP1820165";
+                    sectionName = "Clan de Rovers";
+                } else if (cum === "d") {
+                    valid = true;
+                    role = "Dirigencia";
+                    nombreCompleto = "Dirigente Ejemplo";
+                    cumOficial = "SLP1820165D";
+                    sectionName = "Dirigencia de Grupo";
+                }
+            }
+
+            if (valid) {
+                loggedInScoutRole = role;
+                
+                // Actualizar info del perfil de manera dinámica
+                document.getElementById('scout-profile-name-text').innerText = nombreCompleto;
+                document.getElementById('scout-header-name').innerText = `Hola, ${nombreCompleto.split(" ")[0].toUpperCase()}`;
+                document.getElementById('scout-profile-cum-text').innerText = `CUM: ${cumOficial}`;
+                document.getElementById('scout-profile-role-badge').innerText = sectionName;
+                document.getElementById('scout-profile-section-text').innerText = sectionName;
+                
+                // Inicializar avatar
+                const initials = nombreCompleto.split(" ").map(n => n[0]).join("").slice(0, 2).toUpperCase();
+                document.getElementById('scout-avatar-btn').innerText = initials[0];
+                document.getElementById('scout-avatar-profile-card').innerText = initials;
+
+                // Mostrar Dashboard de MiTequihua
                 mostrarSeccion('panel-scout-sisas');
-                document.body.style.backgroundColor = '#f8fafc'; 
+                document.body.style.backgroundColor = '#f8fafc'; // fondo premium de SISAS portal
                 cambiarSeccionSisas('home');
             } else {
-                lanzarAlert("Acceso Denegado", "CUM o Contraseña incorrectos. Inténtalo de nuevo.");
+                lanzarAlert("Acceso Denegado", "CUM o Contraseña incorrectos.");
             }
         }
         window.validarCredencialesScout = validarCredencialesScout;
@@ -1758,7 +1489,7 @@
         }
         window.cerrarSesionScout = cerrarSesionScout;
 
-        // MiTequihua Tabs Ruteador
+        // SISAS Tabs Ruteador
         function cambiarSeccionSisas(idSubSeccion) {
             const secciones = ['sisas-sub-home', 'sisas-sub-calendario', 'sisas-sub-pagos', 'sisas-sub-anuncios', 'sisas-sub-proyecto'];
             secciones.forEach(id => {
@@ -1772,6 +1503,7 @@
                 }
             });
 
+            // Resaltar nav activo
             const navIds = ['home', 'calendario', 'pagos', 'anuncios', 'proyecto'];
             navIds.forEach(id => {
                 const el = document.getElementById(`sisas-nav-${id}`);
@@ -1789,43 +1521,52 @@
         window.cambiarTabSisas = cambiarSeccionSisas;
         window.cambiarSeccionSisas = cambiarSeccionSisas;
 
-        // Abrir encuestas de sección directamente desde el portal MiTequihua
-        // Habilitando restricción de encuestas: oculta los botones que no corresponden a su sección.
+        // Filtro dinámico de encuestas por sección de pertenencia
         function abrirEncuestasDeSeccion() {
-            const seccionScout = scoutLogueado ? scoutLogueado.seccion : "Clan";
-            
-            // Mostrar la bienvenida de encuestas
             mostrarSeccion('pantalla-inicio');
-            
-            // Restringir y ocultar de forma estricta las tarjetas de las otras secciones
-            const seccionesSocioScouts = ["Manada", "Tropa", "Comunidad", "Clan"];
-            seccionesSocioScouts.forEach(s => {
-                const cardBtn = document.getElementById(`home-card-${s}`);
-                if (cardBtn) {
-                    if (s === seccionScout || seccionScout === "Dirigencia") {
-                        cardBtn.style.display = "flex";
-                    } else {
-                        cardBtn.style.display = "none";
-                    }
-                }
-            });
+            document.body.style.backgroundColor = '#fcf8f2';
+
+            const btnManada = document.getElementById('btn-home-manada');
+            const btnTropa = document.getElementById('btn-home-tropa');
+            const btnComunidad = document.getElementById('btn-home-comunidad');
+            const btnClan = document.getElementById('btn-home-clan');
+
+            // Mostrar todos por defecto (o si es dirigente)
+            btnManada.classList.remove('hidden');
+            btnTropa.classList.remove('hidden');
+            btnComunidad.classList.remove('hidden');
+            btnClan.classList.remove('hidden');
+
+            // Filtrar según el rol del scout que inició sesión
+            if (loggedInScoutRole === "Manada") {
+                btnTropa.classList.add('hidden');
+                btnComunidad.classList.add('hidden');
+                btnClan.classList.add('hidden');
+            } else if (loggedInScoutRole === "Tropa") {
+                btnManada.classList.add('hidden');
+                btnComunidad.classList.add('hidden');
+                btnClan.classList.add('hidden');
+            } else if (loggedInScoutRole === "Comunidad") {
+                btnManada.classList.add('hidden');
+                btnTropa.classList.add('hidden');
+                btnClan.classList.add('hidden');
+            } else if (loggedInScoutRole === "Clan") {
+                btnManada.classList.add('hidden');
+                btnTropa.classList.add('hidden');
+                btnComunidad.classList.add('hidden');
+            }
         }
         window.abrirEncuestasDeSeccion = abrirEncuestasDeSeccion;
 
-        function cancelarEncuestasIrAlDashboard() {
-            mostrarSeccion('panel-scout-sisas');
-            cambiarSeccionSisas('home');
-        }
-        window.cancelarEncuestasIrAlDashboard = cancelarEncuestasIrAlDashboard;
-
         function abrirPerfilScoutCompleto() {
             mostrarSeccion('panel-scout-sisas-profile');
-            cambiarPasoSisasProfileDirecto(0); 
+            cambiarPasoSisasProfileDirecto(0); // Reiniciar al paso 1
         }
         window.abrirPerfilScoutCompleto = abrirPerfilScoutCompleto;
 
         function cancelarEdicionPerfilSisas() {
             mostrarSeccion('panel-scout-sisas');
+            document.body.style.backgroundColor = '#f8fafc';
         }
         window.cancelarEdicionPerfilSisas = cancelarEdicionPerfilSisas;
 
@@ -1843,6 +1584,7 @@
 
             pasoSisasProfileActual = nextStep;
 
+            // Ocultar/mostrar divs de paso
             for (let i = 1; i <= 5; i++) {
                 const stepDiv = document.getElementById(`sisas-paso-${i}`);
                 if (stepDiv) {
@@ -1854,6 +1596,7 @@
                 }
             }
 
+            // Actualizar estilo visual del botón del stepper en la barra
             function stepBtnStyle(id, active, checked) {
                 const btn = document.getElementById(id);
                 if (btn) {
@@ -1873,22 +1616,33 @@
             stepBtnStyle("step-btn-1", pasoSisasProfileActual === 1, pasoSisasProfileActual > 1);
             stepBtnStyle("step-btn-2", pasoSisasProfileActual === 2, pasoSisasProfileActual > 2);
             stepBtnStyle("step-btn-3", pasoSisasProfileActual === 3, pasoSisasProfileActual > 3);
-            stepBtnStyle("step-btn-4", pasoSisasProfileActual === 4, pasoSisasProfileActual > 4);
-            stepBtnStyle("step-btn-5", pasoSisasProfileActual === 5, pasoSisasProfileActual > 5);
+            stepBtnStyle("sisas-step-4", pasoSisasProfileActual === 4, pasoSisasProfileActual > 4);
+            stepBtnStyle("sisas-nav-seguridad-step", pasoSisasProfileActual === 5, pasoSisasProfileActual > 5);
 
+            // Rellenar barra de progreso
             const fillPct = ((pasoSisasProfileActual - 1) / 4) * 100;
-            const pFill = document.getElementById('sisas-stepper-progress-fill');
-            if (pFill) pFill.style.width = `${fillPct}%`;
+            const progressFill = document.getElementById('sisas-stepper-progress-fill');
+            if (progressFill) {
+                progressFill.style.width = `${fillPct}%`;
+            }
 
-            const bAnt = document.getElementById('sisas-btn-anterior-step');
-            if (bAnt) bAnt.disabled = (pasoSisasProfileActual === 1);
+            // Botones de control
+            const btnAnt = document.getElementById('sisas-btn-anterior-step');
+            const btnSig = document.getElementById('sisas-btn-siguiente-step');
             
-            const bSig = document.getElementById('sisas-btn-siguiente-step');
-            if (bSig) {
+            if (btnAnt) {
+                btnAnt.disabled = (pasoSisasProfileActual === 1);
+            }
+            if (btnSig) {
                 if (pasoSisasProfileActual === 5) {
-                    bSig.innerHTML = 'Guardar Datos <i class="fa-solid fa-cloud-arrow-up ml-1"></i>';
+                    btnSig.innerHTML = 'Guardar Datos <i class="fa-solid fa-cloud-arrow-up ml-1"></i>';
+                    btnSig.onclick = () => {
+                        lanzarAlert("Perfil Actualizado", "Tus datos médicos y personales se han actualizado correctamente en MiTequihua.");
+                        cancelarEdicionPerfilSisas();
+                    };
                 } else {
-                    bSig.innerHTML = 'Siguiente <i class="fa-solid fa-arrow-right ml-1"></i>';
+                    btnSig.innerHTML = 'Siguiente <i class="fa-solid fa-arrow-right ml-1"></i>';
+                    btnSig.onclick = () => cambiarPasoSisasProfileDirecto(1);
                 }
             }
         }
@@ -1899,10 +1653,21 @@
         }
         window.cambiarPasoSisasProfile = cambiarPasoSisasProfile;
 
+        function cambiarPasoSisasCurriculum() {
+            cambiarPasoSisasProfile(3);
+        }
+        window.cambiarPasoSisasCurriculum = cambiarPasoSisasCurriculum;
+
+        function cambiarStepSisas(step) {
+            cambiarPasoSisasProfile(step);
+        }
+        window.cambiarStepSisas = cambiarStepSisas;
+
         function guardarProyectoVidaScout() {
             const servicio = document.getElementById('scout-meta-servicio').value;
             const caracter = document.getElementById('scout-meta-caracter').value;
             
+            // Guardar localmente
             localStorage.setItem('scout_meta_servicio', servicio);
             localStorage.setItem('scout_meta_caracter', caracter);
 
@@ -1910,6 +1675,7 @@
         }
         window.guardarProyectoVidaScout = guardarProyectoVidaScout;
 
+        // Configurar Dashboard y Wix-Style Editor según permisos de rol
         function configurarVisibilidadSegunRol() {
             const selectorDash = document.getElementById('selector-secciones-dash');
             const subtext = document.getElementById('subtitulo-rol-scouter');
@@ -1918,21 +1684,25 @@
                 selectorDash.classList.remove('hidden');
                 subtext.innerText = "Acceso Maestro Completo — Grupo 1 Tequihua";
             } else {
-                selectorDash.classList.add('hidden'); 
+                selectorDash.classList.add('hidden'); // Ocultar selector de otras ramas si el jefe de sección tiene rol limitado
                 subtext.innerText = `Acceso Restringido a Jefatura de ${currentRolScouter}`;
             }
 
+            // Cambiar por defecto el Wix-Style editor al rol activo
             document.getElementById('editor-nombre-seccion-activa').innerText = activeDashboardSection;
             inicializarWixEditorPreguntas();
         }
 
+        // Alternar visualización del dashboard para dirigencia de grupo
         function seleccionarSeccionDashboard(seccion) {
+            // Impedir alteración de dashboard si el rol de usuario no tiene permisos maestros
             if (currentRolScouter !== "Dirigencia" && currentRolScouter !== seccion) {
                 return;
             }
 
             activeDashboardSection = seccion;
             
+            // Toggle visual de botones
             const secciones = ["Manada", "Tropa", "Comunidad", "Clan"];
             secciones.forEach((s) => {
                 const btn = document.getElementById(`dash-btn-${s}`);
@@ -1950,6 +1720,7 @@
         }
         window.seleccionarSeccionDashboard = seleccionarSeccionDashboard;
 
+        // Recalcular métricas a partir del histórico y generar Plan de Acción Pedagógico e Indicadores KPIs
         function actualizarDashboardSeccionUI() {
             const localFallback = JSON.parse(localStorage.getItem('tequivoz_fallback') || '[]');
             const totalSurveys = [...surveysList, ...localFallback];
@@ -1962,6 +1733,7 @@
             document.getElementById('dash-total-registros').innerText = total;
 
             if (total === 0) {
+                // Limpiar Dashboard ante base de datos vacía
                 document.getElementById('dash-promedio-diversion').innerText = "Sin Datos";
                 document.getElementById('dash-promedio-economia').innerText = "Sin Datos";
                 document.getElementById('dash-preferencia-actividades').innerText = "Sin Datos";
@@ -1970,7 +1742,9 @@
                 document.getElementById('ia-subtitle-seccion-kpi').innerText = `Análisis Pedagógico de ${activeDashboardSection}`;
                 document.getElementById('ia-diagnostico-kpi').innerText = `Aún no se registran datos para la sección de ${activeDashboardSection}. Las recomendaciones de IA se generarán cuando ingreses la primera encuesta.`;
                 document.getElementById('ia-accion-kpi').innerText = "Incentiva a los scouts de tu sección a dejar su huella digital en TequiVoz.";
+                document.getElementById('ia-sugerencias-container').classList.add('hidden');
 
+                // Reiniciar KPI Cards
                 setKPICardValue("isp", 0);
                 setKPICardValue("ics", 0);
                 setKPICardValue("iap", 0);
@@ -1979,6 +1753,7 @@
                 return;
             }
 
+            // Calcular promedios
             let funSum = 0, supportSum = 0, teamworkSum = 0, progressionSum = 0, safetySum = 0, economySum = 0, p9Sum = 0;
             let countAburrida = 0, countRegular = 0, countDivertida = 0, countExcelente = 0;
             let countSupervivencia = 0, countServicio = 0, countExtremo = 0;
@@ -2018,7 +1793,7 @@
                 }
             });
 
-            const avgFun = (funSum / total) * 10; 
+            const avgFun = (funSum / total) * 10; // Escala 100%
             const avgSupport = ((supportSum / total) / 10) * 100;
             const avgTeamwork = (teamworkSum / total) * 10;
             const avgProgression = (progressionSum / total) * 10;
@@ -2043,18 +1818,21 @@
 
             actualizarBarrasGrafica(avgFun, avgSupport, avgTeamwork, avgProgression, avgSafety);
 
+            // CALCULAR KPIs DEL MODELO HÍBRIDO EN TIEMPO REAL (80% Analítica de Base de Datos)
             const kpiISP = Math.round((avgFun + avgSupport) / 2);
             const kpiICS = Math.round((avgTeamwork + avgP9) / 2);
             const kpiIAP = Math.round(avgProgression);
             const kpiISG = Math.round(avgSafety);
             const kpiIVE = Math.round(((5 - (economySum / total)) / 4) * 100);
 
+            // Actualizar Tarjetas de KPIs en el DOM
             setKPICardValue("isp", kpiISP);
             setKPICardValue("ics", kpiICS);
             setKPICardValue("iap", kpiIAP);
             setKPICardValue("isg", kpiISG);
             setKPICardValue("ive", kpiIVE);
 
+            // Generar Reporte Automatizado de IA exclusivo por rama
             document.getElementById('ia-subtitle-seccion-kpi').innerText = `Análisis Pedagógico de ${activeDashboardSection}`;
             
             let diagnostico = "", accion = "";
@@ -2103,8 +1881,23 @@
 
             document.getElementById('ia-diagnostico-kpi').innerText = diagnostico;
             document.getElementById('ia-accion-kpi').innerText = accion || "• Mantener el monitoreo continuo para prevenir desviaciones pedagógicas.";
+
+            if (sugerenciasCambio.length > 0) {
+                document.getElementById('ia-sugerencias-container').classList.remove('hidden');
+                const listContainer = document.getElementById('ia-sugerencias-texto-lista');
+                listContainer.innerHTML = "";
+                sugerenciasCambio.slice(-3).forEach(txt => {
+                    const item = document.createElement('p');
+                    item.className = "text-gray-300 text-xs italic font-medium";
+                    item.innerText = `• "${txt}"`;
+                    listContainer.appendChild(item);
+                });
+            } else {
+                document.getElementById('ia-sugerencias-container').classList.add('hidden');
+            }
         }
 
+        // Helper para pintar tarjetas de KPIs con colores dinámicos tipo tacómetro
         function setKPICardValue(kpiId, val) {
             const card = document.getElementById(`kpi-card-${kpiId}`);
             const valContainer = document.getElementById(`kpi-val-${kpiId}`);
@@ -2112,6 +1905,7 @@
 
             valContainer.innerText = `${val}%`;
 
+            // Limpiar clases de colores
             card.className = "border rounded-2xl p-4 flex flex-col justify-between items-center text-center transition-all duration-300 ";
             valContainer.className = "w-16 h-16 rounded-full flex items-center justify-center border-4 text-lg font-black transition-all duration-300 ";
 
@@ -2127,6 +1921,7 @@
             }
         }
 
+        // FUSIONAR MÉTRICAS (80% IA) Y APORTE DE SCOUTER (20% sabiduría humana)
         function validarDiagnosticoSemanal() {
             const notaContexto = document.getElementById('scouter-context-note').value.trim();
             if (notaContexto === "") {
@@ -2208,6 +2003,30 @@
             document.getElementById('chart-safety').innerText = `${Math.round(safety)}%`;
         }
 
+        // CONTROL DE TABS DEL PANEL SCOUTER
+        function cambiarTabScouter(tab) {
+            const btnAnalytics = document.getElementById('tab-analytics');
+            const btnEditor = document.getElementById('tab-editor');
+            const vistaAnalytics = document.getElementById('vista-scouter-analytics');
+            const vistaEditor = document.getElementById('vista-scouter-editor');
+
+            if (tab === 'analytics') {
+                btnAnalytics.className = "pb-4 px-2 font-bold text-sm text-indigo-600 border-b-2 border-indigo-600 transition-apple";
+                btnEditor.className = "pb-4 px-2 font-bold text-sm text-gray-400 hover:text-gray-700 transition-apple";
+                vistaAnalytics.classList.remove('hidden');
+                vistaEditor.classList.add('hidden');
+                actualizarDashboardSeccionUI();
+            } else {
+                btnEditor.className = "pb-4 px-2 font-bold text-sm text-indigo-600 border-b-2 border-indigo-600 transition-apple";
+                btnAnalytics.className = "pb-4 px-2 font-bold text-sm text-gray-400 hover:text-gray-700 transition-apple";
+                vistaEditor.classList.remove('hidden');
+                vistaAnalytics.classList.add('hidden');
+                inicializarWixEditorPreguntas();
+            }
+        }
+        window.cambiarTabScouter = cambiarTabScouter;
+
+        // INICIALIZACIÓN Y CONFIGURACIÓN DEL EDITOR DE PREGUNTAS PERSONALIZADO
         function inicializarWixEditorPreguntas() {
             const listaPreguntas = bancoPreguntas[activeDashboardSection];
             const listContainer = document.getElementById('editor-selector-preguntas-lista');
@@ -2258,7 +2077,6 @@
             const dd = document.getElementById(`opt-emoji-dropdown-${optIdx}`);
             if (dd) dd.classList.add('hidden');
         }
-        window.openSelectorEmojiInterno = abrirSelectorEmojiInterno;
         window.abrirSelectorEmojiInterno = abrirSelectorEmojiInterno;
 
         function toggleEmojiDropdownVisual(optIdx) {
@@ -2347,12 +2165,12 @@
                     div.innerHTML = `
                         <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Tarjeta ${idx+1}</span>
                         <div class="grid grid-cols-3 gap-2">
-                            <input type="text" id="opt-list-icon-${idx}" class="rounded-lg border px-2 py-1.5 text-xs" value="${opt.icon}" placeholder="Icono (fa-...)">
+                            <input type="text" id="opt-list-icon-${idx}" class="rounded-lg border px-2 py-1.5 text-xs" value="${opt.icon}" placeholder="Icono FontAwesome (fa-...)">
                             <input type="text" id="opt-list-color-${idx}" class="rounded-lg border px-2 py-1.5 text-xs" value="${opt.color}" placeholder="Color (emerald, amber, rose)">
                             <input type="text" id="opt-list-val-${idx}" class="rounded-lg border px-2 py-1.5 text-xs" value="${opt.val}" placeholder="Valor de respuesta">
                         </div>
-                        <input type="text" id="opt-list-title-${idx}" class="w-full rounded-lg border px-2 py-1.5 text-sm font-bold" value="${opt.title}" placeholder="Título de Tarjeta">
-                        <input type="text" id="opt-list-desc-${idx}" class="w-full rounded-lg border px-2 py-1.5 text-xs" value="${opt.desc}" placeholder="Descripción de Tarjeta">
+                        <input type="text" id="opt-list-title-${idx}" class="w-full rounded-lg border px-2 py-1.5 text-sm font-bold shadow-sm bg-white" value="${opt.title}" placeholder="Título de Tarjeta">
+                        <input type="text" id="opt-list-desc-${idx}" class="w-full rounded-lg border px-2 py-1.5 text-xs shadow-sm bg-white" value="${opt.desc}" placeholder="Descripción de Tarjeta">
                     `;
                     container.appendChild(div);
                 });
@@ -2463,7 +2281,7 @@
         }
         window.guardarPreguntaModificada = guardarPreguntaModificada;
 
-        function restablecerPreguntasPredetermiandadas() {
+        function restablecerPreguntasPredeterminadas() {
             if (confirm("¿Estás seguro de restablecer todas las preguntas de todas las secciones a sus configuraciones scouts por defecto?")) {
                 bancoPreguntas = JSON.parse(JSON.stringify(bancoPreguntasPredeterminado));
                 localStorage.setItem('bancoPreguntas_tequivoz', JSON.stringify(bancoPreguntas));
@@ -2471,8 +2289,9 @@
                 inicializarWixEditorPreguntas();
             }
         }
-        window.restablecerPreguntasPredeterminadas = restablecerPreguntasPredetermiandadas;
+        window.restablecerPreguntasPredeterminadas = restablecerPreguntasPredeterminadas;
 
+        // Cambiar paso en el stepper de edición de perfil (1 a 5)
         function cambiarPasoSisasProfileDirecto(dir) {
             let nextStep = pasoSisasProfileActual;
             if (dir === 0) {
@@ -2486,6 +2305,7 @@
 
             pasoSisasProfileActual = nextStep;
 
+            // Ocultar/mostrar divs de paso
             for (let i = 1; i <= 5; i++) {
                 const stepDiv = document.getElementById(`sisas-paso-${i}`);
                 if (stepDiv) {
@@ -2497,6 +2317,7 @@
                 }
             }
 
+            // Actualizar estilo visual del botón del stepper en la barra
             function stepBtnStyle(id, active, checked) {
                 const btn = document.getElementById(id);
                 if (btn) {
@@ -2516,22 +2337,33 @@
             stepBtnStyle("step-btn-1", pasoSisasProfileActual === 1, pasoSisasProfileActual > 1);
             stepBtnStyle("step-btn-2", pasoSisasProfileActual === 2, pasoSisasProfileActual > 2);
             stepBtnStyle("step-btn-3", pasoSisasProfileActual === 3, pasoSisasProfileActual > 3);
-            stepBtnStyle("step-btn-4", pasoSisasProfileActual === 4, pasoSisasProfileActual > 4);
-            stepBtnStyle("step-btn-5", pasoSisasProfileActual === 5, pasoSisasProfileActual > 5);
+            stepBtnStyle("sisas-step-4", pasoSisasProfileActual === 4, pasoSisasProfileActual > 4);
+            stepBtnStyle("sisas-nav-seguridad-step", pasoSisasProfileActual === 5, pasoSisasProfileActual > 5);
 
+            // Rellenar barra de progreso
             const fillPct = ((pasoSisasProfileActual - 1) / 4) * 100;
-            const pFill = document.getElementById('sisas-stepper-progress-fill');
-            if (pFill) pFill.style.width = `${fillPct}%`;
+            const progressFill = document.getElementById('sisas-stepper-progress-fill');
+            if (progressFill) {
+                progressFill.style.width = `${fillPct}%`;
+            }
 
-            const bAnt = document.getElementById('sisas-btn-anterior-step');
-            if (bAnt) bAnt.disabled = (pasoSisasProfileActual === 1);
+            // Botones de control
+            const btnAnt = document.getElementById('sisas-btn-anterior-step');
+            const btnSig = document.getElementById('sisas-btn-siguiente-step');
             
-            const bSig = document.getElementById('sisas-btn-siguiente-step');
-            if (bSig) {
+            if (btnAnt) {
+                btnAnt.disabled = (pasoSisasProfileActual === 1);
+            }
+            if (btnSig) {
                 if (pasoSisasProfileActual === 5) {
-                    bSig.innerHTML = 'Guardar Datos <i class="fa-solid fa-cloud-arrow-up ml-1"></i>';
+                    btnSig.innerHTML = 'Guardar Datos <i class="fa-solid fa-cloud-arrow-up ml-1"></i>';
+                    btnSig.onclick = () => {
+                        lanzarAlert("Perfil Actualizado", "Tus datos médicos y personales se han actualizado correctamente en MiTequihua.");
+                        cancelarEdicionPerfilSisas();
+                    };
                 } else {
-                    bSig.innerHTML = 'Siguiente <i class="fa-solid fa-arrow-right ml-1"></i>';
+                    btnSig.innerHTML = 'Siguiente <i class="fa-solid fa-arrow-right ml-1"></i>';
+                    btnSig.onclick = () => cambiarPasoSisasProfileDirecto(1);
                 }
             }
         }
@@ -2541,6 +2373,16 @@
             cambiarPasoSisasProfileDirecto(step - pasoSisasProfileActual);
         }
         window.cambiarPasoSisasProfile = cambiarPasoSisasProfile;
+
+        function cambiarPasoSisasCurriculum() {
+            cambiarPasoSisasProfile(3);
+        }
+        window.cambiarPasoSisasCurriculum = cambiarPasoSisasCurriculum;
+
+        function cambiarStepSisas(step) {
+            cambiarPasoSisasProfile(step);
+        }
+        window.cambiarStepSisas = cambiarStepSisas;
 
         // Inicializar por defecto la vista de Login Scout sin cabecera
         mostrarSeccion('puerta-autenticacion-scout');
