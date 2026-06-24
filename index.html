@@ -245,9 +245,12 @@
             <!-- MiTequihua Top Purple Bar Header -->
             <header class="bg-tequihuaPurple text-white px-6 py-4 rounded-3xl flex justify-between items-center shadow-lg mb-8">
                 <div class="flex items-center gap-4">
-                    <img src="Logo 1.png" alt="Logo Grupo 1 Tequihua" class="h-10 w-auto filter brightness-0 invert">
+                    <img src="Logo 1.png" alt="Logo Grupo 1 Tequihua" class="h-12 w-auto filter brightness-0 invert">
                     <div>
-                        <span class="text-lg font-black tracking-tight flex items-center gap-2">MiTequihua Grupo 1 <span class="text-[9px] bg-white/15 px-2 py-0.5 rounded-full uppercase tracking-wider">Versión 4.4</span></span>
+                        <span class="text-lg font-black tracking-tight flex items-center gap-2">
+                            MiTequihua Grupo 1
+                            <img src="Logo 1.png" alt="Logo Grupo 1 Tequihua" class="h-8 w-auto ml-2">
+                        </span>
                     </div>
                 </div>
                 <div class="flex items-center gap-4">
@@ -896,7 +899,7 @@
             <!-- Grid de Secciones con Logotipos Oficiales Actualizados -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-8">
                 <!-- Manada -->
-                <button id="btn-home-manada" onclick="empezarEncuesta('Manada')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-manada flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
+                <button id="btn-home-manada" onclick="window.open('https://lyriclawyer.github.io/TequiVoz/', '_blank')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-manada flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
                     <img src="Logo 2.png" alt="Logo Manada de Lobatos" class="h-24 w-auto object-contain drop-shadow-sm">
                     <div class="text-center">
                         <span class="font-extrabold text-lg block">Manada</span>
@@ -905,7 +908,7 @@
                 </button>
 
                 <!-- Tropa -->
-                <button id="btn-home-tropa" onclick="empezarEncuesta('Tropa')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-tropa flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
+                <button id="btn-home-tropa" onclick="window.open('https://lyriclawyer.github.io/TequiVoz/', '_blank')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-tropa flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
                     <img src="Logo 3.png" alt="Logo Tropa de Scouts" class="h-24 w-auto object-contain drop-shadow-sm">
                     <div class="text-center">
                         <span class="font-extrabold text-lg block">Tropa</span>
@@ -914,7 +917,7 @@
                 </button>
 
                 <!-- Comunidad -->
-                <button id="btn-home-comunidad" onclick="empezarEncuesta('Comunidad')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-comunidad flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
+                <button id="btn-home-comunidad" onclick="window.open('https://lyriclawyer.github.io/TequiVoz/', '_blank')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-comunidad flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
                     <img src="Logo 4.png" alt="Logo Comunidad de Caminantes" class="h-24 w-auto object-contain drop-shadow-sm">
                     <div class="text-center">
                         <span class="font-extrabold text-lg block">Comunidad</span>
@@ -923,7 +926,7 @@
                 </button>
 
                 <!-- Clan -->
-                <button id="btn-home-clan" onclick="empezarEncuesta('Clan')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-clan flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
+                <button id="btn-home-clan" onclick="window.open('https://lyriclawyer.github.io/TequiVoz/', '_blank')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-clan flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
                     <img src="Logo 5.png" alt="Logo Clan de Rovers" class="h-24 w-auto object-contain drop-shadow-sm">
                     <div class="text-center">
                         <span class="font-extrabold text-lg block">Clan</span>
@@ -1120,44 +1123,9 @@
         }
         window.cerrarAlert = cerrarAlert;
 
-        // Iniciar encuesta de sección
+        // Iniciar encuesta de sección (redirige a TequiVoz)
         function empezarEncuesta(rama) {
-            seccionActiva = rama;
-            respuestasSesion = {
-                rama: rama,
-                p1: "", p2: 5, p3: "", p4: "", p5: 3, p6: "", p7: "", p8: "", p9: "", p10: ""
-            };
-            preguntaActual = 0;
-
-            const body = document.body;
-            const logoImg = document.getElementById('seccion-logo-activo');
-
-            // Adaptar paleta de colores dinámicamente y asignar logotipo correspondiente
-            if(rama === 'Manada') {
-                body.style.backgroundColor = '#fffbeb';
-                document.getElementById('badge-seccion-activa').style.backgroundColor = 'var(--color-manada)';
-                logoImg.src = 'Logo 2.png';
-            }
-            if(rama === 'Tropa') {
-                body.style.backgroundColor = '#f0fdf4';
-                document.getElementById('badge-seccion-activa').style.backgroundColor = 'var(--color-tropa)';
-                logoImg.src = 'Logo 3.png';
-            }
-            if(rama === 'Comunidad') {
-                body.style.backgroundColor = '#ecfeff';
-                document.getElementById('badge-seccion-activa').style.backgroundColor = 'var(--color-comunidad)';
-                logoImg.src = 'Logo 4.png';
-            }
-            if(rama === 'Clan') {
-                body.style.backgroundColor = '#fff5f5';
-                document.getElementById('badge-seccion-activa').style.backgroundColor = 'var(--color-clan)';
-                logoImg.src = 'Logo 5.png';
-            }
-
-            document.getElementById('badge-seccion-activa').innerText = rama;
-            mostrarSeccion('contenedor-encuesta');
-
-            renderPreguntaActiva();
+            window.open('https://lyriclawyer.github.io/TequiVoz/', '_blank');
         }
         window.empezarEncuesta = empezarEncuesta;
 
@@ -1592,38 +1560,7 @@
 
         // Filtro dinámico de encuestas por sección de pertenencia
         function abrirEncuestasDeSeccion() {
-            mostrarSeccion('pantalla-inicio');
-            document.body.style.backgroundColor = '#fcf8f2';
-
-            const btnManada = document.getElementById('btn-home-manada');
-            const btnTropa = document.getElementById('btn-home-tropa');
-            const btnComunidad = document.getElementById('btn-home-comunidad');
-            const btnClan = document.getElementById('btn-home-clan');
-
-            // Mostrar todos por defecto (o si es dirigente)
-            btnManada.classList.remove('hidden');
-            btnTropa.classList.remove('hidden');
-            btnComunidad.classList.remove('hidden');
-            btnClan.classList.remove('hidden');
-
-            // Filtrar según el rol del scout que inició sesión
-            if (loggedInScoutRole === "Manada") {
-                btnTropa.classList.add('hidden');
-                btnComunidad.classList.add('hidden');
-                btnClan.classList.add('hidden');
-            } else if (loggedInScoutRole === "Tropa") {
-                btnManada.classList.add('hidden');
-                btnComunidad.classList.add('hidden');
-                btnClan.classList.add('hidden');
-            } else if (loggedInScoutRole === "Comunidad") {
-                btnManada.classList.add('hidden');
-                btnTropa.classList.add('hidden');
-                btnClan.classList.add('hidden');
-            } else if (loggedInScoutRole === "Clan") {
-                btnManada.classList.add('hidden');
-                btnTropa.classList.add('hidden');
-                btnComunidad.classList.add('hidden');
-            }
+            window.open('https://lyriclawyer.github.io/TequiVoz/', '_blank');
         }
         window.abrirEncuestasDeSeccion = abrirEncuestasDeSeccion;
 
