@@ -145,11 +145,9 @@
 
     <!-- CABECERA FLOTANTE PRINCIPAL (Oculta al inicio por defecto) -->
     <nav id="cabecera-principal" class="glass-nav fixed top-0 left-0 w-full z-50 transition-apple px-6 py-4 flex justify-between items-center hidden">
-        <div class="flex items-center gap-3 mb-8">
-                        <img src="Logo 1.png" alt="Logo Grupo 1 Tequihua" class="h-16 w-auto object-contain">
-                        <div class="w-[1px] h-10 bg-gray-200"></div>
-                        <img src="scouts logo.png" alt="Scouts México" class="h-12 w-auto object-contain">
-                    </div>
+        <div class="flex items-center gap-4 cursor-pointer hover:opacity-90 transition-apple" onclick="regresarAlInicio()">
+            <img src="Logo 1.png" alt="Logo Grupo 1 Tequihua" class="h-14 w-auto drop-shadow-md hover:scale-105 transition-apple">
+            <div>
                 <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-800 to-indigo-950 bg-clip-text text-transparent">TequiVoz</span>
                 <p class="text-[9px] font-bold text-gray-500 uppercase tracking-widest leading-none">Grupo 1 SLP</p>
             </div>
@@ -174,7 +172,7 @@
                     <div class="flex items-center gap-3 mb-8">
                         <img src="Logo 1.png" alt="Logo Grupo 1 Tequihua" class="h-16 w-auto object-contain">
                         <div class="w-[1px] h-10 bg-gray-200"></div>
-                        <img src="scouts logo" alt="Scouts México" class="h-12 w-auto object-contain">
+                        <img src="scouts logo.png" alt="Scouts México" class="h-12 w-auto object-contain">
                     </div>
 
                     <h2 class="text-2xl md:text-3xl font-black text-indigo-950 tracking-tight mb-1">Acceso a Miembros Scout</h2>
@@ -463,7 +461,7 @@
                     <!-- SUB-VISTA: ANUNCIOS -->
                     <div id="sisas-sub-anuncios" class="hidden glass-panel rounded-[32px] p-6 md:p-8 text-left space-y-6 shadow-xl">
                         <h3 class="text-xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-bullhorn text-indigo-600"></i> Boletín de Avisos Grupo 1</h3>
-                        <p class="text-xs text-gray-500 font-medium">Entérate de las notificaciones oficiales dictadas por la Dirigencia y Jefaturas de Sección.</p>
+                        <p class="text-xs text-gray-500 font-medium font-semibold">Entérate de las notificaciones oficiales dictadas por la Dirigencia y Jefaturas de Sección.</p>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="p-5 bg-white border border-gray-100 rounded-2xl shadow-sm space-y-3">
@@ -482,7 +480,7 @@
                     <!-- SUB-VISTA: PROYECTO DE VIDA -->
                     <div id="sisas-sub-proyecto" class="hidden glass-panel rounded-[32px] p-6 md:p-8 text-left space-y-6 shadow-xl">
                         <h3 class="text-xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-brain text-indigo-600"></i> Mi Proyecto de Vida Rover</h3>
-                        <p class="text-xs text-gray-500 font-medium">Tu plan de vida guía tus elecciones personales, profesionales y de servicio.</p>
+                        <p class="text-xs text-gray-500 font-medium font-semibold">Tu plan de vida guía tus elecciones personales, profesionales y de servicio.</p>
 
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                             <div class="bg-white border border-gray-100 rounded-2xl p-5 space-y-4">
@@ -517,7 +515,7 @@
             </div>
         </section>
 
-        <!-- ================= 3. MITEQUIHUA EXPANDED SCOUT PROFILE / CURRICULUM EDITOR (De image_282382.png a image_282b1d.png) ================= -->
+        <!-- ================= 3. MITEQUIHUA EXPANDED SCOUT PROFILE / CURRICULUM EDITOR ================= -->
         <section id="panel-scout-sisas-profile" class="hidden w-full glass-panel rounded-[32px] p-6 md:p-10 shadow-2xl border-2 border-white/50 text-left transition-apple">
             
             <div class="flex items-center gap-3 mb-8 border-b border-gray-100 pb-6">
@@ -528,7 +526,7 @@
                 </div>
             </div>
 
-            <!-- SISAS Stepper / Progress Bar (Inspirado en la imagen image_282382.png) -->
+            <!-- SISAS Stepper / Progress Bar -->
             <div class="relative flex justify-between items-center max-w-3xl mx-auto mb-12">
                 <!-- Stepper Progress Line -->
                 <div class="absolute left-4 right-4 h-1 bg-gray-200 top-1/2 -translate-y-1/2 z-0">
@@ -599,7 +597,7 @@
                     </div>
                 </div>
 
-                <!-- PASO 2: DATOS DE CONTACTO (Inspirado en la imagen image_282382.png) -->
+                <!-- PASO 2: DATOS DE CONTACTO -->
                 <div id="sisas-paso-2" class="hidden space-y-8">
                     <!-- Datos de Tutor / Emergencia -->
                     <div class="space-y-4">
@@ -660,7 +658,7 @@
                     </div>
                 </div>
 
-                <!-- PASO 3: CURRICULUM SCOUT (Inspirado en las imágenes image_2823f6.png, image_2826e0.png y image_282722.png) -->
+                <!-- PASO 3: CURRICULUM SCOUT -->
                 <div id="sisas-paso-3" class="hidden space-y-8">
                     
                     <!-- Datos Scout actuales -->
@@ -737,7 +735,7 @@
                         </div>
                     </div>
 
-                    <!-- Reconocimientos, Cursos y Certificaciones (image_282722.png) -->
+                    <!-- Reconocimientos, Cursos y Certificaciones -->
                     <div class="space-y-4">
                         <h3 class="text-md font-black text-purple-900 border-b pb-2"><i class="fa-solid fa-ribbon text-purple-600 mr-2"></i> Reconocimientos, Cursos y Certificaciones</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -763,7 +761,7 @@
                     </div>
                 </div>
 
-                <!-- PASO 4: FICHA DE SALUD (Inspirado en las imágenes image_28279a.png, image_282a66.png y image_282a89.png) -->
+                <!-- PASO 4: FICHA DE SALUD -->
                 <div id="sisas-paso-4" class="hidden space-y-8">
                     
                     <!-- Ficha de Salud principal -->
@@ -847,7 +845,7 @@
                     </div>
                 </div>
 
-                <!-- PASO 5: SEGURIDAD Y AUTORIZACIÓN (Inspirado en la imagen image_282b1d.png) -->
+                <!-- PASO 5: SEGURIDAD Y AUTORIZACIÓN -->
                 <div id="sisas-paso-5" class="hidden space-y-6">
                     <h3 class="text-2xl font-black text-indigo-950 flex items-center gap-2"><i class="fa-solid fa-lock text-indigo-600"></i> Firma y Contraseña de Autorización</h3>
                     
@@ -883,6 +881,56 @@
                 </div>
 
             </form>
+        </section>
+
+        <!-- ================= BIENVENIDA DE ENCUESTAS (Oculto inicialmente) ================= -->
+        <section id="pantalla-inicio" class="hidden text-center transition-apple w-full">
+            <span class="px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-widest inline-block mb-6 shadow-sm">Representación Juvenil</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 leading-tight">
+                Tu voz es el mapa de <br><span class="bg-gradient-to-r from-emerald-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">nuestras aventuras.</span>
+            </h1>
+            <p class="text-gray-500 text-base md:text-lg max-w-2xl mx-auto mb-12 font-medium">
+                TequiVoz es la plataforma interactiva oficial para evaluar y planificar las mejores actividades de sábado del Grupo 1 Tequihua. Elige tu sección para comenzar.
+            </p>
+
+            <!-- Grid de Secciones con Logotipos Oficiales Actualizados -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-8">
+                <!-- Manada -->
+                <button id="btn-home-manada" onclick="empezarEncuesta('Manada')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-manada flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
+                    <img src="Logo 2.png" alt="Logo Manada de Lobatos" class="h-24 w-auto object-contain drop-shadow-sm">
+                    <div class="text-center">
+                        <span class="font-extrabold text-lg block">Manada</span>
+                        <p class="text-[10px] text-yellow-600 font-bold uppercase tracking-wider">Lobatos</p>
+                    </div>
+                </button>
+
+                <!-- Tropa -->
+                <button id="btn-home-tropa" onclick="empezarEncuesta('Tropa')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-tropa flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
+                    <img src="Logo 3.png" alt="Logo Tropa de Scouts" class="h-24 w-auto object-contain drop-shadow-sm">
+                    <div class="text-center">
+                        <span class="font-extrabold text-lg block">Tropa</span>
+                        <p class="text-[10px] text-emerald-600 font-bold uppercase tracking-wider">Scouts</p>
+                    </div>
+                </button>
+
+                <!-- Comunidad -->
+                <button id="btn-home-comunidad" onclick="empezarEncuesta('Comunidad')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-comunidad flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
+                    <img src="Logo 4.png" alt="Logo Comunidad de Caminantes" class="h-24 w-auto object-contain drop-shadow-sm">
+                    <div class="text-center">
+                        <span class="font-extrabold text-lg block">Comunidad</span>
+                        <p class="text-[10px] text-sky-600 font-bold uppercase tracking-wider">Caminantes</p>
+                    </div>
+                </button>
+
+                <!-- Clan -->
+                <button id="btn-home-clan" onclick="empezarEncuesta('Clan')" class="glass-panel p-6 rounded-[28px] border-2 border-transparent hover:border-clan flex flex-col items-center gap-4 transition-apple bounce-hover shadow-md">
+                    <img src="Logo 5.png" alt="Logo Clan de Rovers" class="h-24 w-auto object-contain drop-shadow-sm">
+                    <div class="text-center">
+                        <span class="font-extrabold text-lg block">Clan</span>
+                        <p class="text-[10px] text-rose-600 font-bold uppercase tracking-wider">Rovers</p>
+                    </div>
+                </button>
+            </div>
         </section>
 
     </main>
@@ -978,9 +1026,9 @@
                 { id: 3, type: "list", title: "¿Cómo marcha la mística, el apoyo mutuo y la verdadera hermandad dentro de la comunidad de Clan?", options: [ { val: "Fuerte", icon: "fa-hands-holding", color: "emerald", title: "Fuerte Unión", desc: "Excelente integración, apoyo mutuo en proyectos y plan de vida." }, { val: "Division", icon: "fa-bolt", color: "amber", title: "Distanciamiento", desc: "Falta de participación en debates o distanciamiento entre rovers." }, { val: "FaltaIntegracion", icon: "fa-circle-exclamation", color: "rose", title: "Falta de Hermandad", desc: "Se sienten grupos herméticos o apatía generalizada." } ] },
                 { id: 4, type: "grid", title: "¿Sientes que tus proyectos personales o plan de vida se vieron impulsados por las actividades de hoy?", options: [ { val: "Si", icon: "🏅", title: "¡Sí, totalmente!", desc: "Aporta a mi proyecto personal y progresión técnica." }, { val: "Medias", icon: "⏳", title: "A medias", desc: "Falta vincular los debates con la realidad de mi plan personal." }, { val: "No", icon: "❌", title: "No aportó", desc: "Sentí que la sesión no aportó valor a mis metas rovers." } ] },
                 { id: 5, type: "range", title: "¿Qué tan accesibles sientes los costos de las actividades regionales o nacionales de Clan?", min: 1, max: 5, def: 3, left: "Muy Accesibles 🪙", right: "Muy Difícil Costear 💸" },
-                { id: 6, type: "grid", title: "¿Qué tipo de proyectos de impacto o servicio social te gustaría que el Clan organizara?", options: [ { val: "Supervivencia", icon: "🌲", title: "Expedición Extrema", desc: "Retos de alta montaña, supervivencia pura y autonomía." }, { val: "Servicio", icon: "❤️", title: "Proyectos de Impacto", desc: "Voluntariado social, ecología de impacto y desarrollo comunitario." }, { val: "Extremo", icon: "🧗", title: "Servicios Técnicos", desc: "Apoyo en desastres naturales, primeros auxilios avanzados y capacitación." } ] },
+                { id: 6, type: "grid", title: "¿Qué tipo de projects de impacto o servicio social te gustaría que el Clan organizara?", options: [ { val: "Supervivencia", icon: "🌲", title: "Expedición Extrema", desc: "Retos de alta montaña, supervivencia pura y autonomía." }, { val: "Servicio", icon: "❤️", title: "Proyectos de Impacto", desc: "Voluntariado social, ecología de impacto y desarrollo comunitario." }, { val: "Extremo", icon: "🧗", title: "Servicios Técnicos", desc: "Apoyo en desastres naturales, primeros auxilios avanzados y capacitación." } ] },
                 { id: 7, type: "textarea", title: "Si pudieras proponer o modificar una sola norma o acuerdo de nuestro Consejo de Clan, ¿cuál sería?", placeholder: "Escribe tu propuesta o reforma para el Consejo de Clan..." },
-                { id: 8, type: "grid", title: "¿Cómo consideras el nivel de seguridad y los protocolos físicos/emocionales durante nuestras actividades?", options: [ { val: "Inseguro", icon: "⚠️", title: "Deficiente", desc: "Hubo descuidos o falta de gestión de riesgos en salidas complejas." }, { val: "Bien", icon: "👍", title: "Buena", desc: "Me siento seguro en la mayoría de las dinámicas." }, { val: "Excelente", icon: "🛡️", title: "Excelente", desc: "Análisis previo de riesgos, equipamiento y monitoreo constante." } ] },
+                { id: 8, type: "grid", title: "¿Cómo consideras el nivel de seguridad y los protocolos físicos/emocionales durante nuestras actividades?", options: [ { val: "Inseguro", icon: "⚠️", title: "Deficiente", desc: "Hubo descuidos o falta de gestión de riesgos en salidas complejas." }, { val: "Bien", icon: "👍", title: "Buena", desc: "Me siento seguro en la mayoría de las dinámicas." }, { val: "Excelente", icon: "🛡️", title: "Excelente", desc: "Gestión impecable de riesgos físicos y un espacio seguro de expresión." } ] },
                 { id: 9, type: "grid", title: "¿Se vive un ambiente libre de prejuicios, inclusivo y plenamente democrático en el Clan?", options: [ { val: "Excelente", icon: "✨", title: "Siempre democrático", desc: "Se debaten las ideas con madurez, equidad y respeto." }, { val: "Excluyente", icon: "💬", title: "A veces excluyente", desc: "Favoritismos o falta de apertura a nuevas formas de pensamiento." }, { val: "Neutro", icon: "😐", title: "Indiferente", desc: "Casi no me involucro de manera personal." } ] },
                 { id: 10, type: "textarea", title: "Para finalizar, propón una idea loca, innovadora o juego que nunca se haya hecho en el Grupo:", placeholder: "¡Ejemplo: Un juego de rol de supervivencia de 24 horas con retos de impacto social!" }
             ]
@@ -1571,727 +1619,6 @@
             document.body.style.backgroundColor = '#f8fafc';
         }
         window.cancelarEdicionPerfilSisas = cancelarEdicionPerfilSisas;
-
-        // Cambiar paso en el stepper de edición de perfil (1 a 5)
-        function cambiarPasoSisasProfileDirecto(dir) {
-            let nextStep = pasoSisasProfileActual;
-            if (dir === 0) {
-                nextStep = 1;
-            } else {
-                nextStep += dir;
-            }
-
-            if (nextStep < 1) nextStep = 1;
-            if (nextStep > 5) nextStep = 5;
-
-            pasoSisasProfileActual = nextStep;
-
-            // Ocultar/mostrar divs de paso
-            for (let i = 1; i <= 5; i++) {
-                const stepDiv = document.getElementById(`sisas-paso-${i}`);
-                if (stepDiv) {
-                    if (i === pasoSisasProfileActual) {
-                        stepDiv.classList.remove('hidden');
-                    } else {
-                        stepDiv.classList.add('hidden');
-                    }
-                }
-            }
-
-            // Actualizar estilo visual del botón del stepper en la barra
-            function stepBtnStyle(id, active, checked) {
-                const btn = document.getElementById(id);
-                if (btn) {
-                    if (checked) {
-                        btn.className = "w-8 h-8 rounded-full bg-purple-600 text-white font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple";
-                        btn.innerHTML = '<i class="fa-solid fa-check"></i>';
-                    } else if (active) {
-                        btn.className = "w-8 h-8 rounded-full bg-purple-600 text-white font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple";
-                        btn.innerHTML = pasoSisasProfileActual;
-                    } else {
-                        btn.className = "w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-black flex items-center justify-center text-xs shadow-md border-2 border-white transition-apple";
-                        btn.innerHTML = id.slice(-1);
-                    }
-                }
-            }
-
-            stepBtnStyle("step-btn-1", pasoSisasProfileActual === 1, pasoSisasProfileActual > 1);
-            stepBtnStyle("step-btn-2", pasoSisasProfileActual === 2, pasoSisasProfileActual > 2);
-            stepBtnStyle("step-btn-3", pasoSisasProfileActual === 3, pasoSisasProfileActual > 3);
-            stepBtnStyle("sisas-step-4", pasoSisasProfileActual === 4, pasoSisasProfileActual > 4);
-            stepBtnStyle("sisas-nav-seguridad-step", pasoSisasProfileActual === 5, pasoSisasProfileActual > 5);
-
-            // Rellenar barra de progreso
-            const fillPct = ((pasoSisasProfileActual - 1) / 4) * 100;
-            const progressFill = document.getElementById('sisas-stepper-progress-fill');
-            if (progressFill) {
-                progressFill.style.width = `${fillPct}%`;
-            }
-
-            // Botones de control
-            const btnAnt = document.getElementById('sisas-btn-anterior-step');
-            const btnSig = document.getElementById('sisas-btn-siguiente-step');
-            
-            if (btnAnt) {
-                btnAnt.disabled = (pasoSisasProfileActual === 1);
-            }
-            if (btnSig) {
-                if (pasoSisasProfileActual === 5) {
-                    btnSig.innerHTML = 'Guardar Datos <i class="fa-solid fa-cloud-arrow-up ml-1"></i>';
-                    btnSig.onclick = () => {
-                        lanzarAlert("Perfil Actualizado", "Tus datos médicos y personales se han actualizado correctamente en MiTequihua.");
-                        cancelarEdicionPerfilSisas();
-                    };
-                } else {
-                    btnSig.innerHTML = 'Siguiente <i class="fa-solid fa-arrow-right ml-1"></i>';
-                    btnSig.onclick = () => cambiarPasoSisasProfileDirecto(1);
-                }
-            }
-        }
-        window.cambiarPasoSisasProfileDirecto = cambiarPasoSisasProfileDirecto;
-
-        function cambiarPasoSisasProfile(step) {
-            cambiarPasoSisasProfileDirecto(step - pasoSisasProfileActual);
-        }
-        window.cambiarPasoSisasProfile = cambiarPasoSisasProfile;
-
-        function cambiarPasoSisasCurriculum() {
-            cambiarPasoSisasProfile(3);
-        }
-        window.cambiarPasoSisasCurriculum = cambiarPasoSisasCurriculum;
-
-        function cambiarStepSisas(step) {
-            cambiarPasoSisasProfile(step);
-        }
-        window.cambiarStepSisas = cambiarStepSisas;
-
-        function guardarProyectoVidaScout() {
-            const servicio = document.getElementById('scout-meta-servicio').value;
-            const caracter = document.getElementById('scout-meta-caracter').value;
-            
-            // Guardar localmente
-            localStorage.setItem('scout_meta_servicio', servicio);
-            localStorage.setItem('scout_meta_caracter', caracter);
-
-            lanzarAlert("Proyecto de Vida Guardado ⚜️", "Tus metas e iniciativas trimestrales han sido guardadas de manera segura en tu perfil.");
-        }
-        window.guardarProyectoVidaScout = guardarProyectoVidaScout;
-
-        // Configurar Dashboard y Wix-Style Editor según permisos de rol
-        function configurarVisibilidadSegunRol() {
-            const selectorDash = document.getElementById('selector-secciones-dash');
-            const subtext = document.getElementById('subtitulo-rol-scouter');
-
-            if (currentRolScouter === "Dirigencia") {
-                selectorDash.classList.remove('hidden');
-                subtext.innerText = "Acceso Maestro Completo — Grupo 1 Tequihua";
-            } else {
-                selectorDash.classList.add('hidden'); // Ocultar selector de otras ramas si el jefe de sección tiene rol limitado
-                subtext.innerText = `Acceso Restringido a Jefatura de ${currentRolScouter}`;
-            }
-
-            // Cambiar por defecto el Wix-Style editor al rol activo
-            document.getElementById('editor-nombre-seccion-activa').innerText = activeDashboardSection;
-            inicializarWixEditorPreguntas();
-        }
-
-        // Alternar visualización del dashboard para dirigencia de grupo
-        function seleccionarSeccionDashboard(seccion) {
-            // Impedir alteración de dashboard si el rol de usuario no tiene permisos maestros
-            if (currentRolScouter !== "Dirigencia" && currentRolScouter !== seccion) {
-                return;
-            }
-
-            activeDashboardSection = seccion;
-            
-            // Toggle visual de botones
-            const secciones = ["Manada", "Tropa", "Comunidad", "Clan"];
-            secciones.forEach((s) => {
-                const btn = document.getElementById(`dash-btn-${s}`);
-                if (s === seccion) {
-                    btn.className = `flex-1 min-w-[100px] py-2 px-3 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 bg-white text-${s === 'Manada' ? 'yellow-600' : (s === 'Tropa' ? 'emerald-600' : (s === 'Comunidad' ? 'sky-600' : 'rose-600'))} shadow-sm border border-${s === 'Manada' ? 'yellow-200' : (s === 'Tropa' ? 'emerald-200' : (s === 'Comunidad' ? 'sky-200' : 'rose-200'))}`;
-                } else {
-                    btn.className = "flex-1 min-w-[100px] py-2 px-3 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 hover:bg-white hover:text-gray-700";
-                }
-            });
-
-            document.getElementById('editor-nombre-seccion-activa').innerText = seccion;
-            actualizarDashboardSeccionUI();
-            inicializarWixEditorPreguntas();
-            renderReportesValidadosLista();
-        }
-        window.seleccionarSeccionDashboard = seleccionarSeccionDashboard;
-
-        // Recalcular métricas a partir del histórico y generar Plan de Acción Pedagógico e Indicadores KPIs
-        function actualizarDashboardSeccionUI() {
-            const localFallback = JSON.parse(localStorage.getItem('tequivoz_fallback') || '[]');
-            const totalSurveys = [...surveysList, ...localFallback];
-
-            const filteredSurveys = totalSurveys.filter(s => s.rama === activeDashboardSection);
-            const total = filteredSurveys.length;
-
-            document.getElementById('dash-seccion').innerText = activeDashboardSection;
-            document.getElementById('dash-seccion').style.backgroundColor = `var(--color-${activeDashboardSection.toLowerCase()})`;
-            document.getElementById('dash-total-registros').innerText = total;
-
-            if (total === 0) {
-                // Limpiar Dashboard ante base de datos vacía
-                document.getElementById('dash-promedio-diversion').innerText = "Sin Datos";
-                document.getElementById('dash-promedio-economia').innerText = "Sin Datos";
-                document.getElementById('dash-preferencia-actividades').innerText = "Sin Datos";
-
-                actualizarBarrasGrafica(0, 0, 0, 0, 0);
-                document.getElementById('ia-subtitle-seccion-kpi').innerText = `Análisis Pedagógico de ${activeDashboardSection}`;
-                document.getElementById('ia-diagnostico-kpi').innerText = `Aún no se registran datos para la sección de ${activeDashboardSection}. Las recomendaciones de IA se generarán cuando ingreses la primera encuesta.`;
-                document.getElementById('ia-accion-kpi').innerText = "Incentiva a los scouts de tu sección a dejar su huella digital en TequiVoz.";
-                document.getElementById('ia-sugerencias-container').classList.add('hidden');
-
-                // Reiniciar KPI Cards
-                setKPICardValue("isp", 0);
-                setKPICardValue("ics", 0);
-                setKPICardValue("iap", 0);
-                setKPICardValue("isg", 0);
-                setKPICardValue("ive", 0);
-                return;
-            }
-
-            // Calcular promedios
-            let funSum = 0, supportSum = 0, teamworkSum = 0, progressionSum = 0, safetySum = 0, economySum = 0, p9Sum = 0;
-            let countAburrida = 0, countRegular = 0, countDivertida = 0, countExcelente = 0;
-            let countSupervivencia = 0, countServicio = 0, countExtremo = 0;
-            let sugerenciasCambio = [];
-
-            filteredSurveys.forEach(s => {
-                if (s.p1 === "Excelente") { funSum += 10; countExcelente++; }
-                else if (s.p1 === "Divertida") { funSum += 8; countDivertida++; }
-                else if (s.p1 === "Regular") { funSum += 5; countRegular++; }
-                else { funSum += 3; countAburrida++; }
-
-                supportSum += Number(s.p2 || 5);
-
-                if (s.p3 === "Fuerte") teamworkSum += 10;
-                else if (s.p3 === "Division") teamworkSum += 6;
-                else teamworkSum += 3;
-
-                if (s.p4 === "Si") progressionSum += 10;
-                else if (s.p4 === "Medias") progressionSum += 6;
-                else progressionSum += 3;
-
-                if (s.p8 === "Excelente") safetySum += 10;
-                else if (s.p8 === "Bien") safetySum += 7;
-                else safetySum += 4;
-
-                if (s.p9 === "Excelente") p9Sum += 10;
-                else p9Sum += 4;
-
-                economySum += Number(s.p5 || 3);
-
-                if (s.p6 === "Supervivencia") countSupervivencia++;
-                else if (s.p6 === "Servicio") countServicio++;
-                else if (s.p6 === "Extremo") countExtremo++;
-
-                if (s.p7 && s.p7.trim() !== "") {
-                    sugerenciasCambio.push(s.p7);
-                }
-            });
-
-            const avgFun = (funSum / total) * 10; // Escala 100%
-            const avgSupport = ((supportSum / total) / 10) * 100;
-            const avgTeamwork = (teamworkSum / total) * 10;
-            const avgProgression = (progressionSum / total) * 10;
-            const avgSafety = (safetySum / total) * 10;
-            const avgP9 = (p9Sum / total) * 10;
-            const avgEconomy = (economySum / total).toFixed(1);
-
-            let maxP1Val = Math.max(countAburrida, countRegular, countDivertida, countExcelente);
-            let popularP1 = "Divertida";
-            if (maxP1Val === countExcelente) popularP1 = "¡Épica!";
-            else if (maxP1Val === countRegular) popularP1 = "Neutro";
-            else if (maxP1Val === countAburrida) popularP1 = "Aburrida";
-
-            let maxActVal = Math.max(countSupervivencia, countServicio, countExtremo);
-            let favAct = "Supervivencia";
-            if (maxActVal === countServicio) favAct = "Servicio Comunitario";
-            else if (maxActVal === countExtremo) favAct = "Deportes Extremos";
-
-            document.getElementById('dash-promedio-diversion').innerText = popularP1;
-            document.getElementById('dash-promedio-economia').innerText = `${avgEconomy} / 5`;
-            document.getElementById('dash-preferencia-actividades').innerText = favAct;
-
-            actualizarBarrasGrafica(avgFun, avgSupport, avgTeamwork, avgProgression, avgSafety);
-
-            // CALCULAR KPIs DEL MODELO HÍBRIDO EN TIEMPO REAL (80% Analítica de Base de Datos)
-            const kpiISP = Math.round((avgFun + avgSupport) / 2);
-            const kpiICS = Math.round((avgTeamwork + avgP9) / 2);
-            const kpiIAP = Math.round(avgProgression);
-            const kpiISG = Math.round(avgSafety);
-            const kpiIVE = Math.round(((5 - (economySum / total)) / 4) * 100);
-
-            // Actualizar Tarjetas de KPIs en el DOM
-            setKPICardValue("isp", kpiISP);
-            setKPICardValue("ics", kpiICS);
-            setKPICardValue("iap", kpiIAP);
-            setKPICardValue("isg", kpiISG);
-            setKPICardValue("ive", kpiIVE);
-
-            // Generar Reporte Automatizado de IA exclusivo por rama
-            document.getElementById('ia-subtitle-seccion-kpi').innerText = `Análisis Pedagógico de ${activeDashboardSection}`;
-            
-            let diagnostico = "", accion = "";
-
-            if (activeDashboardSection === "Manada") {
-                if (avgFun < 75) {
-                    diagnostico += "ALERTA DE FANTASÍA EN LA MANADA: Los lobatos reportan baja interactividad en las cacerías de sábado. ";
-                    accion += "• Dinamizar los consejos del Libro de la Selva. Menos plática estática de Akela, más acción teatralizada de Baloo y Bagheera. ";
-                } else {
-                    diagnostico += "MARCO SIMBÓLICO EXCELENTE: Los lobatos se sienten felices en la selva. ";
-                    accion += "• Continuar usando narrativas dramáticas de cacería como hilo conductor de cada sábado. ";
-                }
-                if (avgTeamwork < 75) {
-                    diagnostico += "SEISENAS CON ROCES: Se detecta falta de integración de lobatos nuevos o discusiones por roles de liderazgo de Seiseneros. ";
-                    accion += "• Planificar 'Juegos de Cuerdas de Integración' cooperativos para forzar la ayuda mutua en el fondo de la selva. ";
-                }
-            } else if (activeDashboardSection === "Tropa") {
-                if (avgFun < 70) {
-                    diagnostico += "BAJO ENTUSIASMO EN LA TROPA: Los scouts sienten que las juntas de sábado son muy pasivas o repetitivas. ";
-                    accion += "• Sustituir las pláticas teóricas por un rally de técnicas scouts prácticas en campo o pionerismo extremo. ";
-                } else {
-                    diagnostico += "ESPÍRITU DE TROPA EN ALTO: Los scouts disfrutan del sistema de patrullas. ";
-                    accion += "• Seguir promoviendo competencias sanas entre patrullas antes del juego nocturno. ";
-                }
-                if (avgTeamwork < 70) {
-                    diagnostico += "CONFLICITOS EN PATRULLAS: Hay indicios de roces marcados o falta de cohesión en las juntas. ";
-                    accion += "• Convocar a una Corte de Honor extraordinaria. Realizar dinámicas de empoderamiento para los Guías de Patrulla. ";
-                }
-            } else if (activeDashboardSection === "Comunidad") {
-                if (avgFun < 70) {
-                    diagnostico += "FALTA DESAFÍO EN COMUNIDAD: Los caminantes reportan que los proyectos carecen de aventura o iniciativa real. ";
-                    accion += "• Fomentar que la iniciativa y toma de decisiones surjan del Congreso de Comunidad, no de los asesores. ";
-                } else {
-                    diagnostico += "DINÁMICA DE COMUNIDAD SANA: Se reporta buen avance en proyectos autogestivos de equipo. ";
-                    accion += "• Ofrecer sutil de Scouter soporte para garantizar la viabilidad técnica de las expediciones. ";
-                }
-            } else if (activeDashboardSection === "Clan") {
-                if (avgFun < 70) {
-                    diagnostico += "JUNTAS DE CLAN MONÓTONAS: Rovers reportan que las actividades se sienten rutinarias o puramente teóricas. ";
-                    accion += "• Salir del local de grupo. Organizar servicios de impacto social externo o expediciones autónomas de fin de semana. ";
-                } else {
-                    diagnostico += "COMUNIDAD DE CLAN INSPIRADORA: Fuerte espíritu de debate y acompañamiento personal. ";
-                    accion += "• Fortalecer el avance de la ruta rover de plan de vida a través de sinodales dinámicos. ";
-                }
-            }
-
-            document.getElementById('ia-diagnostico-kpi').innerText = diagnostico;
-            document.getElementById('ia-accion-kpi').innerText = accion || "• Mantener el monitoreo continuo para prevenir desviaciones pedagógicas.";
-
-            if (sugerenciasCambio.length > 0) {
-                document.getElementById('ia-sugerencias-container').classList.remove('hidden');
-                const listContainer = document.getElementById('ia-sugerencias-texto-lista');
-                listContainer.innerHTML = "";
-                sugerenciasCambio.slice(-3).forEach(txt => {
-                    const item = document.createElement('p');
-                    item.className = "text-gray-300 text-xs italic font-medium";
-                    item.innerText = `• "${txt}"`;
-                    listContainer.appendChild(item);
-                });
-            } else {
-                document.getElementById('ia-sugerencias-container').classList.add('hidden');
-            }
-        }
-
-        // Helper para pintar tarjetas de KPIs con colores dinámicos tipo tacómetro
-        function setKPICardValue(kpiId, val) {
-            const card = document.getElementById(`kpi-card-${kpiId}`);
-            const valContainer = document.getElementById(`kpi-val-${kpiId}`);
-            if (!card || !valContainer) return;
-
-            valContainer.innerText = `${val}%`;
-
-            // Limpiar clases de colores
-            card.className = "border rounded-2xl p-4 flex flex-col justify-between items-center text-center transition-all duration-300 ";
-            valContainer.className = "w-16 h-16 rounded-full flex items-center justify-center border-4 text-lg font-black transition-all duration-300 ";
-
-            if (val < 60) {
-                card.classList.add("bg-rose-50", "border-rose-200", "text-rose-900");
-                valContainer.classList.add("border-rose-400", "text-rose-600", "bg-white");
-            } else if (val < 80) {
-                card.classList.add("bg-amber-50", "border-amber-200", "text-amber-900");
-                valContainer.classList.add("border-amber-400", "text-amber-600", "bg-white");
-            } else {
-                card.classList.add("bg-emerald-50", "border-emerald-200", "text-emerald-900");
-                valContainer.classList.add("border-emerald-400", "text-emerald-600", "bg-white");
-            }
-        }
-
-        // FUSIONAR MÉTRICAS (80% IA) Y APORTE DE SCOUTER (20% sabiduría humana)
-        function validarDiagnosticoSemanal() {
-            const notaContexto = document.getElementById('scouter-context-note').value.trim();
-            if (notaContexto === "") {
-                lanzarAlert("Falta Contexto", "Por favor ingresa una breve nota de contexto para enriquecer las métricas de la IA.");
-                return;
-            }
-
-            const ispVal = document.getElementById('kpi-val-isp').innerText;
-            const icsVal = document.getElementById('kpi-val-ics').innerText;
-            const iapVal = document.getElementById('kpi-val-iap').innerText;
-            const isgVal = document.getElementById('kpi-val-isg').innerText;
-            const iveVal = document.getElementById('kpi-val-ive').innerText;
-
-            const nuevoReporte = {
-                rama: activeDashboardSection,
-                fecha: new Date().toLocaleDateString('es-MX', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
-                isp: ispVal,
-                ics: icsVal,
-                iap: iapVal,
-                isg: isgVal,
-                ive: iveVal,
-                contexto: notaContexto
-            };
-
-            reportesValidadosHistorico.unshift(nuevoReporte);
-            localStorage.setItem('tequivoz_reportes_kpi_validados', JSON.stringify(reportesValidadosHistorico));
-
-            lanzarAlert("¡Reporte Semanal Guardado! ⚜️", `Fusión de co-creación exitosa. El diagnóstico oficial para la sección de ${activeDashboardSection} ha quedado registrado en el histórico.`);
-            document.getElementById('scouter-context-note').value = "";
-            renderReportesValidadosLista();
-        }
-        window.validarDiagnosticoSemanal = validarDiagnosticoSemanal;
-
-        function renderReportesValidadosLista() {
-            const listContainer = document.getElementById('reportes-validados-lista');
-            if (!listContainer) return;
-
-            const filtrados = reportesValidadosHistorico.filter(r => r.rama === activeDashboardSection);
-
-            if (filtrados.length === 0) {
-                listContainer.innerHTML = `<p class="text-xs text-gray-400 italic text-center py-6">Aún no se ha validado ningún reporte semanal de KPIs para esta sección.</p>`;
-                return;
-            }
-
-            listContainer.innerHTML = filtrados.map((rep, idx) => `
-                <div class="p-4 bg-white rounded-xl border border-gray-100 shadow-sm space-y-2">
-                    <div class="flex justify-between items-center border-b pb-2">
-                        <span class="text-[10px] font-black text-indigo-600 capitalize">${rep.fecha}</span>
-                        <span class="text-[9px] font-bold text-gray-400 bg-gray-100 px-2 py-0.5 rounded">Guardado</span>
-                    </div>
-                    <div class="grid grid-cols-5 gap-1 text-center font-black text-[9px] text-slate-700 bg-slate-50 py-1.5 rounded">
-                        <div>ISP: <span class="text-emerald-600 block">${rep.isp}</span></div>
-                        <div>ICS: <span class="text-indigo-600 block">${rep.ics}</span></div>
-                        <div>IAP: <span class="text-amber-600 block">${rep.iap}</span></div>
-                        <div>ISG: <span class="text-rose-600 block">${rep.isg}</span></div>
-                        <div>IVE: <span class="text-sky-600 block">${rep.ive}</span></div>
-                    </div>
-                    <div class="text-[11px] text-gray-500 font-medium leading-relaxed italic bg-gray-50/50 p-2 rounded border border-dashed">
-                        "<b>Nota Scouter:</b> ${rep.contexto}"
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function actualizarBarrasGrafica(fun, support, teamwork, progression, safety) {
-            document.getElementById('chart-fun').style.height = `${fun}%`;
-            document.getElementById('chart-fun').innerText = `${Math.round(fun)}%`;
-
-            document.getElementById('chart-leaders').style.height = `${support}%`;
-            document.getElementById('chart-leaders').innerText = `${Math.round(support)}%`;
-
-            document.getElementById('chart-teamwork').style.height = `${teamwork}%`;
-            document.getElementById('chart-teamwork').innerText = `${Math.round(teamwork)}%`;
-
-            document.getElementById('chart-progression').style.height = `${progression}%`;
-            document.getElementById('chart-progression').innerText = `${Math.round(progression)}%`;
-
-            document.getElementById('chart-safety').style.height = `${safety}%`;
-            document.getElementById('chart-safety').innerText = `${Math.round(safety)}%`;
-        }
-
-        // CONTROL DE TABS DEL PANEL SCOUTER
-        function cambiarTabScouter(tab) {
-            const btnAnalytics = document.getElementById('tab-analytics');
-            const btnEditor = document.getElementById('tab-editor');
-            const vistaAnalytics = document.getElementById('vista-scouter-analytics');
-            const vistaEditor = document.getElementById('vista-scouter-editor');
-
-            if (tab === 'analytics') {
-                btnAnalytics.className = "pb-4 px-2 font-bold text-sm text-indigo-600 border-b-2 border-indigo-600 transition-apple";
-                btnEditor.className = "pb-4 px-2 font-bold text-sm text-gray-400 hover:text-gray-700 transition-apple";
-                vistaAnalytics.classList.remove('hidden');
-                vistaEditor.classList.add('hidden');
-                actualizarDashboardSeccionUI();
-            } else {
-                btnEditor.className = "pb-4 px-2 font-bold text-sm text-indigo-600 border-b-2 border-indigo-600 transition-apple";
-                btnAnalytics.className = "pb-4 px-2 font-bold text-sm text-gray-400 hover:text-gray-700 transition-apple";
-                vistaEditor.classList.remove('hidden');
-                vistaAnalytics.classList.add('hidden');
-                inicializarWixEditorPreguntas();
-            }
-        }
-        window.cambiarTabScouter = cambiarTabScouter;
-
-        // INICIALIZACIÓN Y CONFIGURACIÓN DEL EDITOR DE PREGUNTAS PERSONALIZADO
-        function inicializarWixEditorPreguntas() {
-            const listaPreguntas = bancoPreguntas[activeDashboardSection];
-            const listContainer = document.getElementById('editor-selector-preguntas-lista');
-            listContainer.innerHTML = "";
-
-            listaPreguntas.forEach((q, idx) => {
-                const btn = document.createElement('button');
-                btn.onclick = () => cargarPreguntaEnEditor(idx);
-                const activeClass = (idx === editorPreguntaIndexSeleccionada) ? "bg-indigo-600 text-white shadow-md border-indigo-700" : "bg-white text-slate-700 hover:bg-slate-50 border-slate-200";
-                btn.className = `w-full text-left p-3 rounded-xl border text-xs font-bold transition-apple flex justify-between items-center ${activeClass}`;
-                btn.innerHTML = `
-                    <span>Q${q.id}: ${q.title.slice(0, 30)}...</span>
-                    <span class="text-[10px] opacity-75 capitalize">(${q.type})</span>
-                `;
-                listContainer.appendChild(btn);
-            });
-
-            cargarPreguntaEnEditor(editorPreguntaIndexSeleccionada);
-        }
-
-        function cargarPreguntaEnEditor(idx) {
-            editorPreguntaIndexSeleccionada = idx;
-            const q = bancoPreguntas[activeDashboardSection][idx];
-
-            document.getElementById('editor-pregunta-label-seleccionada').innerText = `Pregunta ${q.id} (Slot ${idx + 1})`;
-            document.getElementById('editor-pregunta-titulo').value = q.title;
-            document.getElementById('editor-pregunta-tipo').value = q.type;
-
-            const botones = document.getElementById('editor-selector-preguntas-lista').querySelectorAll('button');
-            botones.forEach((btn, bIdx) => {
-                if(bIdx === idx) {
-                    btn.className = "w-full text-left p-3 rounded-xl border text-xs font-bold transition-apple flex justify-between items-center bg-indigo-600 text-white shadow-md border-indigo-700";
-                } else {
-                    btn.className = "w-full text-left p-3 rounded-xl border text-xs font-bold transition-apple flex justify-between items-center bg-white text-slate-700 hover:bg-slate-50 border-slate-200";
-                }
-            });
-
-            alternarCamposOpcionesEditor(q.type);
-        }
-        window.cargarPreguntaEnEditor = cargarPreguntaEnEditor;
-
-        const popularEmojisScout = ["😴", "😐", "😀", "🤩", "🏆", "🧭", "🌲", "⛺", "🤝", "🧗", "⚠️", "👍", "🛡️", "✨", "💬", "❤️", "🏅", "⏳", "❌", "🔥", "🐺", "🐾", "🚶", "🎒"];
-
-        function abrirSelectorEmojiInterno(optIdx, selectedEmoji) {
-            document.getElementById(`opt-emoji-input-${optIdx}`).value = selectedEmoji;
-            document.getElementById(`opt-emoji-display-${optIdx}`).innerText = selectedEmoji;
-            
-            const dd = document.getElementById(`opt-emoji-dropdown-${optIdx}`);
-            if (dd) dd.classList.add('hidden');
-        }
-        window.abrirSelectorEmojiInterno = abrirSelectorEmojiInterno;
-
-        function toggleEmojiDropdownVisual(optIdx) {
-            const dds = document.querySelectorAll('[id^="opt-emoji-dropdown-"]');
-            dds.forEach(dd => {
-                if(dd.id !== `opt-emoji-dropdown-${optIdx}`) {
-                    dd.classList.add('hidden');
-                }
-            });
-            const dd = document.getElementById(`opt-emoji-dropdown-${optIdx}`);
-            if (dd) dd.classList.toggle('hidden');
-        }
-        window.toggleEmojiDropdownVisual = toggleEmojiDropdownVisual;
-
-        function alternarCamposOpcionesEditor(type) {
-            const container = document.getElementById('editor-campos-dinamicos-opciones');
-            container.innerHTML = "";
-
-            const q = bancoPreguntas[activeDashboardSection][editorPreguntaIndexSeleccionada];
-
-            if (type === "select") {
-                const options = q.options || [
-                    { val: "Aburrida", icon: "😴", text: "Poco divertida" },
-                    { val: "Regular", icon: "😐", text: "Regular" },
-                    { val: "Divertida", icon: "😀", text: "Divertida" },
-                    { val: "Excelente", icon: "🤩", text: "¡Súper Épica!" }
-                ];
-
-                options.forEach((opt, idx) => {
-                    const div = document.createElement('div');
-                    div.className = "space-y-2 border border-gray-100 p-4 rounded-2xl bg-slate-50 relative";
-                    
-                    div.innerHTML = `
-                        <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Opción ${idx+1}</span>
-                        <div class="flex gap-3 items-center">
-                            <div class="relative">
-                                <button type="button" onclick="toggleEmojiDropdownVisual(${idx})" class="w-12 h-12 text-2xl flex items-center justify-center bg-white border border-gray-200 rounded-xl shadow-sm hover:bg-gray-100 transition-apple" id="opt-emoji-display-${idx}">
-                                    ${opt.icon}
-                                </button>
-                                <input type="hidden" id="opt-emoji-input-${idx}" value="${opt.icon}">
-                                
-                                <div id="opt-emoji-dropdown-${idx}" class="hidden absolute left-0 mt-2 w-48 bg-white border border-gray-100 rounded-2xl shadow-xl z-50 p-2 grid grid-cols-6 gap-1 max-h-40 overflow-y-auto no-scrollbar border-2 border-slate-200">
-                                    ${popularEmojisScout.map(emoji => `
-                                        <button type="button" onclick="abrirSelectorEmojiInterno(${idx}, '${emoji}')" class="w-7 h-7 text-lg flex items-center justify-center rounded-lg hover:bg-indigo-50 transition-apple">${emoji}</button>
-                                    `).join('')}
-                                </div>
-                            </div>
-
-                            <input type="text" id="opt-val-${idx}" class="flex-1 rounded-xl border border-gray-200 px-3 py-2 font-bold text-sm bg-white outline-none" value="${opt.val}" placeholder="Valor Interno">
-                        </div>
-                        <input type="text" id="opt-text-${idx}" class="w-full rounded-xl border border-gray-200 px-3 py-2 text-xs bg-white outline-none" value="${opt.text}" placeholder="Texto Descriptivo">
-                    `;
-                    container.appendChild(div);
-                });
-            } else if (type === "range") {
-                container.innerHTML = `
-                    <div class="md:col-span-2 grid grid-cols-2 gap-4 bg-slate-50 p-4 rounded-xl border border-gray-100">
-                        <div>
-                            <label class="text-[10px] font-bold text-slate-400 block mb-1">Mínimo</label>
-                            <input type="number" id="opt-range-min" class="w-full rounded-lg border px-3 py-1.5 font-bold text-sm" value="${q.min || 1}">
-                        </div>
-                        <div>
-                            <label class="text-[10px] font-bold text-slate-400 block mb-1">Máximo</label>
-                            <input type="number" id="opt-range-max" class="w-full rounded-lg border px-3 py-1.5 font-bold text-sm" value="${q.max || 10}">
-                        </div>
-                        <div class="col-span-2">
-                            <label class="text-[10px] font-bold text-slate-400 block mb-1">Etiqueta de Mínimo (Izquierda)</label>
-                            <input type="text" id="opt-range-left" class="w-full rounded-lg border px-3 py-1.5 text-xs font-semibold" value="${q.left || ''}">
-                        </div>
-                        <div class="col-span-2">
-                            <label class="text-[10px] font-bold text-slate-400 block mb-1">Etiqueta de Máximo (Derecha)</label>
-                            <input type="text" id="opt-range-right" class="w-full rounded-lg border px-3 py-1.5 text-xs font-semibold" value="${q.right || ''}">
-                        </div>
-                    </div>
-                `;
-            } else if (type === "list") {
-                const options = q.options || [
-                    { val: "Opcion1", icon: "fa-hands-holding", color: "emerald", title: "Título 1", desc: "Descripción 1" },
-                    { val: "Opcion2", icon: "fa-bolt", color: "amber", title: "Título 2", desc: "Descripción 2" },
-                    { val: "Opcion3", icon: "fa-circle-exclamation", color: "rose", title: "Título 3", desc: "Descripción 3" }
-                ];
-
-                options.forEach((opt, idx) => {
-                    const div = document.createElement('div');
-                    div.className = "space-y-2 border border-gray-100 p-3 rounded-xl bg-slate-50 md:col-span-2";
-                    div.innerHTML = `
-                        <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Tarjeta ${idx+1}</span>
-                        <div class="grid grid-cols-3 gap-2">
-                            <input type="text" id="opt-list-icon-${idx}" class="rounded-lg border px-2 py-1.5 text-xs" value="${opt.icon}" placeholder="Icono FontAwesome (fa-...)">
-                            <input type="text" id="opt-list-color-${idx}" class="rounded-lg border px-2 py-1.5 text-xs" value="${opt.color}" placeholder="Color (emerald, amber, rose)">
-                            <input type="text" id="opt-list-val-${idx}" class="rounded-lg border px-2 py-1.5 text-xs" value="${opt.val}" placeholder="Valor de respuesta">
-                        </div>
-                        <input type="text" id="opt-list-title-${idx}" class="w-full rounded-lg border px-2 py-1.5 text-sm font-bold shadow-sm bg-white" value="${opt.title}" placeholder="Título de Tarjeta">
-                        <input type="text" id="opt-list-desc-${idx}" class="w-full rounded-lg border px-2 py-1.5 text-xs shadow-sm bg-white" value="${opt.desc}" placeholder="Descripción de Tarjeta">
-                    `;
-                    container.appendChild(div);
-                });
-            } else if (type === "grid") {
-                const options = q.options || [
-                    { val: "Si", icon: "🏅", title: "¡Sí, totalmente!", desc: "Aprendí nuevas técnicas." },
-                    { val: "Medias", icon: "⏳", title: "A medias", desc: "Faltó práctica." },
-                    { val: "No", icon: "❌", title: "No aportó", desc: "Repetitivo." }
-                ];
-
-                options.forEach((opt, idx) => {
-                    const div = document.createElement('div');
-                    div.className = "space-y-2 border border-gray-100 p-3 rounded-xl bg-slate-50";
-                    div.innerHTML = `
-                        <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Opción Grid ${idx+1}</span>
-                        <div class="flex gap-2">
-                            <div class="relative">
-                                <button type="button" onclick="toggleEmojiDropdownVisual(${idx+10})" class="w-12 h-12 text-2xl flex items-center justify-center bg-white border border-gray-200 rounded-xl shadow-sm hover:bg-gray-100 transition-apple" id="opt-emoji-display-${idx+10}">
-                                    ${opt.icon}
-                                </button>
-                                <input type="hidden" id="opt-grid-icon-${idx}" value="${opt.icon}">
-                                
-                                <div id="opt-emoji-dropdown-${idx+10}" class="hidden absolute left-0 mt-2 w-48 bg-white border border-gray-100 rounded-2xl shadow-xl z-50 p-2 grid grid-cols-6 gap-1 max-h-40 overflow-y-auto no-scrollbar border-2 border-slate-200">
-                                    ${popularEmojisScout.map(emoji => `
-                                        <button type="button" onclick="abrirSelectorEmojiInterno(${idx+10}, '${emoji}')" class="w-7 h-7 text-lg flex items-center justify-center rounded-lg hover:bg-indigo-50 transition-apple">${emoji}</button>
-                                    `).join('')}
-                                </div>
-                            </div>
-                            <input type="text" id="opt-grid-val-${idx}" class="flex-1 rounded-xl border border-gray-200 px-3 py-2 font-bold text-sm bg-white outline-none" value="${opt.val}" placeholder="Valor">
-                        </div>
-                        <input type="text" id="opt-grid-title-${idx}" class="w-full rounded-lg border px-2 py-1.5 text-sm font-bold bg-white" value="${opt.title}" placeholder="Título">
-                        <input type="text" id="opt-grid-desc-${idx}" class="w-full rounded-lg border px-2 py-1.5 text-xs bg-white" value="${opt.desc}" placeholder="Subtítulo / Desc">
-                    `;
-                    container.appendChild(div);
-                });
-            } else if (type === "textarea") {
-                container.innerHTML = `
-                    <div class="md:col-span-2 bg-slate-50 p-4 rounded-xl border border-gray-100">
-                        <label class="text-[10px] font-bold text-slate-400 block mb-1">Texto de Sugerencia en Caja (Placeholder)</label>
-                        <input type="text" id="opt-textarea-placeholder" class="w-full rounded-lg border px-3 py-1.5 font-semibold text-sm" value="${q.placeholder || ''}">
-                    </div>
-                `;
-            }
-        }
-        window.alternarCamposOpcionesEditor = alternarCamposOpcionesEditor;
-
-        function guardarPreguntaModificada() {
-            const idx = editorPreguntaIndexSeleccionada;
-            const q = bancoPreguntas[activeDashboardSection][idx];
-
-            const nuevoTitulo = document.getElementById('editor-pregunta-titulo').value.trim();
-            const nuevoTipo = document.getElementById('editor-pregunta-tipo').value;
-
-            if (nuevoTitulo === "") {
-                lanzarAlert("Falta Título", "Por favor ingresa un título de pregunta válido.");
-                return;
-            }
-
-            q.title = nuevoTitulo;
-            q.type = nuevoTipo;
-
-            if (nuevoTipo === "select") {
-                q.options = [];
-                for(let i=0; i<4; i++) {
-                    const pickedEmoji = document.getElementById(`opt-emoji-display-${i}`).innerText.trim();
-                    q.options.push({
-                        val: document.getElementById(`opt-val-${i}`).value || `Opcion-${i+1}`,
-                        icon: pickedEmoji || "❓",
-                        text: document.getElementById(`opt-text-${i}`).value || ""
-                    });
-                }
-            } else if (nuevoTipo === "range") {
-                q.min = Number(document.getElementById('opt-range-min').value || 1);
-                q.max = Number(document.getElementById('opt-range-max').value || 10);
-                q.def = Math.round((q.min + q.max) / 2);
-                q.left = document.getElementById('opt-range-left').value || "Mínimo";
-                q.right = document.getElementById('opt-range-right').value || "Máximo";
-            } else if (nuevoTipo === "list") {
-                q.options = [];
-                for(let i=0; i<3; i++) {
-                    q.options.push({
-                        val: document.getElementById(`opt-list-val-${i}`).value || `Opcion-${i+1}`,
-                        icon: document.getElementById(`opt-list-icon-${i}`).value || "fa-hands-holding",
-                        color: document.getElementById(`opt-list-color-${i}`).value || "emerald",
-                        title: document.getElementById(`opt-list-title-${i}`).value || "",
-                        desc: document.getElementById(`opt-list-desc-${i}`).value || ""
-                    });
-                }
-            } else if (nuevoTipo === "grid") {
-                q.options = [];
-                for(let i=0; i<3; i++) {
-                    const pickedGridEmoji = document.getElementById(`opt-emoji-display-${i+10}`).innerText.trim();
-                    q.options.push({
-                        val: document.getElementById(`opt-grid-val-${i}`).value || `Opcion-${i+1}`,
-                        icon: pickedGridEmoji || "❓",
-                        title: document.getElementById(`opt-grid-title-${i}`).value || "",
-                        desc: document.getElementById(`opt-grid-desc-${i}`).value || ""
-                    });
-                }
-            } else if (nuevoTipo === "textarea") {
-                q.placeholder = document.getElementById('opt-textarea-placeholder').value || "Escribe tu respuesta aquí...";
-            }
-
-            localStorage.setItem('bancoPreguntas_tequivoz', JSON.stringify(bancoPreguntas));
-
-            lanzarAlert("¡Formulario Actualizado! 🎨", `La pregunta ${q.id} para la sección de ${activeDashboardSection} ha sido guardada con éxito y está activa.`);
-            inicializarWixEditorPreguntas();
-        }
-        window.guardarPreguntaModificada = guardarPreguntaModificada;
-
-        function restablecerPreguntasPredeterminadas() {
-            if (confirm("¿Estás seguro de restablecer todas las preguntas de todas las secciones a sus configuraciones scouts por defecto?")) {
-                bancoPreguntas = JSON.parse(JSON.stringify(bancoPreguntasPredeterminado));
-                localStorage.setItem('bancoPreguntas_tequivoz', JSON.stringify(bancoPreguntas));
-                lanzarAlert("¡Formulario Restaurado!", "Se han cargado las preguntas base e insignias por defecto.");
-                inicializarWixEditorPreguntas();
-            }
-        }
-        window.restablecerPreguntasPredeterminadas = restablecerPreguntasPredeterminadas;
 
         // Cambiar paso en el stepper de edición de perfil (1 a 5)
         function cambiarPasoSisasProfileDirecto(dir) {
