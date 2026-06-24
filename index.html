@@ -1082,20 +1082,26 @@
         // Ruteador centralizado de vistas
         function mostrarSeccion(idSeccion) {
             const secciones = ['pantalla-inicio', 'contenedor-encuesta', 'puerta-autenticacion', 'puerta-autenticacion-scout', 'panel-scout-sisas', 'panel-scout-sisas-profile', 'panel-scouter'];
+            
+            // Ocultar todas las secciones
             secciones.forEach(id => {
                 const el = document.getElementById(id);
                 if (el) {
-                    if (id === idSeccion) {
-                        el.classList.remove('hidden');
-                    } else {
-                        el.classList.add('hidden');
-                    }
+                    el.classList.add('hidden');
                 }
             });
+            
+            // Mostrar la sección solicitada
+            const targetEl = document.getElementById(idSeccion);
+            if (targetEl) {
+                targetEl.classList.remove('hidden');
+            }
 
-            // Visibilidad de cabecera principal e ingresos (solo visible en Portal Scouter o encuestas, oculto en Home Login)
+            // Visibilidad de cabecera principal
             const mainHeader = document.getElementById('cabecera-principal');
-            if (idSeccion === 'puerta-autenticacion-scout' || idSeccion === 'panel-scout-sisas' || idSeccion === 'panel-scout-sisas-profile' || idSeccion === 'contenedor-encuesta' || idSeccion === 'panel-scouter') {
+            const hiddenSections = ['puerta-autenticacion-scout', 'panel-scout-sisas', 'panel-scout-sisas-profile', 'contenedor-encuesta', 'panel-scouter'];
+            
+            if (hiddenSections.includes(idSeccion)) {
                 mainHeader.classList.add('hidden');
             } else {
                 mainHeader.classList.remove('hidden');
@@ -1421,7 +1427,7 @@
         window.mostrarModalAutenticar = mostrarModalAutenticar;
 
         function validarCredenciales() {
-            const user = document.getElementById('admin-user').value;
+            const user = document.getElementById('admin-user').value.toLowerCase().trim();
             const pass = document.getElementById('admin-pass').value.toLowerCase().trim();
             let loginValido = false;
 
@@ -1444,7 +1450,7 @@
                 loginValido = true;
             } else if (user === 'dirigencia' && pass === 'tequihua1') {
                 currentRolScouter = "Dirigencia";
-                activeDashboardSection = "Manada"; // Dirigencia abre Manada primero pero puede cambiar
+                activeDashboardSection = "Manada";
                 loginValido = true;
             }
 
@@ -1452,9 +1458,15 @@
                 configurarVisibilidadSegunRol();
                 seleccionarSeccionDashboard(activeDashboardSection);
                 mostrarSeccion('panel-scouter');
-                document.body.style.backgroundColor = '#f5f5f7'; // fondo premium de analytics
+                document.body.style.backgroundColor = '#f5f5f7';
+                
+                // Limpiar campos
+                document.getElementById('admin-user').value = '';
+                document.getElementById('admin-pass').value = '';
+                
+                lanzarAlert("Acceso Concedido", `Bienvenido al panel de ${currentRolScouter}.`);
             } else {
-                lanzarAlert("Acceso Denegado", "La clave Tequihua es incorrecta.");
+                lanzarAlert("Acceso Denegado", "Las credenciales de Scouter son incorrectas.");
             }
         }
         window.validarCredenciales = validarCredenciales;
@@ -1475,6 +1487,7 @@
             let cumOficial = "";
             let sectionName = "";
 
+            // Validación de credenciales
             if (pass === "1") {
                 if (cum === "m") {
                     valid = true;
@@ -1526,10 +1539,16 @@
 
                 // Mostrar Dashboard de MiTequihua
                 mostrarSeccion('panel-scout-sisas');
-                document.body.style.backgroundColor = '#f8fafc'; // fondo premium de SISAS portal
+                document.body.style.backgroundColor = '#f8fafc';
                 cambiarSeccionSisas('home');
+                
+                // Limpiar campos
+                document.getElementById('scout-cum-input').value = '';
+                document.getElementById('scout-password-input').value = '';
+                
+                lanzarAlert("¡Bienvenido!", `Has iniciado sesión correctamente como ${nombreCompleto}`);
             } else {
-                lanzarAlert("Acceso Denegado", "CUM o Contraseña incorrectos.");
+                lanzarAlert("Acceso Denegado", "CUM o Contraseña incorrectos. Verifica tus credenciales.");
             }
         }
         window.validarCredencialesScout = validarCredencialesScout;
@@ -1559,10 +1578,10 @@
                 const el = document.getElementById(`sisas-nav-${id}`);
                 if (el) {
                     if (id === idSubSeccion) {
-                        el.classList.add('bg-slate-800', 'text-white');
+                        el.classList.add('bg-slate-800', 'text-white', 'font-bold');
                         el.classList.remove('hover:bg-slate-800', 'hover:text-white');
                     } else {
-                        el.classList.remove('bg-slate-800', 'text-white');
+                        el.classList.remove('bg-slate-800', 'text-white', 'font-bold');
                         el.classList.add('hover:bg-slate-800', 'hover:text-white');
                     }
                 }
